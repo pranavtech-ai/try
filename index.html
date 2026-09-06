@@ -65,7 +65,7 @@ input,select{outline:none}
   box-shadow:0 30px 65px rgba(0,0,0,0.22);
 }
 
-/* Services Stage - Center Static with Flanking Reveal */
+/* Services Stage - Tight Gapless Execution */
 .services-pin-wrapper{
   position:relative;
   width:100%;
@@ -135,11 +135,42 @@ input,select{outline:none}
   padding:2.25rem;
   position:relative;
   overflow:hidden;
-  transition:transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease;
+  transition:all 0.45s cubic-bezier(0.16,1,0.3,1);
+  cursor:pointer;
 }
+/* Electric Yellow Hover Effect for Process Cards */
 .process-feature-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 24px 55px rgba(0,0,0,0.09);
+  background:#FFE500 !important;
+  color:#101114 !important;
+  border-color:transparent !important;
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:0 26px 60px rgba(255,229,0,0.35), 0 12px 28px rgba(0,0,0,0.08);
+}
+.process-feature-card:hover h3,
+.process-feature-card:hover p,
+.process-feature-card:hover span,
+.process-feature-card:hover div{
+  color:#101114 !important;
+}
+.process-feature-card:hover .step-badge{
+  background:#101114 !important;
+  color:#FFE500 !important;
+  border-color:#101114 !important;
+}
+.process-feature-card:hover .step-arrow{
+  background:#101114 !important;
+  color:#FFE500 !important;
+  transform:translateX(4px);
+}
+
+/* Portfolio 3D Tilt Card */
+.portfolio-card{
+  transform-style:preserve-3d;
+  perspective:1000px;
+  transition:transform 0.5s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease;
+}
+.portfolio-card:hover{
+  box-shadow:0 28px 60px rgba(0,0,0,0.12), 0 10px 24px rgba(0,0,0,0.05);
 }
 </style>
 </head>
@@ -191,14 +222,11 @@ input,select{outline:none}
 
 <!-- HERO: GOLDEN FLASH MULTI-CARD FLOATING ARCH -->
 <section id="home" class="relative pt-[124px] md:pt-[150px] pb-10 px-4 md:px-6 max-w-[1360px] mx-auto min-h-[92vh] flex flex-col justify-between">
-  <!-- Sub-Header Metatags / Eyebrow -->
+  <!-- Sub-Header Metatags / Eyebrow (Removed Performance & Visuals) -->
   <div class="w-full flex items-center justify-between text-[11px] md:text-[12px] font-bold tracking-[0.16em] text-[#868A94] uppercase px-2 mb-2 reveal">
     <div class="flex items-center gap-2">
       <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
       <span>[BY NOVA HUAS COLLECTIVE]</span>
-    </div>
-    <div class="hidden sm:inline-flex items-center gap-2 bg-white/80 border border-black/5 px-3.5 py-1.5 rounded-full glass shadow-sm text-[#101114]">
-      <i class="fa-solid fa-bolt text-amber-500 text-[10px]"></i> PERFORMANCE & VISUALS
     </div>
     <span>[NYC • LDN • SF]</span>
   </div>
@@ -300,11 +328,11 @@ input,select{outline:none}
   </div>
 </section>
 
-<!-- SERVICES: CENTER STATIC WITH FLANKING REVEAL (GOLDEN FLASH SYSTEM) -->
+<!-- SERVICES: ZERO DEAD SPACE OPTIMIZED SCROLL PIN -->
 <section id="services" class="relative w-full overflow-hidden">
   <div id="servicesPinWrapper" class="services-pin-wrapper">
     <!-- Pinned Top Header -->
-    <div class="text-center max-w-3xl mx-auto pt-10 md:pt-14 pb-6 px-4 shrink-0 z-20">
+    <div class="text-center max-w-3xl mx-auto pt-8 md:pt-12 pb-5 px-4 shrink-0 z-20">
       <div class="inline-flex items-center gap-2 bg-white border border-black/[0.06] rounded-full px-3.5 py-1.5 shadow-sm">
         <span class="w-1.5 h-1.5 rounded-full bg-[#101114]"></span>
         <span class="text-[11px] font-bold tracking-[0.14em]">CAPABILITIES</span>
@@ -316,7 +344,7 @@ input,select{outline:none}
     <!-- 3-Column Scroll Stage -->
     <div class="relative w-full flex-1 max-w-[1360px] mx-auto overflow-hidden px-4 md:px-8">
       <div class="parallax-gallery-container w-full h-full">
-        <!-- Column 1: Starts Offscreen Bottom, Rises Up to Flank -->
+        <!-- Column 1: Flanks up smoothly -->
         <div id="colLeft" class="parallax-col">
           <div class="service-scroll-card p-6 md:p-7 hover-light group">
             <div class="flex items-center justify-between">
@@ -355,7 +383,7 @@ input,select{outline:none}
           </div>
         </div>
 
-        <!-- Column 2: The Anchor - Arrives First & Stays Static in Center -->
+        <!-- Column 2: Center Anchor -->
         <div id="colCenter" class="parallax-col">
           <div class="service-scroll-card p-6 md:p-7 hover-light group border-black/15 shadow-xl">
             <div class="flex items-center justify-between">
@@ -394,7 +422,7 @@ input,select{outline:none}
           </div>
         </div>
 
-        <!-- Column 3: Starts Offscreen Bottom, Rises Up to Flank -->
+        <!-- Column 3: Flanks up smoothly -->
         <div id="colRight" class="parallax-col">
           <div class="service-scroll-card p-6 md:p-7 hover-light group">
             <div class="flex items-center justify-between">
@@ -437,8 +465,8 @@ input,select{outline:none}
   </div>
 </section>
 
-<!-- PROCESS: PINNED HORIZONTAL CAROUSEL ENGINE -->
-<section id="process" class="relative w-full overflow-hidden bg-white">
+<!-- PROCESS: PINNED HORIZONTAL CAROUSEL WITH ELECTRIC YELLOW HOVER -->
+<section id="process" class="relative w-full overflow-hidden bg-white -mt-1">
   <div id="processPinWrapper" class="process-pinned-section">
     <!-- Sticky Section Title Header -->
     <div class="px-6 md:px-12 max-w-[1280px] w-full mx-auto pb-8 shrink-0">
@@ -459,18 +487,18 @@ input,select{outline:none}
         <div class="process-feature-card group">
           <div>
             <div class="flex items-center justify-between">
-              <div class="w-12 h-12 rounded-2xl bg-[#101114] text-white grid place-items-center font-extrabold text-[13px] tracking-widest shadow-md">01</div>
-              <span class="text-[11px] font-bold tracking-widest text-[#9AA0A8]">PHASE ONE</span>
+              <div class="step-badge w-12 h-12 rounded-2xl bg-[#101114] text-white grid place-items-center font-extrabold text-[13px] tracking-widest shadow-md transition-colors duration-300">01</div>
+              <span class="text-[11px] font-bold tracking-widest text-[#9AA0A8] transition-colors duration-300">PHASE ONE</span>
             </div>
-            <div class="mt-8 text-[11px] font-bold tracking-widest text-[#9AA0A8] flex items-center gap-2">
+            <div class="mt-8 text-[11px] font-bold tracking-widest text-[#9AA0A8] flex items-center gap-2 transition-colors duration-300">
               <span class="w-6 h-px bg-black/10"></span> WEEK 01
             </div>
-            <h3 class="mt-3 font-display font-bold text-[22px] tracking-tight text-[#101114]">Audit & Discovery</h3>
-            <p class="mt-3 text-[14px] leading-6 text-[#6B6B6E]">Deep-dive analysis of your funnel, unit economics, competitor blindspots, and missed revenue leaks.</p>
+            <h3 class="mt-3 font-display font-bold text-[22px] tracking-tight text-[#101114] transition-colors duration-300">Audit & Discovery</h3>
+            <p class="mt-3 text-[14px] leading-6 text-[#6B6B6E] transition-colors duration-300">Deep-dive analysis of your funnel, unit economics, competitor blindspots, and missed revenue leaks.</p>
           </div>
           <div class="pt-6 border-t border-black/[0.06] flex items-center justify-between">
-            <span class="text-[12px] font-semibold text-[#101114]">Diagnostic Deliverable</span>
-            <span class="w-8 h-8 rounded-full bg-[#F6F7F9] grid place-items-center text-[#101114] group-hover:translate-x-1 transition-transform"><i class="fa-solid fa-arrow-right text-[11px]"></i></span>
+            <span class="text-[12px] font-semibold text-[#101114] transition-colors duration-300">Diagnostic Deliverable</span>
+            <span class="step-arrow w-8 h-8 rounded-full bg-[#F6F7F9] grid place-items-center text-[#101114] transition-all duration-300"><i class="fa-solid fa-arrow-right text-[11px]"></i></span>
           </div>
         </div>
 
@@ -478,18 +506,18 @@ input,select{outline:none}
         <div class="process-feature-card group">
           <div>
             <div class="flex items-center justify-between">
-              <div class="w-12 h-12 rounded-2xl bg-[#FFF1F5] text-[#E11D48] grid place-items-center font-extrabold text-[13px] tracking-widest border border-[#E11D48]/20">02</div>
-              <span class="text-[11px] font-bold tracking-widest text-[#9AA0A8]">PHASE TWO</span>
+              <div class="step-badge w-12 h-12 rounded-2xl bg-[#FFF1F5] text-[#E11D48] grid place-items-center font-extrabold text-[13px] tracking-widest border border-[#E11D48]/20 transition-colors duration-300">02</div>
+              <span class="text-[11px] font-bold tracking-widest text-[#9AA0A8] transition-colors duration-300">PHASE TWO</span>
             </div>
-            <div class="mt-8 text-[11px] font-bold tracking-widest text-[#9AA0A8] flex items-center gap-2">
+            <div class="mt-8 text-[11px] font-bold tracking-widest text-[#9AA0A8] flex items-center gap-2 transition-colors duration-300">
               <span class="w-6 h-px bg-black/10"></span> WEEK 02–03
             </div>
-            <h3 class="mt-3 font-display font-bold text-[22px] tracking-tight text-[#101114]">Creative & Technical Re-Architecture</h3>
-            <p class="mt-3 text-[14px] leading-6 text-[#6B6B6E]">Scripting high-converting hooks, shooting bespoke visual assets, and CRO rebuilding high-velocity landing pages.</p>
+            <h3 class="mt-3 font-display font-bold text-[22px] tracking-tight text-[#101114] transition-colors duration-300">Creative & Technical Re-Architecture</h3>
+            <p class="mt-3 text-[14px] leading-6 text-[#6B6B6E] transition-colors duration-300">Scripting high-converting hooks, shooting bespoke visual assets, and CRO rebuilding high-velocity landing pages.</p>
           </div>
           <div class="pt-6 border-t border-black/[0.06] flex items-center justify-between">
-            <span class="text-[12px] font-semibold text-[#101114]">Asset Production</span>
-            <span class="w-8 h-8 rounded-full bg-[#F6F7F9] grid place-items-center text-[#101114] group-hover:translate-x-1 transition-transform"><i class="fa-solid fa-arrow-right text-[11px]"></i></span>
+            <span class="text-[12px] font-semibold text-[#101114] transition-colors duration-300">Asset Production</span>
+            <span class="step-arrow w-8 h-8 rounded-full bg-[#F6F7F9] grid place-items-center text-[#101114] transition-all duration-300"><i class="fa-solid fa-arrow-right text-[11px]"></i></span>
           </div>
         </div>
 
@@ -497,37 +525,37 @@ input,select{outline:none}
         <div class="process-feature-card group">
           <div>
             <div class="flex items-center justify-between">
-              <div class="w-12 h-12 rounded-2xl bg-[#EEF2FF] text-[#4F46E5] grid place-items-center font-extrabold text-[13px] tracking-widest border border-[#4F46E5]/20">03</div>
-              <span class="text-[11px] font-bold tracking-widest text-[#9AA0A8]">PHASE THREE</span>
+              <div class="step-badge w-12 h-12 rounded-2xl bg-[#EEF2FF] text-[#4F46E5] grid place-items-center font-extrabold text-[13px] tracking-widest border border-[#4F46E5]/20 transition-colors duration-300">03</div>
+              <span class="text-[11px] font-bold tracking-widest text-[#9AA0A8] transition-colors duration-300">PHASE THREE</span>
             </div>
-            <div class="mt-8 text-[11px] font-bold tracking-widest text-[#9AA0A8] flex items-center gap-2">
+            <div class="mt-8 text-[11px] font-bold tracking-widest text-[#9AA0A8] flex items-center gap-2 transition-colors duration-300">
               <span class="w-6 h-px bg-black/10"></span> WEEK 04–06
             </div>
-            <h3 class="mt-3 font-display font-bold text-[22px] tracking-tight text-[#101114]">Algorithmic Testing & Media Blitz</h3>
-            <p class="mt-3 text-[14px] leading-6 text-[#6B6B6E]">Multi-variant ad testing across platforms to isolate winning creative-angle combinations with minimal budget waste.</p>
+            <h3 class="mt-3 font-display font-bold text-[22px] tracking-tight text-[#101114] transition-colors duration-300">Algorithmic Testing & Media Blitz</h3>
+            <p class="mt-3 text-[14px] leading-6 text-[#6B6B6E] transition-colors duration-300">Multi-variant ad testing across platforms to isolate winning creative-angle combinations with minimal budget waste.</p>
           </div>
           <div class="pt-6 border-t border-black/[0.06] flex items-center justify-between">
-            <span class="text-[12px] font-semibold text-[#101114]">Angle Validation</span>
-            <span class="w-8 h-8 rounded-full bg-[#F6F7F9] grid place-items-center text-[#101114] group-hover:translate-x-1 transition-transform"><i class="fa-solid fa-arrow-right text-[11px]"></i></span>
+            <span class="text-[12px] font-semibold text-[#101114] transition-colors duration-300">Angle Validation</span>
+            <span class="step-arrow w-8 h-8 rounded-full bg-[#F6F7F9] grid place-items-center text-[#101114] transition-all duration-300"><i class="fa-solid fa-arrow-right text-[11px]"></i></span>
           </div>
         </div>
 
         <!-- 04: Aggressive Scale & Optimization -->
-        <div class="process-feature-card group bg-[#101114] border-white/10 text-white shadow-xl">
+        <div class="process-feature-card group">
           <div>
             <div class="flex items-center justify-between">
-              <div class="w-12 h-12 rounded-2xl bg-white text-[#101114] grid place-items-center font-extrabold text-[13px] tracking-widest">04</div>
-              <span class="text-[11px] font-bold tracking-widest text-white/50">PHASE FOUR</span>
+              <div class="step-badge w-12 h-12 rounded-2xl bg-[#101114] text-white grid place-items-center font-extrabold text-[13px] tracking-widest transition-colors duration-300">04</div>
+              <span class="text-[11px] font-bold tracking-widest text-[#9AA0A8] transition-colors duration-300">PHASE FOUR</span>
             </div>
-            <div class="mt-8 text-[11px] font-bold tracking-widest text-white/50 flex items-center gap-2">
-              <span class="w-6 h-px bg-white/20"></span> ONGOING SCALE
+            <div class="mt-8 text-[11px] font-bold tracking-widest text-[#9AA0A8] flex items-center gap-2 transition-colors duration-300">
+              <span class="w-6 h-px bg-black/10"></span> ONGOING SCALE
             </div>
-            <h3 class="mt-3 font-display font-bold text-[22px] tracking-tight text-white">Aggressive Scale & Optimization</h3>
-            <p class="mt-3 text-[14px] leading-6 text-white/70">Pushing ad spend efficiently while safeguarding net-profit ROAS, automated customer retention, and compounding lifetime value.</p>
+            <h3 class="mt-3 font-display font-bold text-[22px] tracking-tight text-[#101114] transition-colors duration-300">Aggressive Scale & Optimization</h3>
+            <p class="mt-3 text-[14px] leading-6 text-[#6B6B6E] transition-colors duration-300">Pushing ad spend efficiently while safeguarding net-profit ROAS, automated customer retention, and compounding lifetime value.</p>
           </div>
-          <div class="pt-6 border-t border-white/10 flex items-center justify-between">
-            <span class="text-[12px] font-semibold text-emerald-400">Continuous Compounding</span>
-            <span class="w-8 h-8 rounded-full bg-white text-[#101114] grid place-items-center group-hover:translate-x-1 transition-transform"><i class="fa-solid fa-arrow-right text-[11px]"></i></span>
+          <div class="pt-6 border-t border-black/[0.06] flex items-center justify-between">
+            <span class="text-[12px] font-semibold text-[#101114] transition-colors duration-300">Continuous Compounding</span>
+            <span class="step-arrow w-8 h-8 rounded-full bg-[#F6F7F9] grid place-items-center text-[#101114] transition-all duration-300"><i class="fa-solid fa-arrow-right text-[11px]"></i></span>
           </div>
         </div>
       </div>
@@ -535,7 +563,7 @@ input,select{outline:none}
   </div>
 </section>
 
-<!-- PORTFOLIO -->
+<!-- PORTFOLIO: WITH 3D TILT & ENHANCED CHOREOGRAPHY -->
 <section id="portfolio" class="px-4 md:px-6 max-w-[1280px] mx-auto pt-10 md:pt-16 pb-8">
   <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 reveal">
     <div>
@@ -557,7 +585,7 @@ input,select{outline:none}
 
   <div class="mt-8 grid md:grid-cols-2 gap-6" id="portfolioGrid">
     <!-- Alpha -->
-    <div data-category="paid visual" class="portfolio-card group bg-white rounded-[28px] border border-black/[0.06] overflow-hidden shadow-sm card-lift reveal">
+    <div data-category="paid visual" class="portfolio-card group bg-white rounded-[28px] border border-black/[0.06] overflow-hidden shadow-sm reveal">
       <div class="relative h-[280px] overflow-hidden bg-[#F6F7F9]">
         <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80&auto=format&fit=crop" alt="Apex Luxury" class="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700">
         <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
@@ -580,7 +608,7 @@ input,select{outline:none}
       </div>
     </div>
     <!-- Beta -->
-    <div data-category="visual paid" class="portfolio-card group bg-white rounded-[28px] border border-black/[0.06] overflow-hidden shadow-sm card-lift reveal">
+    <div data-category="visual paid" class="portfolio-card group bg-white rounded-[28px] border border-black/[0.06] overflow-hidden shadow-sm reveal">
       <div class="relative h-[280px] overflow-hidden bg-[#F6F7F9]">
         <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=800&q=80&auto=format&fit=crop" alt="Lumina Cafe" class="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700">
         <div class="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent"></div>
@@ -603,7 +631,7 @@ input,select{outline:none}
       </div>
     </div>
     <!-- Gamma -->
-    <div data-category="web" class="portfolio-card group bg-white rounded-[28px] border border-black/[0.06] overflow-hidden shadow-sm card-lift reveal">
+    <div data-category="web" class="portfolio-card group bg-white rounded-[28px] border border-black/[0.06] overflow-hidden shadow-sm reveal">
       <div class="relative h-[280px] overflow-hidden bg-[#0B0C0F]">
         <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80&auto=format&fit=crop" alt="Aura Tech" class="w-full h-full object-cover opacity-90 group-hover:scale-[1.04] transition-transform duration-700">
         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -631,7 +659,7 @@ input,select{outline:none}
       </div>
     </div>
     <!-- Delta -->
-    <div data-category="funnel paid" class="portfolio-card group bg-white rounded-[28px] border border-black/[0.06] overflow-hidden shadow-sm card-lift reveal">
+    <div data-category="funnel paid" class="portfolio-card group bg-white rounded-[28px] border border-black/[0.06] overflow-hidden shadow-sm reveal">
       <div class="relative h-[280px] overflow-hidden bg-[#F6F7F9]">
         <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&q=80&auto=format&fit=crop" alt="Kova Botanicals" class="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700">
         <div class="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent"></div>
@@ -960,41 +988,38 @@ if(heroDeck){
   });
 }
 
-// SERVICES: EXACT GOLDEN FLASH CHOREOGRAPHY
+// SERVICES: SEAMLESS BUTTERY SMOOTH WITH ZERO DEAD GAP
 const colLeft = document.getElementById('colLeft');
 const colCenter = document.getElementById('colCenter');
 const colRight = document.getElementById('colRight');
 
-// 1. Initial State: Center column is present at center; Left & Right are pushed offscreen bottom
+// Starting positions: Center visible, Left/Right just slightly below viewport for quick catch-up
 gsap.set(colCenter, { yPercent: 4 });
-gsap.set([colLeft, colRight], { yPercent: 125 });
+gsap.set([colLeft, colRight], { yPercent: 70 });
 
-// 2. Scrubbed Timeline
 const servicesTl = gsap.timeline({
   scrollTrigger: {
     trigger: "#services",
     start: "top top",
-    end: "+=1600",
+    end: "+=900", // Fast, responsive pinning without dead white space
     pin: true,
-    scrub: 0.8,
+    scrub: 0.6,
     anticipatePin: 1
   }
 });
 
 servicesTl
-  // Stage A: colCenter stays completely static while Left & Right rise up together to flank it
+  // Flank left and right cards up alongside center
   .to([colLeft, colRight], {
     yPercent: 4,
-    ease: "power1.out",
-    duration: 1.4
+    ease: "power2.out",
+    duration: 1.0
   })
-  // Stage B: Brief pause where all three cards rest side-by-side
-  .to({}, { duration: 0.3 })
-  // Stage C: All three columns scroll up together off-screen into the next section
+  // Immediate gentle scroll upwards exiting seamlessly into the Process section
   .to([colLeft, colCenter, colRight], {
-    yPercent: -125,
-    ease: "power1.in",
-    duration: 0.9
+    yPercent: -50,
+    ease: "power1.inOut",
+    duration: 0.8
   });
 
 // PROCESS SECTION: HORIZONTAL SCRUB ANIMATION
@@ -1009,12 +1034,37 @@ gsap.to(processTrack, {
   scrollTrigger: {
     trigger: "#processPinWrapper",
     start: "top top",
-    end: () => `+=${Math.max(1200, processTrack.scrollWidth - window.innerWidth)}`,
+    end: () => `+=${Math.max(1000, processTrack.scrollWidth - window.innerWidth)}`,
     pin: true,
-    scrub: 0.7,
+    scrub: 0.6,
     invalidateOnRefresh: true,
     anticipatePin: 1
   }
+});
+
+// PORTFOLIO 3D TILT ANIMATION
+document.querySelectorAll('.portfolio-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    if(window.innerWidth < 768) return;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    gsap.to(card, {
+      rotationY: x * 0.035,
+      rotationX: -y * 0.035,
+      transformPerspective: 1000,
+      ease: "power1.out",
+      duration: 0.4
+    });
+  });
+  card.addEventListener('mouseleave', () => {
+    gsap.to(card, {
+      rotationY: 0,
+      rotationX: 0,
+      ease: "power2.out",
+      duration: 0.6
+    });
+  });
 });
 
 // Mobile menu
