@@ -2,14 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<title>Nova Huas — Engineering Market Leaders</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Nova Huas — Engineering Market Leaders</title>
 <script src="https://cdn.tailwindcss.com"></script>
@@ -161,7 +153,7 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
   }
 }
 
-/* Warm Yellow Hover & Active Mobile States */
+/* Warm Yellow Hover for Process Cards */
 .process-feature-card:hover, .process-feature-card:active{
   background:#FFE664 !important;
   color:#101114 !important;
@@ -212,7 +204,6 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
     <a href="#home" data-nav="home" class="nav-link relative z-10 px-5 py-2 text-[13px] font-semibold text-[#101114] rounded-full">Home</a>
     <a href="#services" data-nav="services" class="nav-link relative z-10 px-5 py-2 text-[13px] font-medium text-[#6B6B6E] hover:text-[#101114] rounded-full transition-colors">Services</a>
     <a href="#process" data-nav="process" class="nav-link relative z-10 px-5 py-2 text-[13px] font-medium text-[#6B6B6E] hover:text-[#101114] rounded-full transition-colors">Process</a>
-    <a href="#about" data-nav="about" class="nav-link relative z-10 px-5 py-2 text-[13px] font-medium text-[#6B6B6E] hover:text-[#101114] rounded-full transition-colors">About</a>
     <a href="#contact" data-nav="contact" class="nav-link relative z-10 px-5 py-2 text-[13px] font-medium text-[#6B6B6E] hover:text-[#101114] rounded-full transition-colors">Contact</a>
   </div>
 
@@ -227,22 +218,19 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
       <a href="#home" class="mobile-link px-4 py-3 rounded-full text-[14px] font-semibold bg-[#101114] text-white text-center">Home</a>
       <a href="#services" class="mobile-link px-4 py-3 rounded-full text-[14px] font-medium text-[#555] hover:bg-black/5 text-center">Services</a>
       <a href="#process" class="mobile-link px-4 py-3 rounded-full text-[14px] font-medium text-[#555] hover:bg-black/5 text-center">Process</a>
-      <a href="#about" class="mobile-link px-4 py-3 rounded-full text-[14px] font-medium text-[#555] hover:bg-black/5 text-center">About</a>
       <a href="#contact" class="mobile-link px-4 py-3 rounded-full text-[14px] font-medium text-[#555] hover:bg-black/5 text-center">Contact</a>
       <a href="#contact" class="mt-2 bg-[#101114] text-white text-center py-3.5 rounded-full font-bold text-[14px]">Let's Talk — Free Audit</a>
     </div>
   </div>
 </nav>
 
-<!-- HERO: FULLY RESPONSIVE & BOUND-SAFE -->
+<!-- HERO -->
 <section id="home" class="relative w-full pt-[96px] md:pt-[136px] pb-6 px-4 md:px-8 min-h-[92vh] flex flex-col justify-between overflow-hidden">
-  <!-- Dynamic Backdrop on Hover (Desktop Only) -->
   <div id="heroHoverBackdrop" class="absolute inset-0 pointer-events-none transition-opacity duration-700 opacity-0 z-0 overflow-hidden">
     <img id="heroBackdropImg" src="" class="w-full h-full object-cover filter blur-[32px] scale-105 opacity-25" alt="Backdrop projection">
     <div class="absolute inset-0 bg-[#F8F9FA]/80"></div>
   </div>
 
-  <!-- Sub-Header Metatags: Perfectly Spaced across Mobile & Desktop -->
   <div class="relative z-10 w-full max-w-[1320px] mx-auto flex items-center justify-between text-[10px] sm:text-[11px] md:text-[12px] font-bold tracking-[0.14em] md:tracking-[0.16em] text-[#7A7E88] uppercase px-1 mb-3">
     <div class="flex items-center gap-1.5">
       <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -251,25 +239,20 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
     <span>[NYC • LDN • SF]</span>
   </div>
 
-  <!-- Central Visual Stage -->
   <div id="heroDeckStage" class="hero-deck-wrapper relative z-10 w-full max-w-[1320px] mx-auto my-auto py-2 md:py-4 flex flex-col items-center justify-center">
-    <!-- Responsive Hero Deck Row: Uses Screen Clamp and Scales Proportionately -->
     <div id="deckCardsRow" class="relative z-20 w-full flex items-center justify-center -space-x-3 sm:-space-x-6 md:-space-x-8 lg:-space-x-10 pointer-events-auto px-2">
-      <!-- Card 1 -->
       <div data-preview="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1400&q=80&auto=format&fit=crop" class="deck-card w-[68px] sm:w-[110px] md:w-[155px] lg:w-[185px] h-[95px] sm:h-[150px] md:h-[210px] lg:h-[240px] -rotate-12 translate-y-3 sm:translate-y-5 md:translate-y-6 bg-black cursor-pointer">
         <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&q=80&auto=format&fit=crop" class="w-full h-full object-cover" alt="3D Engine">
         <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
         <span class="absolute bottom-1.5 left-1.5 sm:bottom-2 sm:left-2 text-white text-[8px] sm:text-[10px] md:text-[11px] font-bold tracking-wider">3D</span>
       </div>
 
-      <!-- Card 2 -->
       <div data-preview="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1400&q=80&auto=format&fit=crop" class="deck-card w-[72px] sm:w-[115px] md:w-[160px] lg:w-[190px] h-[100px] sm:h-[155px] md:h-[215px] lg:h-[245px] -rotate-6 translate-y-1 sm:translate-y-2 bg-black cursor-pointer z-10">
         <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=500&q=80&auto=format&fit=crop" class="w-full h-full object-cover" alt="Editorial">
         <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
         <span class="absolute bottom-1.5 left-1.5 sm:bottom-2 sm:left-2 text-white text-[8px] sm:text-[10px] md:text-[11px] font-bold tracking-wider">VISUAL</span>
       </div>
 
-      <!-- Card 3 (Centerpiece Anchor) -->
       <div data-preview="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1400&q=80&auto=format&fit=crop" class="deck-card w-[78px] sm:w-[125px] md:w-[175px] lg:w-[210px] h-[110px] sm:h-[170px] md:h-[235px] lg:h-[265px] rotate-0 -translate-y-2 sm:-translate-y-4 bg-black cursor-pointer z-20 shadow-xl">
         <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&q=80&auto=format&fit=crop" class="w-full h-full object-cover" alt="Viral Hooks">
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
@@ -277,14 +260,12 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
         <span class="absolute bottom-1.5 left-1.5 sm:bottom-2 sm:left-2 text-white text-[8px] sm:text-[11px] font-black tracking-wide">HOOKS</span>
       </div>
 
-      <!-- Card 4 -->
       <div data-preview="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1400&q=80&auto=format&fit=crop" class="deck-card w-[72px] sm:w-[115px] md:w-[160px] lg:w-[190px] h-[100px] sm:h-[155px] md:h-[215px] lg:h-[245px] rotate-6 translate-y-1 sm:translate-y-2 bg-black cursor-pointer z-10">
         <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500&q=80&auto=format&fit=crop" class="w-full h-full object-cover" alt="Commercial">
         <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
         <span class="absolute bottom-1.5 left-1.5 sm:bottom-2 sm:left-2 text-white text-[8px] sm:text-[10px] md:text-[11px] font-bold tracking-wider">COMMERCE</span>
       </div>
 
-      <!-- Card 5 -->
       <div data-preview="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=1400&q=80&auto=format&fit=crop" class="deck-card w-[68px] sm:w-[110px] md:w-[155px] lg:w-[185px] h-[95px] sm:h-[150px] md:h-[210px] lg:h-[240px] rotate-12 translate-y-3 sm:translate-y-5 md:translate-y-6 bg-black cursor-pointer">
         <img src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=500&q=80&auto=format&fit=crop" class="w-full h-full object-cover" alt="4.8x Scale">
         <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
@@ -292,7 +273,6 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
       </div>
     </div>
 
-    <!-- Display Headline -->
     <div class="relative z-10 text-center mt-5 md:mt-7 max-w-5xl mx-auto px-2">
       <h1 class="font-display font-[900] tracking-[-0.04em] md:tracking-[-0.05em] leading-[0.92] md:leading-[0.88] text-[34px] sm:text-[54px] md:text-[76px] lg:text-[96px] text-[#101114] uppercase">
         Capturing Attention<br>
@@ -302,7 +282,6 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
         Delivering category-dominating paid acquisition, high-fashion creative direction, and WebGL infrastructure — with extreme precision and compounding payback.
       </p>
 
-      <!-- CTA Cluster -->
       <div class="mt-6 sm:mt-7 flex items-center justify-center gap-2.5 sm:gap-3">
         <a href="#contact" class="inline-flex items-center gap-2.5 bg-[#101114] hover:bg-black text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-[13.5px] sm:text-[14.5px] hover:scale-[1.03] transition-all shadow-[0_12px_28px_rgba(0,0,0,0.18)]">
           Get in Touch
@@ -346,10 +325,9 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
   </div>
 </section>
 
-<!-- SERVICES: DESKTOP PINNED + MOBILE FLUID STACK -->
+<!-- SERVICES -->
 <section id="services" class="relative w-full overflow-hidden py-8 md:py-0">
   <div id="servicesPinWrapper" class="services-pin-wrapper">
-    <!-- Header -->
     <div class="text-center max-w-3xl mx-auto pt-4 md:pt-10 pb-4 md:pb-6 px-4 shrink-0 z-20">
       <div class="inline-flex items-center gap-1.5 bg-white border border-black/[0.06] rounded-full px-3 py-1 shadow-sm">
         <span class="w-1.5 h-1.5 rounded-full bg-[#101114]"></span>
@@ -359,7 +337,6 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
       <p class="mt-1.5 text-[13px] sm:text-[14px] md:text-[15px] leading-relaxed text-[#6B6B6E]">Six integrated disciplines. One accountable squad. No hand-offs.</p>
     </div>
 
-    <!-- Cards Container: Responsive Grid on Mobile / Pinned Gallery on Desktop -->
     <div class="relative w-full flex-1 max-w-[1320px] mx-auto overflow-hidden px-4 md:px-8">
       <div class="parallax-gallery-container grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
         <!-- Col 1 -->
@@ -483,10 +460,9 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
   </div>
 </section>
 
-<!-- PROCESS: HORIZONTAL SCRUB ON DESKTOP, FLUID GRID ON MOBILE -->
+<!-- PROCESS -->
 <section id="process" class="relative w-full overflow-hidden bg-white py-8 md:py-4">
   <div id="processPinWrapper" class="process-pinned-section">
-    <!-- Header -->
     <div class="px-4 sm:px-6 md:px-12 max-w-[1320px] w-full mx-auto pb-4 md:pb-6 shrink-0">
       <div class="inline-flex items-center gap-1.5 bg-[#F6F7F9] border border-black/[0.06] rounded-full px-3 py-1">
         <span class="w-1.5 h-1.5 rounded-full bg-[#101114]"></span>
@@ -498,7 +474,6 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
       </div>
     </div>
 
-    <!-- Cards Stage -->
     <div class="w-full overflow-hidden px-4 md:px-0">
       <div id="processTrack" class="process-track grid grid-cols-1 sm:grid-cols-2 md:flex gap-4 md:gap-6">
         <!-- Step 01 -->
@@ -581,73 +556,8 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="px-4 md:px-6 max-w-[1320px] mx-auto pt-8 pb-8">
-  <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-6">
-    <!-- Manifesto -->
-    <div class="bg-white rounded-[24px] sm:rounded-[32px] border border-black/[0.06] shadow-sm p-6 sm:p-8 md:p-10 reveal">
-      <div class="inline-flex items-center gap-1.5 bg-[#F6F7F9] border border-black/[0.06] rounded-full px-3 py-1">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#101114]"></span>
-        <span class="text-[10px] md:text-[11px] font-bold tracking-[0.14em]">WHY NOVA HUAS</span>
-      </div>
-      <h2 class="mt-4 font-display font-extrabold tracking-[-0.035em] text-[24px] sm:text-[30px] md:text-[36px] leading-tight">We are not an agency that reports vanity metrics.</h2>
-      <div class="mt-4 space-y-3 sm:space-y-4 text-[13.5px] sm:text-[14.5px] leading-6 sm:leading-7 text-[#55575B]">
-        <p><span class="font-semibold text-[#101114]">We report revenue.</span> No fluff dashboards, no “impressions.” Every creative, every landing page, every dollar is tied to pipeline and payback.</p>
-        <p>Senior squads only — strategists who’ve scaled 8-figure brands sit on your account daily. No junior hand-offs, no bait-and-switch.</p>
-        <p>Skin in the game: we win when you win. That’s why our partners stay, spend more, and send their friends.</p>
-      </div>
-      <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
-        <div class="flex items-center gap-2.5 bg-[#FCFCFD] border border-black/[0.06] rounded-2xl px-3.5 py-3">
-          <span class="w-7 h-7 rounded-full bg-[#101114] text-white grid place-items-center text-[11px] shrink-0"><i class="fa-solid fa-shield-halved"></i></span>
-          <span class="text-[12px] sm:text-[13px] font-semibold leading-tight">Radical transparency</span>
-        </div>
-        <div class="flex items-center gap-2.5 bg-[#FCFCFD] border border-black/[0.06] rounded-2xl px-3.5 py-3">
-          <span class="w-7 h-7 rounded-full bg-white border border-black/10 grid place-items-center text-[11px] shrink-0"><i class="fa-solid fa-users"></i></span>
-          <span class="text-[12px] sm:text-[13px] font-semibold leading-tight">Senior-only squads</span>
-        </div>
-        <div class="flex items-center gap-2.5 bg-[#FCFCFD] border border-black/[0.06] rounded-2xl px-3.5 py-3">
-          <span class="w-7 h-7 rounded-full bg-white border border-black/10 grid place-items-center text-[11px] shrink-0"><i class="fa-solid fa-handshake"></i></span>
-          <span class="text-[12px] sm:text-[13px] font-semibold leading-tight">Partner model</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Counters -->
-    <div class="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6 reveal">
-      <div class="bg-white rounded-[22px] sm:rounded-[28px] border border-black/[0.06] shadow-sm p-5 sm:p-6 md:p-7 flex flex-col justify-between min-h-[140px] sm:min-h-[160px]">
-        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-[#F2F3F6] grid place-items-center text-[#101114]"><i class="fa-solid fa-rocket text-[12px] sm:text-[14px]"></i></div>
-        <div class="mt-4">
-          <div class="font-extrabold tracking-[-0.04em] text-[30px] sm:text-[38px] md:text-[44px] leading-none"><span class="counter" data-target="150" data-suffix="+">0</span></div>
-          <div class="mt-1.5 text-[10px] sm:text-[11px] font-bold tracking-[0.14em] text-[#9AA0A8]">BRANDS SCALED</div>
-        </div>
-      </div>
-      <div class="bg-[#101114] rounded-[22px] sm:rounded-[28px] border border-white/10 shadow-sm p-5 sm:p-6 md:p-7 flex flex-col justify-between text-white min-h-[140px] sm:min-h-[160px]">
-        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-white/10 grid place-items-center"><i class="fa-solid fa-sack-dollar text-[12px] sm:text-[14px]"></i></div>
-        <div class="mt-4">
-          <div class="font-extrabold tracking-[-0.04em] text-[30px] sm:text-[38px] md:text-[44px] leading-none">$<span class="counter" data-target="45" data-suffix="M+">0</span></div>
-          <div class="mt-1.5 text-[10px] sm:text-[11px] font-bold tracking-[0.14em] text-white/50">TRACKED REVENUE</div>
-        </div>
-      </div>
-      <div class="bg-white rounded-[22px] sm:rounded-[28px] border border-black/[0.06] shadow-sm p-5 sm:p-6 md:p-7 flex flex-col justify-between min-h-[140px] sm:min-h-[160px]">
-        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-[#EEF2FF] grid place-items-center text-[#4F46E5]"><i class="fa-solid fa-chart-simple text-[12px] sm:text-[14px]"></i></div>
-        <div class="mt-4">
-          <div class="font-extrabold tracking-[-0.04em] text-[30px] sm:text-[38px] md:text-[44px] leading-none"><span class="counter" data-target="4.6" data-decimals="1" data-suffix="x">0</span></div>
-          <div class="mt-1.5 text-[10px] sm:text-[11px] font-bold tracking-[0.14em] text-[#9AA0A8]">AVG. ROAS</div>
-        </div>
-      </div>
-      <div class="bg-white rounded-[22px] sm:rounded-[28px] border border-black/[0.06] shadow-sm p-5 sm:p-6 md:p-7 flex flex-col justify-between min-h-[140px] sm:min-h-[160px]">
-        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-[#ECFDF5] grid place-items-center text-[#059669]"><i class="fa-solid fa-heart text-[12px] sm:text-[14px]"></i></div>
-        <div class="mt-4">
-          <div class="font-extrabold tracking-[-0.04em] text-[30px] sm:text-[38px] md:text-[44px] leading-none"><span class="counter" data-target="98" data-suffix="%">0</span></div>
-          <div class="mt-1.5 text-[10px] sm:text-[11px] font-bold tracking-[0.14em] text-[#9AA0A8]">RETENTION</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="px-4 md:px-6 max-w-[1320px] mx-auto pt-2 pb-8">
+<!-- CONTACT & REGISTRATION FORM (FINAL SECTION) -->
+<section id="contact" class="px-4 md:px-6 max-w-[1320px] mx-auto pt-6 pb-16">
   <div class="relative overflow-hidden rounded-[24px] sm:rounded-[36px] bg-[#0F0F12] border border-white/10 shadow-[0_24px_70px_rgba(0,0,0,0.3)]">
     <div class="relative grid lg:grid-cols-[0.95fr_1.05fr] gap-6 sm:gap-8 md:gap-10 p-5 sm:p-8 md:p-10 lg:p-12">
       <!-- Left Column -->
@@ -744,28 +654,6 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="px-4 md:px-6 max-w-[1320px] mx-auto pt-2 pb-8">
-  <div class="rounded-[24px] sm:rounded-[32px] bg-white border border-black/[0.06] shadow-sm p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-    <div class="flex items-center gap-2.5">
-      <div class="w-8 h-8 rounded-xl bg-[#101114] grid place-items-center text-white">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" stroke="white" stroke-width="1.8"/><circle cx="12" cy="12" r="2" fill="white"/></svg>
-      </div>
-      <span class="font-extrabold text-[15px] text-[#101114]">NOVA HUAS</span>
-    </div>
-    <div class="flex flex-wrap justify-center gap-4 sm:gap-6 text-[13px] font-medium text-[#6B6B6E]">
-      <a href="#home" class="hover:text-black transition">Home</a>
-      <a href="#services" class="hover:text-black transition">Services</a>
-      <a href="#process" class="hover:text-black transition">Process</a>
-      <a href="#about" class="hover:text-black transition">About</a>
-      <a href="#contact" class="hover:text-black transition">Contact</a>
-    </div>
-    <div class="text-[12px] text-[#9AA0A8]">
-      © 2026 Nova Huas Agency. All rights reserved.
-    </div>
-  </div>
-</footer>
-
 <script>
 gsap.registerPlugin(ScrollTrigger);
 
@@ -778,7 +666,7 @@ gsap.utils.toArray('.reveal').forEach((el, i)=>{
   });
 });
 
-// HERO DECK POP ENTRANCE
+// Hero pop entrance
 const heroDeck = document.getElementById('heroDeckStage');
 const deckCards = document.querySelectorAll('.deck-card');
 const backdrop = document.getElementById('heroHoverBackdrop');
@@ -797,7 +685,7 @@ gsap.from(deckCards, {
   delay: 0.1
 });
 
-// DESKTOP INTERACTIVE MOUSE TILT & BACKGROUND PROJECTION
+// Desktop hover tilt & projection
 if(window.matchMedia("(hover: hover) and (min-width: 768px)").matches && heroDeck){
   let heroBounds = heroDeck.getBoundingClientRect();
   window.addEventListener('resize', () => { heroBounds = heroDeck.getBoundingClientRect(); });
@@ -850,7 +738,7 @@ if(window.matchMedia("(hover: hover) and (min-width: 768px)").matches && heroDec
   });
 }
 
-// RESPONSIVE PINNED ANIMATIONS VIA GSAP MATCHMEDIA
+// Responsive animations via matchMedia
 ScrollTrigger.matchMedia({
   // Desktop only (>= 768px): Pinned Parallax & Pinned Horizontal Track
   "(min-width: 768px)": function() {
@@ -977,28 +865,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   });
 });
 
-// Counter animations
-const counters = document.querySelectorAll('.counter');
-const counted = new Set();
-const counterObserver = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting && !counted.has(entry.target)){
-      counted.add(entry.target);
-      animateCounter(entry.target);
-    }
-  });
-},{threshold:0.5});
-counters.forEach(c => counterObserver.observe(c));
-function animateCounter(el){
-  const target = parseFloat(el.dataset.target);
-  const decimals = parseInt(el.dataset.decimals || '0');
-  const suffix = el.dataset.suffix || '';
-  const obj = { v: 0 };
-  gsap.to(obj, {v:target, duration:1.4, ease:"power2.out", onUpdate:()=>{
-    el.textContent = (decimals ? obj.v.toFixed(decimals) : Math.round(obj.v).toString()) + suffix;
-  }});
-}
-
 // Form handling
 const budgetGroup = document.getElementById('budgetGroup');
 let selectedBudget = null;
@@ -1064,1152 +930,4 @@ if(resetBtn){
 }
 </script>
 </body>
-</html><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script>
-tailwind.config={
-  theme:{
-    extend:{
-      fontFamily:{ sans:['Inter','Plus Jakarta Sans','system-ui','sans-serif'], display:['Plus Jakarta Sans','Inter','sans-serif'] },
-      colors:{ 
-        ink:'#101114', 
-        muted:'#555557', 
-        canvas:'#F8F9FA', 
-        surface:'#FFFFFF',
-        warmYellow:'#FFE664',
-        line:'rgba(0,0,0,0.07)' 
-      }
-    }
-  }
-}
-</script>
-<style>
-*{scroll-behavior:smooth; box-sizing:border-box}
-body{background:#F8F9FA; color:#101114; overflow-x:hidden; width:100%}
-.noise::after{
-  content:""; position:absolute; inset:0; pointer-events:none; opacity:0.035;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-}
-.glass{backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px)}
-.marquee-track{animation:marquee 28s linear infinite}
-@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.pill-active{transition:all 0.4s cubic-bezier(0.16,1,0.3,1)}
-.card-lift{transition:transform 0.5s cubic-bezier(0.16,1,0.3,1), box-shadow 0.5s ease, border-color 0.3s ease}
-.card-lift:hover{transform:translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,0.08), 0 8px 16px rgba(0,0,0,0.04)}
-.hover-light{position:relative; overflow:hidden}
-.hover-light::before{
-  content:""; position:absolute; width:400px; height:400px; border-radius:50%;
-  background:radial-gradient(circle, rgba(160,180,255,0.18) 0%, transparent 70%);
-  opacity:0; transition:opacity 0.4s; pointer-events:none; transform:translate(-50%,-50%);
-}
-.hover-light:hover::before{opacity:1}
-::-webkit-scrollbar{width:6px; height:6px}
-::-webkit-scrollbar-thumb{background:#101114; border-radius:999px}
-input,select{outline:none}
-
-/* Hero Deck Responsive Arch */
-.hero-deck-wrapper{
-  perspective:1200px;
-  transform-style:preserve-3d;
-  width:100%;
-}
-.deck-card{
-  position:relative;
-  border-radius:clamp(14px, 3vw, 24px);
-  overflow:hidden;
-  box-shadow:0 12px 30px rgba(0,0,0,0.12), 0 3px 8px rgba(0,0,0,0.05);
-  border:2px solid #FFFFFF;
-  transition:transform 0.45s cubic-bezier(0.16,1,0.3,1), filter 0.4s ease, box-shadow 0.4s ease;
-  will-change:transform;
-}
-@media (hover:hover){
-  .deck-card:hover{
-    transform:scale(1.08) translateY(-12px) rotate(0deg) !important;
-    z-index:40 !important;
-    box-shadow:0 24px 50px rgba(0,0,0,0.2);
-  }
-}
-
-/* Services Stage Engine */
-.services-pin-wrapper{
-  position:relative;
-  width:100%;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-}
-@media (min-width: 1024px){
-  .services-pin-wrapper{ height:100vh; }
-  .parallax-gallery-container{
-    position:relative;
-    width:100%;
-    height:100%;
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:1.5rem;
-    padding:0 2rem;
-  }
-  .parallax-col{
-    display:flex;
-    flex-direction:column;
-    gap:1.5rem;
-    will-change:transform;
-  }
-}
-@media (max-width: 1023px){
-  .parallax-gallery-container{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:1.25rem;
-    padding:1rem 0;
-  }
-  @media (min-width: 640px){
-    .parallax-gallery-container{ grid-template-columns:repeat(2, 1fr); }
-  }
-  .parallax-col{
-    display:contents;
-  }
-}
-.service-scroll-card{
-  position:relative;
-  border-radius:24px;
-  overflow:hidden;
-  background:#FFFFFF;
-  border:1px solid rgba(0,0,0,0.06);
-  box-shadow:0 10px 30px rgba(0,0,0,0.04);
-  transition:border-color 0.3s ease, box-shadow 0.4s ease;
-}
-
-/* Process Section Engine */
-.process-pinned-section{
-  position:relative;
-  width:100%;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-@media (min-width: 1024px){
-  .process-pinned-section{ height:100vh; }
-  .process-track{
-    display:flex;
-    gap:2rem;
-    width:max-content;
-    will-change:transform;
-    padding-left:max(1.5rem, calc((100vw - 1280px)/2));
-    padding-right:20vw;
-  }
-  .process-feature-card{
-    width:clamp(320px, 32vw, 420px);
-    min-height:380px;
-    flex-shrink:0;
-  }
-}
-@media (max-width: 1023px){
-  .process-pinned-section{ height:auto; padding:2rem 0; }
-  .process-track{
-    display:flex;
-    overflow-x:auto;
-    scroll-snap-type:x mandatory;
-    gap:1rem;
-    padding:1rem 1rem 2rem 1rem;
-    -webkit-overflow-scrolling:touch;
-  }
-  .process-feature-card{
-    min-width:280px;
-    width:82vw;
-    max-width:360px;
-    scroll-snap-align:center;
-    flex-shrink:0;
-  }
-}
-.process-feature-card{
-  border-radius:28px;
-  background:#FFFFFF;
-  border:1px solid rgba(0,0,0,0.07);
-  box-shadow:0 14px 35px rgba(0,0,0,0.05);
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  padding:clamp(1.5rem, 3vw, 2.25rem);
-  position:relative;
-  overflow:hidden;
-  transition:all 0.4s cubic-bezier(0.16,1,0.3,1);
-  cursor:pointer;
-}
-
-/* Warm Yellow Hover for Process Cards */
-@media (hover:hover){
-  .process-feature-card:hover{
-    background:#FFE664 !important;
-    color:#101114 !important;
-    border-color:transparent !important;
-    transform:translateY(-8px);
-    box-shadow:0 24px 55px rgba(255,230,100,0.35), 0 12px 28px rgba(0,0,0,0.06);
-  }
-  .process-feature-card:hover h3,
-  .process-feature-card:hover p,
-  .process-feature-card:hover span,
-  .process-feature-card:hover div{
-    color:#101114 !important;
-  }
-  .process-feature-card:hover .step-badge{
-    background:#101114 !important;
-    color:#FFE664 !important;
-    border-color:#101114 !important;
-  }
-  .process-feature-card:hover .step-arrow{
-    background:#101114 !important;
-    color:#FFE664 !important;
-    transform:translateX(4px);
-  }
-}
-</style>
-</head>
-<body class="antialiased selection:bg-black selection:text-white">
-<!-- Atmospheric Canvas Background -->
-<div class="fixed inset-0 -z-10 bg-[#F8F9FA] overflow-hidden pointer-events-none">
-  <div class="absolute -top-[30%] -right-[20%] w-[85%] h-[75%] rounded-full opacity-[0.45]" style="background:radial-gradient(circle at 50% 50%, rgba(210,225,250,1) 0%, rgba(210,225,250,0) 70%)"></div>
-  <div class="absolute -bottom-[20%] -left-[15%] w-[70%] h-[60%] rounded-full opacity-[0.4]" style="background:radial-gradient(circle at 50% 50%, rgba(235,238,245,1) 0%, rgba(235,238,245,0) 70%)"></div>
-  <div class="absolute inset-0 noise"></div>
-</div>
-
-<!-- Responsive Floating Navigation Bar -->
-<nav id="navbar" class="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 w-[calc(100%-24px)] max-w-5xl z-50 px-3 sm:px-6 py-2.5 sm:py-3.5 rounded-full bg-white/80 glass border border-black/[0.06] shadow-[0_8px_32px_rgba(0,0,0,0.08)] flex items-center justify-between">
-  <a href="#home" class="flex items-center gap-2.5 sm:gap-3 pl-1 shrink-0">
-    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-[#101114] flex items-center justify-center">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 22V12M12 12L3 7M12 12L21 7" stroke="white" stroke-width="1.3"/><circle cx="12" cy="12" r="2.3" fill="white"/></svg>
-    </div>
-    <span class="font-extrabold tracking-[-0.04em] text-[14px] sm:text-[16px] text-[#101114]">NOVA HUAS</span>
-  </a>
-
-  <div class="hidden lg:flex items-center p-1 rounded-full bg-[#F1F2F4] border border-black/[0.04] relative">
-    <div id="navIndicator" class="pill-active absolute top-1 bottom-1 bg-white rounded-full shadow-sm border border-black/[0.06]" style="left:4px; width:68px"></div>
-    <a href="#home" data-nav="home" class="nav-link relative z-10 px-5 py-2 text-[13.5px] font-semibold text-[#101114] rounded-full">Home</a>
-    <a href="#services" data-nav="services" class="nav-link relative z-10 px-5 py-2 text-[13.5px] font-medium text-[#6B6B6E] hover:text-[#101114] rounded-full transition-colors">Services</a>
-    <a href="#process" data-nav="process" class="nav-link relative z-10 px-5 py-2 text-[13.5px] font-medium text-[#6B6B6E] hover:text-[#101114] rounded-full transition-colors">Process</a>
-    <a href="#about" data-nav="about" class="nav-link relative z-10 px-5 py-2 text-[13.5px] font-medium text-[#6B6B6E] hover:text-[#101114] rounded-full transition-colors">About</a>
-    <a href="#contact" data-nav="contact" class="nav-link relative z-10 px-5 py-2 text-[13.5px] font-medium text-[#6B6B6E] hover:text-[#101114] rounded-full transition-colors">Contact</a>
-  </div>
-
-  <div class="flex items-center gap-2 sm:gap-3 shrink-0 pr-1">
-    <a href="#contact" class="hidden sm:inline-flex items-center gap-2 bg-[#101114] hover:bg-black text-white px-5 sm:px-6 py-2 sm:py-[10px] rounded-full text-[12.5px] sm:text-[13.5px] font-semibold hover:scale-[1.04] transition-all shadow-[0_8px_20px_rgba(0,0,0,0.18)]">Let's Talk <span class="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-white text-black grid place-items-center text-[9px] sm:text-[11px]"><i class="fa-solid fa-arrow-right -rotate-45"></i></span></a>
-    <button id="mobileToggle" aria-label="Toggle navigation" class="lg:hidden w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#101114] text-white grid place-items-center"><i class="fa-solid fa-bars text-[12px] sm:text-[13px]"></i></button>
-  </div>
-
-  <!-- Mobile Dropdown Menu -->
-  <div id="mobileMenu" class="hidden absolute top-[calc(100%+10px)] left-0 right-0 bg-white/95 glass rounded-[24px] border border-black/5 shadow-[0_20px_60px_rgba(0,0,0,0.12)] p-2 mx-1 overflow-hidden z-50">
-    <div class="flex flex-col p-1 gap-1">
-      <a href="#home" class="mobile-link px-4 py-3 rounded-full text-[14px] font-semibold bg-[#101114] text-white">Home</a>
-      <a href="#services" class="mobile-link px-4 py-3 rounded-full text-[14px] font-medium text-[#555] hover:bg-black/5">Services</a>
-      <a href="#process" class="mobile-link px-4 py-3 rounded-full text-[14px] font-medium text-[#555] hover:bg-black/5">Process</a>
-      <a href="#about" class="mobile-link px-4 py-3 rounded-full text-[14px] font-medium text-[#555] hover:bg-black/5">About</a>
-      <a href="#contact" class="mobile-link px-4 py-3 rounded-full text-[14px] font-medium text-[#555] hover:bg-black/5">Contact</a>
-      <a href="#contact" class="mt-1 bg-[#101114] text-white text-center py-3.5 rounded-full font-semibold text-[13.5px]">Let's Talk — Get Audit</a>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO: FULLY FLUID RESPONSIVE SECTION -->
-<section id="home" class="relative w-full pt-[100px] sm:pt-[130px] lg:pt-[140px] pb-6 px-3 sm:px-6 lg:px-8 min-h-[90vh] flex flex-col justify-between overflow-hidden">
-  <!-- Dynamic Projection Backdrop -->
-  <div id="heroHoverBackdrop" class="absolute inset-0 pointer-events-none transition-opacity duration-700 opacity-0 z-0 overflow-hidden">
-    <img id="heroBackdropImg" src="" class="w-full h-full object-cover filter blur-[32px] scale-110 opacity-30" alt="Backdrop projection">
-    <div class="absolute inset-0 bg-[#F8F9FA]/75"></div>
-  </div>
-
-  <!-- Sub-Header Metatags -->
-  <div class="relative z-10 w-full max-w-[1360px] mx-auto flex items-center justify-between text-[10px] sm:text-[12px] font-bold tracking-[0.14em] sm:tracking-[0.16em] text-[#868A94] uppercase px-1 mb-2 reveal">
-    <div class="flex items-center gap-1.5 sm:gap-2">
-      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-      <span class="truncate">[BY NOVA HUAS COLLECTIVE]</span>
-    </div>
-    <span>[NYC • LDN • SF]</span>
-  </div>
-
-  <!-- Central Visual Stage -->
-  <div id="heroDeckStage" class="hero-deck-wrapper relative z-10 w-full max-w-[1360px] mx-auto my-auto py-2 sm:py-4 flex flex-col items-center justify-center">
-    <!-- Responsive Floating Arch Row -->
-    <div id="deckCardsRow" class="relative z-20 w-full max-w-5xl h-[120px] sm:h-[180px] md:h-[220px] lg:h-[240px] flex items-center justify-center -space-x-3 sm:-space-x-6 md:-space-x-8 lg:-space-x-10 pointer-events-auto">
-      <!-- Card 1 -->
-      <div data-preview="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1600&q=80&auto=format&fit=crop" class="deck-card w-[75px] sm:w-[130px] md:w-[160px] lg:w-[190px] h-[100px] sm:h-[160px] md:h-[200px] lg:h-[230px] -rotate-12 translate-y-3 sm:translate-y-6 shrink-0 bg-black cursor-pointer">
-        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80&auto=format&fit=crop" class="w-full h-full object-cover" alt="3D Web Asset">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-        <span class="absolute bottom-1.5 sm:bottom-2.5 left-1.5 sm:left-2.5 text-white text-[8px] sm:text-[11px] font-bold tracking-wider">3D ENGINE</span>
-      </div>
-
-      <!-- Card 2 -->
-      <div data-preview="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1600&q=80&auto=format&fit=crop" class="deck-card w-[80px] sm:w-[135px] md:w-[165px] lg:w-[195px] h-[105px] sm:h-[165px] md:h-[205px] lg:h-[235px] -rotate-6 translate-y-1 sm:translate-y-2 shrink-0 bg-black cursor-pointer z-10">
-        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80&auto=format&fit=crop" class="w-full h-full object-cover" alt="Fashion Creative">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-        <span class="absolute bottom-1.5 sm:bottom-2.5 left-1.5 sm:left-2.5 text-white text-[8px] sm:text-[11px] font-bold tracking-wider">EDITORIAL</span>
-      </div>
-
-      <!-- Card 3 -->
-      <div data-preview="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1600&q=80&auto=format&fit=crop" class="deck-card w-[90px] sm:w-[145px] md:w-[180px] lg:w-[215px] h-[115px] sm:h-[180px] md:h-[225px] lg:h-[255px] rotate-0 -translate-y-2 sm:-translate-y-4 shrink-0 bg-black cursor-pointer z-20 shadow-[0_25px_60px_rgba(0,0,0,0.22)]">
-        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80&auto=format&fit=crop" class="w-full h-full object-cover" alt="Hero Portrait Brand">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
-        <span class="absolute top-1.5 sm:top-3 right-1.5 sm:right-3 w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-white/90 grid place-items-center text-black text-[8px] sm:text-[10px] shadow"><i class="fa-solid fa-play"></i></span>
-        <span class="absolute bottom-1.5 sm:bottom-3 left-1.5 sm:left-3 text-white text-[8px] sm:text-[12px] font-black tracking-wide">VIRAL HOOKS</span>
-      </div>
-
-      <!-- Card 4 -->
-      <div data-preview="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1600&q=80&auto=format&fit=crop" class="deck-card w-[80px] sm:w-[135px] md:w-[165px] lg:w-[195px] h-[105px] sm:h-[165px] md:h-[205px] lg:h-[235px] rotate-6 translate-y-1 sm:translate-y-2 shrink-0 bg-black cursor-pointer z-10">
-        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80&auto=format&fit=crop" class="w-full h-full object-cover" alt="Commercial Mockup">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-        <span class="absolute bottom-1.5 sm:bottom-2.5 left-1.5 sm:left-2.5 text-white text-[8px] sm:text-[11px] font-bold tracking-wider">COMMERCIAL</span>
-      </div>
-
-      <!-- Card 5 -->
-      <div data-preview="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=1600&q=80&auto=format&fit=crop" class="deck-card w-[75px] sm:w-[130px] md:w-[160px] lg:w-[190px] h-[100px] sm:h-[160px] md:h-[200px] lg:h-[230px] rotate-12 translate-y-3 sm:translate-y-6 shrink-0 bg-black cursor-pointer">
-        <img src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=600&q=80&auto=format&fit=crop" class="w-full h-full object-cover" alt="Paid Performance Ad">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-        <span class="absolute bottom-1.5 sm:bottom-2.5 left-1.5 sm:left-2.5 text-white text-[8px] sm:text-[11px] font-bold tracking-wider">4.8X SCALE</span>
-      </div>
-    </div>
-
-    <!-- Fluid Typography Headline -->
-    <div class="relative z-10 text-center mt-4 sm:mt-6 max-w-5xl mx-auto px-2">
-      <h1 class="font-display font-[900] tracking-[-0.04em] sm:tracking-[-0.05em] leading-[0.92] text-[32px] sm:text-[54px] md:text-[76px] lg:text-[100px] text-[#101114] uppercase">
-        Capturing Attention<br>
-        <span class="font-[300] tracking-[-0.03em] text-[#55575B]">Scaling Empires</span>
-      </h1>
-      <p class="mt-3 sm:mt-4 text-[14px] sm:text-[16px] md:text-[18px] text-[#5B5B5E] max-w-2xl mx-auto font-[450] leading-relaxed">
-        Delivering category-dominating paid acquisition, high-fashion creative direction, and WebGL infrastructure — with extreme precision and compounding payback.
-      </p>
-
-      <!-- Action Buttons -->
-      <div class="mt-6 sm:mt-8 flex items-center justify-center gap-3">
-        <a href="#contact" class="inline-flex items-center gap-2.5 sm:gap-3 bg-[#101114] hover:bg-black text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-[13px] sm:text-[14.5px] hover:scale-105 transition-all shadow-[0_12px_28px_rgba(0,0,0,0.18)]">
-          Get in Touch
-          <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white text-black grid place-items-center text-[10px] sm:text-[11px]"><i class="fa-solid fa-arrow-right -rotate-45"></i></span>
-        </a>
-        <a href="#services" class="inline-flex items-center gap-2 bg-white/80 glass border border-black/10 text-[#101114] px-5 sm:px-6 py-3 sm:py-4 rounded-full font-semibold text-[13px] sm:text-[14px] hover:bg-white transition-colors shadow-sm">
-          Explore Disciplines
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Marquee Banner -->
-  <div class="mt-6 w-full max-w-[1360px] mx-auto rounded-[20px] sm:rounded-[28px] bg-white border border-black/[0.06] shadow-sm overflow-hidden">
-    <div class="px-4 sm:px-8 py-3.5 sm:py-4 flex flex-col md:flex-row items-center gap-2 sm:gap-8 border-b border-black/[0.06]">
-      <div class="text-[10px] sm:text-[11px] font-bold tracking-[0.16em] text-[#9AA0A8] whitespace-nowrap">TRUSTED BY 150+ MARKET LEADERS</div>
-      <div class="hidden md:block h-4 w-px bg-black/10"></div>
-      <div class="text-[11.5px] sm:text-[13px] font-medium text-[#6B6B6E] text-center md:text-left">Venture-backed brands who scaled with Nova Huas</div>
-    </div>
-    <div class="relative overflow-hidden py-3.5 sm:py-5 bg-[#FCFCFD]">
-      <div class="flex w-max marquee-track">
-        <div class="flex items-center gap-8 sm:gap-16 pr-8 sm:pr-16">
-          <span class="flex items-center gap-2 font-extrabold tracking-tight text-[#101114] opacity-60 grayscale"><i class="fa-brands fa-stripe text-lg sm:text-xl"></i> stripe</span>
-          <span class="font-black tracking-[0.18em] text-[12px] sm:text-[13px] text-[#101114] opacity-60">LINEAR</span>
-          <span class="flex items-center gap-2 font-bold text-[#101114] opacity-60"><i class="fa-solid fa-bolt"></i> VERCEL</span>
-          <span class="font-extrabold tracking-tight text-[#101114] opacity-60">● Perplexity</span>
-          <span class="font-black tracking-tight text-[#101114] opacity-60">NOTION</span>
-          <span class="flex items-center gap-2 font-bold text-[#101114] opacity-60"><i class="fa-brands fa-figma"></i> Figma</span>
-          <span class="font-bold tracking-widest text-[#101114] opacity-60">MONZO</span>
-          <span class="font-extrabold text-[#101114] opacity-60">attentive</span>
-        </div>
-        <div class="flex items-center gap-8 sm:gap-16 pr-8 sm:pr-16" aria-hidden="true">
-          <span class="flex items-center gap-2 font-extrabold tracking-tight text-[#101114] opacity-60 grayscale"><i class="fa-brands fa-stripe text-lg sm:text-xl"></i> stripe</span>
-          <span class="font-black tracking-[0.18em] text-[12px] sm:text-[13px] text-[#101114] opacity-60">LINEAR</span>
-          <span class="flex items-center gap-2 font-bold text-[#101114] opacity-60"><i class="fa-solid fa-bolt"></i> VERCEL</span>
-          <span class="font-extrabold tracking-tight text-[#101114] opacity-60">● Perplexity</span>
-          <span class="font-black tracking-tight text-[#101114] opacity-60">NOTION</span>
-          <span class="flex items-center gap-2 font-bold text-[#101114] opacity-60"><i class="fa-brands fa-figma"></i> Figma</span>
-          <span class="font-bold tracking-widest text-[#101114] opacity-60">MONZO</span>
-          <span class="font-extrabold text-[#101114] opacity-60">attentive</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES: ADAPTIVE RESPONSIVE STAGE -->
-<section id="services" class="relative w-full overflow-hidden px-4 md:px-8 py-8 md:py-0">
-  <div id="servicesPinWrapper" class="services-pin-wrapper">
-    <!-- Section Header -->
-    <div class="text-center max-w-3xl mx-auto pt-4 md:pt-10 pb-4 px-2 shrink-0 z-20">
-      <div class="inline-flex items-center gap-2 bg-white border border-black/[0.06] rounded-full px-3.5 py-1.5 shadow-sm">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#101114]"></span>
-        <span class="text-[11px] font-bold tracking-[0.14em]">CAPABILITIES</span>
-      </div>
-      <h2 class="mt-3 font-display font-extrabold tracking-[-0.04em] text-[28px] sm:text-[36px] md:text-[46px] leading-[0.98]">Full-Funnel Growth Mechanics</h2>
-      <p class="mt-2 text-[13.5px] sm:text-[15px] leading-6 text-[#6B6B6E]">Six integrated disciplines. One accountable squad. Scroll to explore the architecture.</p>
-    </div>
-
-    <!-- 3-Column Desktop / Fluid Mobile Grid -->
-    <div class="relative w-full flex-1 max-w-[1360px] mx-auto overflow-hidden">
-      <div class="parallax-gallery-container w-full h-full">
-        <!-- Column 1 -->
-        <div id="colLeft" class="parallax-col">
-          <div class="service-scroll-card p-5 sm:p-7 hover-light group">
-            <div class="flex items-center justify-between">
-              <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-[#F2F3F6] border border-black/[0.04] grid place-items-center text-[#101114]"><i class="fa-solid fa-bullseye"></i></div>
-              <span class="text-[11px] font-bold tracking-widest text-[#9AA0A8]">01</span>
-            </div>
-            <div class="mt-4 sm:mt-5 relative h-[150px] sm:h-[170px] rounded-2xl overflow-hidden bg-[#F1F2F5]">
-              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=700&q=80&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Paid Social">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              <span class="absolute bottom-3 left-3 text-white text-[12px] font-bold">4.8x Target ROAS</span>
-            </div>
-            <h3 class="mt-4 sm:mt-5 font-bold tracking-tight text-[17px] sm:text-[18px] leading-snug">Paid Social &<br>Performance Media</h3>
-            <p class="mt-2 text-[13px] sm:text-[13.5px] leading-relaxed text-[#6B6B6E]">Meta, Google, TikTok spend management with creative fatigue forecasting and high-ROAS algorithmic bidding.</p>
-            <div class="mt-4 flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">Meta Ads</span>
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">TikTok</span>
-            </div>
-          </div>
-
-          <div class="service-scroll-card p-5 sm:p-7 hover-light group">
-            <div class="flex items-center justify-between">
-              <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-[#ECFDF5] border border-black/[0.04] grid place-items-center text-[#059669]"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-              <span class="text-[11px] font-bold tracking-widest text-[#9AA0A8]">04</span>
-            </div>
-            <div class="mt-4 sm:mt-5 relative h-[150px] sm:h-[170px] rounded-2xl overflow-hidden bg-[#F1F2F5]">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="SEO">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              <span class="absolute bottom-3 left-3 text-white text-[12px] font-bold">Top 3 Organic Share</span>
-            </div>
-            <h3 class="mt-4 sm:mt-5 font-bold tracking-tight text-[17px] sm:text-[18px] leading-snug">Search Engine Domination</h3>
-            <p class="mt-2 text-[13px] sm:text-[13.5px] leading-relaxed text-[#6B6B6E]">Technical architecture audits, programmatic keyword capture, and authoritative backlink acquisition.</p>
-            <div class="mt-4 flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">Technical SEO</span>
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">Content</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Column 2 -->
-        <div id="colCenter" class="parallax-col">
-          <div class="service-scroll-card p-5 sm:p-7 hover-light group border-black/15 shadow-xl">
-            <div class="flex items-center justify-between">
-              <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-[#FFF1F5] border border-black/[0.04] grid place-items-center text-[#E11D48]"><i class="fa-solid fa-camera"></i></div>
-              <span class="text-[11px] font-bold tracking-widest text-[#9AA0A8]">02</span>
-            </div>
-            <div class="mt-4 sm:mt-5 relative h-[180px] sm:h-[210px] rounded-2xl overflow-hidden bg-[#F1F2F5]">
-              <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?w=700&q=80&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Visual Identity">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              <span class="absolute bottom-3 left-3 text-white text-[12px] font-bold">Cinema-Grade Shoots</span>
-            </div>
-            <h3 class="mt-4 sm:mt-5 font-bold tracking-tight text-[17px] sm:text-[18px] leading-snug">Commercial Visual Identity</h3>
-            <p class="mt-2 text-[13px] sm:text-[13.5px] leading-relaxed text-[#6B6B6E]">Cinema-grade ad production, macro product captures, and editorial aesthetic direction that stops the scroll.</p>
-            <div class="mt-4 flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">Art Direction</span>
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">UGC</span>
-            </div>
-          </div>
-
-          <div class="service-scroll-card p-5 sm:p-7 hover-light group">
-            <div class="flex items-center justify-between">
-              <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-[#FFF7ED] border border-black/[0.04] grid place-items-center text-[#EA580C]"><i class="fa-solid fa-clapperboard"></i></div>
-              <span class="text-[11px] font-bold tracking-widest text-[#9AA0A8]">05</span>
-            </div>
-            <div class="mt-4 sm:mt-5 relative h-[160px] sm:h-[190px] rounded-2xl overflow-hidden bg-[#F1F2F5]">
-              <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=700&q=80&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Viral Creative">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              <span class="absolute bottom-3 left-3 text-white text-[12px] font-bold">Viral Retention</span>
-            </div>
-            <h3 class="mt-4 sm:mt-5 font-bold tracking-tight text-[17px] sm:text-[18px] leading-snug">Social Growth &<br>Viral Creative</h3>
-            <p class="mt-2 text-[13px] sm:text-[13.5px] leading-relaxed text-[#6B6B6E]">Trend-jacking Reels/TikToks and cohesive grid curation that turns followers into fanatics.</p>
-            <div class="mt-4 flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">Reels</span>
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">Community</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Column 3 -->
-        <div id="colRight" class="parallax-col">
-          <div class="service-scroll-card p-5 sm:p-7 hover-light group">
-            <div class="flex items-center justify-between">
-              <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-[#EEF2FF] border border-black/[0.04] grid place-items-center text-[#4F46E5]"><i class="fa-solid fa-cube"></i></div>
-              <span class="text-[11px] font-bold tracking-widest text-[#9AA0A8]">03</span>
-            </div>
-            <div class="mt-4 sm:mt-5 relative h-[150px] sm:h-[170px] rounded-2xl overflow-hidden bg-[#F1F2F5]">
-              <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=700&q=80&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="3D WebGL">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              <span class="absolute bottom-3 left-3 text-white text-[12px] font-bold">Awwwards SOTD Tier</span>
-            </div>
-            <h3 class="mt-4 sm:mt-5 font-bold tracking-tight text-[17px] sm:text-[18px] leading-snug">High-Conversion WebGL Sites</h3>
-            <p class="mt-2 text-[13px] sm:text-[13.5px] leading-relaxed text-[#6B6B6E]">Lightning-fast Awwwards-tier sites, interactive 3D landing pages, and frictionless checkout optimization.</p>
-            <div class="mt-4 flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">WebGL</span>
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">CRO</span>
-            </div>
-          </div>
-
-          <div class="service-scroll-card p-5 sm:p-7 hover-light group">
-            <div class="flex items-center justify-between">
-              <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-[#F5F3FF] border border-black/[0.04] grid place-items-center text-[#7C3AED]"><i class="fa-solid fa-envelope-open-text"></i></div>
-              <span class="text-[11px] font-bold tracking-widest text-[#9AA0A8]">06</span>
-            </div>
-            <div class="mt-4 sm:mt-5 relative h-[150px] sm:h-[170px] rounded-2xl overflow-hidden bg-[#F1F2F5]">
-              <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=700&q=80&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Retention">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              <span class="absolute bottom-3 left-3 text-white text-[12px] font-bold">44% Repeat Buy Rate</span>
-            </div>
-            <h3 class="mt-4 sm:mt-5 font-bold tracking-tight text-[17px] sm:text-[18px] leading-snug">Retention Marketing<br>(Email & SMS)</h3>
-            <p class="mt-2 text-[13px] sm:text-[13.5px] leading-relaxed text-[#6B6B6E]">Predictive Klaviyo flows, VIP LTV mechanics, and automated win-back journeys.</p>
-            <div class="mt-4 flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">Klaviyo</span>
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">LTV</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS: TOUCH-FRIENDLY & RESPONSIVE CAROUSEL -->
-<section id="process" class="relative w-full overflow-hidden bg-white py-6 md:py-0">
-  <div id="processPinWrapper" class="process-pinned-section">
-    <!-- Section Header -->
-    <div class="px-4 sm:px-8 md:px-12 max-w-[1280px] w-full mx-auto pb-4 sm:pb-6 shrink-0">
-      <div class="inline-flex items-center gap-2 bg-[#F6F7F9] border border-black/[0.06] rounded-full px-3.5 py-1.5">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#101114]"></span>
-        <span class="text-[11px] font-bold tracking-[0.14em]">HOW WE WORK</span>
-      </div>
-      <div class="mt-3 flex flex-col md:flex-row md:items-end justify-between gap-3">
-        <h2 class="font-display font-extrabold tracking-[-0.04em] text-[28px] sm:text-[36px] md:text-[50px] leading-none text-[#101114]">From Zero to Category Leader</h2>
-        <p class="text-[13.5px] sm:text-[14px] text-[#6B6B6E] max-w-md">A ruthlessly efficient 4-step system that removes guesswork and compounds growth every week.</p>
-      </div>
-    </div>
-
-    <!-- Cards Track -->
-    <div class="w-full overflow-hidden">
-      <div id="processTrack" class="process-track">
-        <!-- 01: Audit & Discovery -->
-        <div class="process-feature-card group">
-          <div>
-            <div class="flex items-center justify-between">
-              <div class="step-badge w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#101114] text-white grid place-items-center font-extrabold text-[12px] sm:text-[13px] tracking-widest shadow-md transition-colors duration-300">01</div>
-              <span class="text-[10px] sm:text-[11px] font-bold tracking-widest text-[#9AA0A8] transition-colors duration-300">PHASE ONE</span>
-            </div>
-            <div class="mt-6 sm:mt-8 text-[10.5px] sm:text-[11px] font-bold tracking-widest text-[#9AA0A8] flex items-center gap-2 transition-colors duration-300">
-              <span class="w-6 h-px bg-black/10"></span> WEEK 01
-            </div>
-            <h3 class="mt-2.5 sm:mt-3 font-display font-bold text-[19px] sm:text-[22px] tracking-tight text-[#101114] transition-colors duration-300">Audit & Discovery</h3>
-            <p class="mt-2 text-[13px] sm:text-[14px] leading-relaxed text-[#6B6B6E] transition-colors duration-300">Deep-dive analysis of your funnel, unit economics, competitor blindspots, and missed revenue leaks.</p>
-          </div>
-          <div class="pt-5 sm:pt-6 border-t border-black/[0.06] flex items-center justify-between mt-4">
-            <span class="text-[11.5px] sm:text-[12px] font-semibold text-[#101114] transition-colors duration-300">Diagnostic Deliverable</span>
-            <span class="step-arrow w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#F6F7F9] grid place-items-center text-[#101114] transition-all duration-300"><i class="fa-solid fa-arrow-right text-[10px] sm:text-[11px]"></i></span>
-          </div>
-        </div>
-
-        <!-- 02: Creative & Technical Re-Architecture -->
-        <div class="process-feature-card group">
-          <div>
-            <div class="flex items-center justify-between">
-              <div class="step-badge w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#FFF1F5] text-[#E11D48] grid place-items-center font-extrabold text-[12px] sm:text-[13px] tracking-widest border border-[#E11D48]/20 transition-colors duration-300">02</div>
-              <span class="text-[10px] sm:text-[11px] font-bold tracking-widest text-[#9AA0A8] transition-colors duration-300">PHASE TWO</span>
-            </div>
-            <div class="mt-6 sm:mt-8 text-[10.5px] sm:text-[11px] font-bold tracking-widest text-[#9AA0A8] flex items-center gap-2 transition-colors duration-300">
-              <span class="w-6 h-px bg-black/10"></span> WEEK 02–03
-            </div>
-            <h3 class="mt-2.5 sm:mt-3 font-display font-bold text-[19px] sm:text-[22px] tracking-tight text-[#101114] transition-colors duration-300">Creative & Technical Re-Architecture</h3>
-            <p class="mt-2 text-[13px] sm:text-[14px] leading-relaxed text-[#6B6B6E] transition-colors duration-300">Scripting high-converting hooks, shooting bespoke visual assets, and CRO rebuilding high-velocity landing pages.</p>
-          </div>
-          <div class="pt-5 sm:pt-6 border-t border-black/[0.06] flex items-center justify-between mt-4">
-            <span class="text-[11.5px] sm:text-[12px] font-semibold text-[#101114] transition-colors duration-300">Asset Production</span>
-            <span class="step-arrow w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#F6F7F9] grid place-items-center text-[#101114] transition-all duration-300"><i class="fa-solid fa-arrow-right text-[10px] sm:text-[11px]"></i></span>
-          </div>
-        </div>
-
-        <!-- 03: Algorithmic Testing & Media Blitz -->
-        <div class="process-feature-card group">
-          <div>
-            <div class="flex items-center justify-between">
-              <div class="step-badge w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#EEF2FF] text-[#4F46E5] grid place-items-center font-extrabold text-[12px] sm:text-[13px] tracking-widest border border-[#4F46E5]/20 transition-colors duration-300">03</div>
-              <span class="text-[10px] sm:text-[11px] font-bold tracking-widest text-[#9AA0A8] transition-colors duration-300">PHASE THREE</span>
-            </div>
-            <div class="mt-6 sm:mt-8 text-[10.5px] sm:text-[11px] font-bold tracking-widest text-[#9AA0A8] flex items-center gap-2 transition-colors duration-300">
-              <span class="w-6 h-px bg-black/10"></span> WEEK 04–06
-            </div>
-            <h3 class="mt-2.5 sm:mt-3 font-display font-bold text-[19px] sm:text-[22px] tracking-tight text-[#101114] transition-colors duration-300">Algorithmic Testing & Media Blitz</h3>
-            <p class="mt-2 text-[13px] sm:text-[14px] leading-relaxed text-[#6B6B6E] transition-colors duration-300">Multi-variant ad testing across platforms to isolate winning creative-angle combinations with minimal budget waste.</p>
-          </div>
-          <div class="pt-5 sm:pt-6 border-t border-black/[0.06] flex items-center justify-between mt-4">
-            <span class="text-[11.5px] sm:text-[12px] font-semibold text-[#101114] transition-colors duration-300">Angle Validation</span>
-            <span class="step-arrow w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#F6F7F9] grid place-items-center text-[#101114] transition-all duration-300"><i class="fa-solid fa-arrow-right text-[10px] sm:text-[11px]"></i></span>
-          </div>
-        </div>
-
-        <!-- 04: Aggressive Scale & Optimization -->
-        <div class="process-feature-card group">
-          <div>
-            <div class="flex items-center justify-between">
-              <div class="step-badge w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#101114] text-white grid place-items-center font-extrabold text-[12px] sm:text-[13px] tracking-widest transition-colors duration-300">04</div>
-              <span class="text-[10px] sm:text-[11px] font-bold tracking-widest text-[#9AA0A8] transition-colors duration-300">PHASE FOUR</span>
-            </div>
-            <div class="mt-6 sm:mt-8 text-[10.5px] sm:text-[11px] font-bold tracking-widest text-[#9AA0A8] flex items-center gap-2 transition-colors duration-300">
-              <span class="w-6 h-px bg-black/10"></span> ONGOING SCALE
-            </div>
-            <h3 class="mt-2.5 sm:mt-3 font-display font-bold text-[19px] sm:text-[22px] tracking-tight text-[#101114] transition-colors duration-300">Aggressive Scale & Optimization</h3>
-            <p class="mt-2 text-[13px] sm:text-[14px] leading-relaxed text-[#6B6B6E] transition-colors duration-300">Pushing ad spend efficiently while safeguarding net-profit ROAS, automated customer retention, and compounding lifetime value.</p>
-          </div>
-          <div class="pt-5 sm:pt-6 border-t border-black/[0.06] flex items-center justify-between mt-4">
-            <span class="text-[11.5px] sm:text-[12px] font-semibold text-[#101114] transition-colors duration-300">Continuous Compounding</span>
-            <span class="step-arrow w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#F6F7F9] grid place-items-center text-[#101114] transition-all duration-300"><i class="fa-solid fa-arrow-right text-[10px] sm:text-[11px]"></i></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT: RESPONSIVE GRID -->
-<section id="about" class="px-4 sm:px-6 md:px-8 max-w-[1280px] mx-auto pt-6 pb-8">
-  <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-6">
-    <!-- Manifesto -->
-    <div class="bg-white rounded-[24px] sm:rounded-[32px] border border-black/[0.06] shadow-sm p-5 sm:p-8 md:p-10 reveal">
-      <div class="inline-flex items-center gap-2 bg-[#F6F7F9] border border-black/[0.06] rounded-full px-3.5 py-1.5">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#101114]"></span>
-        <span class="text-[11px] font-bold tracking-[0.14em]">WHY NOVA HUAS</span>
-      </div>
-      <h2 class="mt-4 sm:mt-5 font-display font-extrabold tracking-[-0.04em] text-[24px] sm:text-[30px] md:text-[36px] leading-[1.05]">We are not an agency that reports vanity metrics.</h2>
-      <div class="mt-4 sm:mt-5 space-y-3 sm:space-y-4 text-[13.5px] sm:text-[14.5px] leading-relaxed text-[#55575B]">
-        <p><span class="font-semibold text-[#101114]">We report revenue.</span> No fluff dashboards, no “impressions.” Every creative, every landing page, every dollar is tied to pipeline and payback.</p>
-        <p>Senior squads only — strategists who’ve scaled 8-figure brands sit on your account daily. No junior hand-offs, no bait-and-switch.</p>
-        <p>Skin in the game: we win when you win. That’s why our partners stay, spend more, and send their friends.</p>
-      </div>
-      <div class="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
-        <div class="flex items-center gap-3 bg-[#FCFCFD] border border-black/[0.06] rounded-2xl px-3.5 py-2.5 sm:px-4 sm:py-3">
-          <span class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#101114] text-white grid place-items-center text-[11px] sm:text-[12px]"><i class="fa-solid fa-shield-halved"></i></span>
-          <span class="text-[12px] sm:text-[13px] font-semibold leading-tight">Radical transparency</span>
-        </div>
-        <div class="flex items-center gap-3 bg-[#FCFCFD] border border-black/[0.06] rounded-2xl px-3.5 py-2.5 sm:px-4 sm:py-3">
-          <span class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border border-black/10 grid place-items-center text-[11px] sm:text-[12px]"><i class="fa-solid fa-users"></i></span>
-          <span class="text-[12px] sm:text-[13px] font-semibold leading-tight">Senior-only squads</span>
-        </div>
-        <div class="flex items-center gap-3 bg-[#FCFCFD] border border-black/[0.06] rounded-2xl px-3.5 py-2.5 sm:px-4 sm:py-3">
-          <span class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border border-black/10 grid place-items-center text-[11px] sm:text-[12px]"><i class="fa-solid fa-handshake"></i></span>
-          <span class="text-[12px] sm:text-[13px] font-semibold leading-tight">Partner model</span>
-        </div>
-      </div>
-      <div class="mt-6 sm:mt-8 flex flex-wrap items-center gap-3 text-sm">
-        <img src="https://i.pravatar.cc/100?img=15" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border-2 border-white shadow" alt="Elena Roche">
-        <div>
-          <div class="font-semibold text-[13px] leading-none">Elena Roche — Partner, Strategy</div>
-          <div class="text-[11.5px] sm:text-[12px] text-[#6B6B6E] mt-0.5">Ex-Head of Growth, 3× unicorn exits</div>
-        </div>
-        <span class="w-full sm:w-auto sm:ml-auto inline-flex items-center gap-1.5 text-[10.5px] sm:text-[11px] font-bold tracking-widest bg-[#F6F7F9] border border-black/5 px-3 py-1.5 rounded-full"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> AVAILABLE FOR Q1</span>
-      </div>
-    </div>
-
-    <!-- Live Counters -->
-    <div class="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6 reveal">
-      <div class="bg-white rounded-[24px] sm:rounded-[28px] border border-black/[0.06] shadow-sm p-5 sm:p-7 flex flex-col justify-between min-h-[140px] sm:min-h-[170px]">
-        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-[#F2F3F6] grid place-items-center text-[13px] sm:text-[14px]"><i class="fa-solid fa-rocket"></i></div>
-        <div class="mt-4 sm:mt-6">
-          <div class="font-extrabold tracking-[-0.05em] text-[30px] sm:text-[38px] md:text-[44px] leading-none"><span class="counter" data-target="150" data-suffix="+">0</span></div>
-          <div class="mt-1.5 sm:mt-2 text-[10.5px] sm:text-[12px] font-bold tracking-[0.14em] text-[#9AA0A8]">BRANDS SCALED</div>
-          <div class="text-[11px] sm:text-[12px] text-[#6B6B6E]">Venture to enterprise</div>
-        </div>
-      </div>
-      <div class="bg-[#101114] rounded-[24px] sm:rounded-[28px] border border-white/10 shadow-sm p-5 sm:p-7 flex flex-col justify-between text-white min-h-[140px] sm:min-h-[170px]">
-        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-white/10 grid place-items-center text-[13px] sm:text-[14px]"><i class="fa-solid fa-sack-dollar"></i></div>
-        <div class="mt-4 sm:mt-6">
-          <div class="font-extrabold tracking-[-0.05em] text-[30px] sm:text-[38px] md:text-[44px] leading-none">$<span class="counter" data-target="45" data-suffix="M+">0</span></div>
-          <div class="mt-1.5 sm:mt-2 text-[10.5px] sm:text-[12px] font-bold tracking-[0.14em] text-white/50">TRACKED REVENUE</div>
-          <div class="text-[11px] sm:text-[12px] text-white/50">Attributed, not vanity</div>
-        </div>
-      </div>
-      <div class="bg-white rounded-[24px] sm:rounded-[28px] border border-black/[0.06] shadow-sm p-5 sm:p-7 flex flex-col justify-between min-h-[140px] sm:min-h-[170px]">
-        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-[#EEF2FF] grid place-items-center text-[#4F46E5] text-[13px] sm:text-[14px]"><i class="fa-solid fa-chart-simple"></i></div>
-        <div class="mt-4 sm:mt-6">
-          <div class="font-extrabold tracking-[-0.05em] text-[30px] sm:text-[38px] md:text-[44px] leading-none"><span class="counter" data-target="4.6" data-decimals="1" data-suffix="x">0</span></div>
-          <div class="mt-1.5 sm:mt-2 text-[10.5px] sm:text-[12px] font-bold tracking-[0.14em] text-[#9AA0A8]">AVG. ROAS</div>
-          <div class="text-[11px] sm:text-[12px] text-[#6B6B6E]">Blended, 12-mo avg</div>
-        </div>
-      </div>
-      <div class="bg-white rounded-[24px] sm:rounded-[28px] border border-black/[0.06] shadow-sm p-5 sm:p-7 flex flex-col justify-between min-h-[140px] sm:min-h-[170px]">
-        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-[#ECFDF5] grid place-items-center text-[#059669] text-[13px] sm:text-[14px]"><i class="fa-solid fa-heart"></i></div>
-        <div class="mt-4 sm:mt-6">
-          <div class="font-extrabold tracking-[-0.05em] text-[30px] sm:text-[38px] md:text-[44px] leading-none"><span class="counter" data-target="98" data-suffix="%">0</span></div>
-          <div class="mt-1.5 sm:mt-2 text-[10.5px] sm:text-[12px] font-bold tracking-[0.14em] text-[#9AA0A8]">RETENTION</div>
-          <div class="text-[11px] sm:text-[12px] text-[#6B6B6E]">Annual partner stay</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT: RESPONSIVE FORM SECTION -->
-<section id="contact" class="px-4 sm:px-6 md:px-8 max-w-[1280px] mx-auto pt-2 pb-8">
-  <div class="relative overflow-hidden rounded-[24px] sm:rounded-[36px] bg-[#0F0F12] border border-white/10 shadow-[0_24px_80px_rgba(0,0,0,0.35)]">
-    <div class="pointer-events-none absolute -top-40 -right-40 w-[640px] h-[640px] rounded-full opacity-30" style="background:radial-gradient(circle at 50% 50%, rgba(140,160,255,0.5), transparent 70%)"></div>
-    <div class="pointer-events-none absolute -bottom-40 -left-40 w-[560px] h-[560px] rounded-full opacity-20" style="background:radial-gradient(circle at 50% 50%, rgba(255,180,200,0.45), transparent 70%)"></div>
-
-    <div class="relative grid lg:grid-cols-[0.95fr_1.05fr] gap-8 p-5 sm:p-8 md:p-12">
-      <!-- Left Contact Info -->
-      <div class="text-white">
-        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/10 rounded-full px-3.5 py-1.5">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-          <span class="text-[11px] font-bold tracking-[0.14em] text-white/90">DIRECT LINE TO PARTNERS</span>
-        </div>
-        <h2 class="mt-4 sm:mt-6 font-display font-extrabold tracking-[-0.04em] text-[28px] sm:text-[38px] md:text-[48px] leading-[1.02]">Let's build<br>something<br>unforgettable.</h2>
-        <p class="mt-3 sm:mt-4 text-[13.5px] sm:text-[14.5px] leading-relaxed text-white/60 max-w-[420px]">Fill out the diagnostic form and our partners will review your brand within 24 hours with a custom growth plan — no generic deck.</p>
-
-        <div class="mt-6 sm:mt-8 space-y-2.5 sm:space-y-3">
-          <a href="mailto:info@novahuas.com" class="flex items-center gap-3 bg-white/10 hover:bg-white/15 border border-white/10 rounded-full px-4 py-3 transition">
-            <span class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white text-black grid place-items-center text-[12px] sm:text-[13px]"><i class="fa-regular fa-envelope"></i></span>
-            <span class="text-[13px] sm:text-[14px] font-medium truncate">info@novahuas.com</span>
-            <span class="ml-auto w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 grid place-items-center"><i class="fa-solid fa-arrow-right text-[10px] sm:text-[11px]"></i></span>
-          </a>
-          <a href="tel:+18006682487" class="flex items-center gap-3 bg-white/10 hover:bg-white/15 border border-white/10 rounded-full px-4 py-3 transition">
-            <span class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white text-black grid place-items-center text-[11px] sm:text-[12px]"><i class="fa-solid fa-phone"></i></span>
-            <span class="text-[13px] sm:text-[14px] font-medium truncate">+1 (800) NOVA-HUAS</span>
-            <span class="ml-auto text-[10px] sm:text-[11px] font-bold tracking-widest text-white/60">24H RESPONSE</span>
-          </a>
-          <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-4 py-3">
-            <span class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 grid place-items-center text-[12px] sm:text-[13px]"><i class="fa-solid fa-location-dot"></i></span>
-            <span class="text-[12.5px] sm:text-[14px] font-medium text-white/90 truncate">Global HQ — NYC • LDN • SF</span>
-          </div>
-        </div>
-
-        <div class="mt-6 sm:mt-8 flex items-center gap-3 text-[11.5px] sm:text-[12px] text-white/50">
-          <span class="flex -space-x-2">
-            <img src="https://i.pravatar.cc/100?img=11" class="w-6 h-6 sm:w-7 sm:h-7 rounded-full border-2 border-[#0F0F12]" alt="Reviewer">
-            <img src="https://i.pravatar.cc/100?img=22" class="w-6 h-6 sm:w-7 sm:h-7 rounded-full border-2 border-[#0F0F12]" alt="Reviewer">
-            <img src="https://i.pravatar.cc/100?img=33" class="w-6 h-6 sm:w-7 sm:h-7 rounded-full border-2 border-[#0F0F12]" alt="Reviewer">
-          </span>
-          Avg. reply time <b class="text-white">2.4 hours</b> • No spam.
-        </div>
-      </div>
-
-      <!-- Right Form -->
-      <form id="leadForm" class="bg-white rounded-[24px] sm:rounded-[28px] p-5 sm:p-7 shadow-[0_20px_60px_rgba(0,0,0,0.25)] relative">
-        <div class="flex items-center justify-between">
-          <h3 class="font-bold tracking-tight text-[15px] sm:text-[16px]">Request your free growth audit</h3>
-          <span class="text-[10.5px] sm:text-[11px] font-bold tracking-widest text-[#9AA0A8]">2-MIN FORM</span>
-        </div>
-        <p class="mt-1 text-[12.5px] sm:text-[13px] text-[#6B6B6E]">We’ll map your funnel leaks and send a Loom + plan within 24h.</p>
-
-        <div class="mt-5 sm:mt-6 grid gap-3.5 sm:gap-4">
-          <div>
-            <label class="text-[11px] font-bold tracking-[0.12em] text-[#6B6B6E]">FULL NAME</label>
-            <input id="fName" type="text" placeholder="Alex Morgan" class="mt-1.5 w-full bg-[#F6F7F9] border border-black/10 rounded-full px-4 sm:px-5 py-3 text-[13.5px] sm:text-[14px] placeholder:text-[#9AA0A8] focus:bg-white focus:border-black/20 transition">
-            <p class="hidden mt-1 text-[11.5px] text-red-500 font-medium" data-err="fName">Please enter your name.</p>
-          </div>
-
-          <div class="grid sm:grid-cols-2 gap-3.5 sm:gap-4">
-            <div>
-              <label class="text-[11px] font-bold tracking-[0.12em] text-[#6B6B6E]">WORK EMAIL</label>
-              <input id="fEmail" type="email" placeholder="alex@brand.com" class="mt-1.5 w-full bg-[#F6F7F9] border border-black/10 rounded-full px-4 sm:px-5 py-3 text-[13.5px] sm:text-[14px] placeholder:text-[#9AA0A8] focus:bg-white focus:border-black/20 transition">
-              <p class="hidden mt-1 text-[11.5px] text-red-500 font-medium" data-err="fEmail">Enter a valid work email.</p>
-            </div>
-            <div>
-              <label class="text-[11px] font-bold tracking-[0.12em] text-[#6B6B6E]">BRAND WEBSITE</label>
-              <input id="fSite" type="url" placeholder="https://yourbrand.com" class="mt-1.5 w-full bg-[#F6F7F9] border border-black/10 rounded-full px-4 sm:px-5 py-3 text-[13.5px] sm:text-[14px] placeholder:text-[#9AA0A8] focus:bg-white focus:border-black/20 transition">
-              <p class="hidden mt-1 text-[11.5px] text-red-500 font-medium" data-err="fSite">Enter your website URL.</p>
-            </div>
-          </div>
-
-          <div>
-            <label class="text-[11px] font-bold tracking-[0.12em] text-[#6B6B6E]">MONTHLY AD SPEND</label>
-            <div class="mt-1.5 grid grid-cols-2 sm:grid-cols-4 gap-2" id="budgetGroup">
-              <button type="button" data-budget="<$10k" class="budget-pill px-2.5 py-2.5 rounded-full border bg-[#F6F7F9] border-black/10 text-[12px] sm:text-[13px] font-semibold text-[#6B6B6E] hover:bg-white transition"><$10k</button>
-              <button type="button" data-budget="$10k–$50k" class="budget-pill px-2.5 py-2.5 rounded-full border bg-[#F6F7F9] border-black/10 text-[12px] sm:text-[13px] font-semibold text-[#6B6B6E] hover:bg-white transition">$10k–$50k</button>
-              <button type="button" data-budget="$50k–$100k" class="budget-pill px-2.5 py-2.5 rounded-full border bg-[#F6F7F9] border-black/10 text-[12px] sm:text-[13px] font-semibold text-[#6B6B6E] hover:bg-white transition">$50k–$100k</button>
-              <button type="button" data-budget="$100k+" class="budget-pill px-2.5 py-2.5 rounded-full border bg-[#F6F7F9] border-black/10 text-[12px] sm:text-[13px] font-semibold text-[#6B6B6E] hover:bg-white transition">$100k+</button>
-            </div>
-            <p class="hidden mt-1 text-[11.5px] text-red-500 font-medium" data-err="budget">Pick your spend range.</p>
-          </div>
-
-          <div>
-            <label class="text-[11px] font-bold tracking-[0.12em] text-[#6B6B6E]">PRIMARY GOAL</label>
-            <div class="mt-1.5 relative">
-              <select id="fGoal" class="w-full bg-[#F6F7F9] border border-black/10 rounded-full px-4 sm:px-5 py-3 pr-10 text-[13.5px] sm:text-[14px] text-[#101114] focus:bg-white focus:border-black/20 transition appearance-none">
-                <option value="">Select a goal…</option>
-                <option>Paid Ads & Performance</option>
-                <option>Full Rebrand & Creative</option>
-                <option>3D Web Design & CRO</option>
-                <option>Full Growth Retainer</option>
-              </select>
-              <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white border border-black/10 grid place-items-center"><i class="fa-solid fa-chevron-down text-[10px]"></i></span>
-            </div>
-            <p class="hidden mt-1 text-[11.5px] text-red-500 font-medium" data-err="goal">Choose a primary goal.</p>
-          </div>
-
-          <button type="submit" class="mt-1.5 w-full bg-[#101114] hover:bg-black text-white rounded-full py-3.5 sm:py-4 font-semibold text-[13.5px] sm:text-[14px] inline-flex items-center justify-center gap-2 shadow-[0_12px_28px_rgba(0,0,0,0.18)] hover:scale-[1.01] transition">
-            Request Free Growth Audit
-            <span class="w-6 h-6 rounded-full bg-white text-black grid place-items-center"><i class="fa-solid fa-arrow-right text-[10px]"></i></span>
-          </button>
-          <p class="text-center text-[10.5px] sm:text-[11px] leading-4 text-[#9AA0A8]">By submitting you agree to our <a href="#" class="underline">Privacy Policy</a>. No spam — audit only.</p>
-        </div>
-
-        <!-- Success Message Overlay -->
-        <div id="formSuccess" class="hidden absolute inset-0 bg-white rounded-[24px] sm:rounded-[28px] p-6 flex flex-col items-center justify-center text-center">
-          <div class="w-14 h-14 rounded-full bg-emerald-500 text-white grid place-items-center text-lg shadow-lg"><i class="fa-solid fa-check"></i></div>
-          <h4 class="mt-4 font-extrabold text-[20px] tracking-tight">Audit requested — you’re in.</h4>
-          <p class="mt-2 text-[13px] leading-relaxed text-[#6B6B6E] max-w-[320px]">Thanks, <span id="successName" class="font-semibold text-[#101114]"></span>! Our partners are reviewing <span id="successBrand" class="font-semibold text-[#101114]"></span> and will send your custom plan within 24 hours.</p>
-          <button type="button" id="resetForm" class="mt-5 px-5 py-2.5 rounded-full bg-[#101114] text-white font-semibold text-[12.5px]">Send another request</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="px-4 sm:px-6 md:px-8 max-w-[1280px] mx-auto pt-2 pb-8">
-  <div class="rounded-[24px] sm:rounded-[32px] bg-white border border-black/[0.06] shadow-sm overflow-hidden">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_0.8fr] gap-6 p-6 sm:p-8 md:p-10">
-      <div class="sm:col-span-2 lg:col-span-1">
-        <div class="flex items-center gap-2.5">
-          <div class="w-8 h-8 rounded-xl bg-[#101114] grid place-items-center">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 22V12M12 12L3 7M12 12L21 7" stroke="white" stroke-width="1.3"/><circle cx="12" cy="12" r="2.3" fill="white"/></svg>
-          </div>
-          <span class="font-extrabold tracking-[-0.03em] text-[15px]">NOVA HUAS</span>
-        </div>
-        <p class="mt-3 text-[13px] leading-relaxed text-[#6B6B6E] max-w-[400px]">Engineering market leaders through aesthetic precision and algorithmic performance. Strategy, creative, WebGL, and paid media under one roof.</p>
-        <div class="mt-4 inline-flex items-center gap-2 bg-[#F6F7F9] border border-black/5 rounded-full px-3.5 py-1.5 text-[11px] font-medium text-[#6B6B6E]">
-          <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Accepting 3 new partners for Q1 2026
-        </div>
-      </div>
-      <div>
-        <div class="text-[11px] font-bold tracking-[0.14em] text-[#9AA0A8]">NAVIGATE</div>
-        <div class="mt-3 grid gap-2 text-[13.5px] font-medium">
-          <a href="#home" class="hover:text-black text-[#6B6B6E] transition">Home</a>
-          <a href="#services" class="hover:text-black text-[#6B6B6E] transition">Services</a>
-          <a href="#process" class="hover:text-black text-[#6B6B6E] transition">Process</a>
-          <a href="#about" class="hover:text-black text-[#6B6B6E] transition">About</a>
-          <a href="#contact" class="hover:text-black text-[#6B6B6E] transition">Contact</a>
-        </div>
-      </div>
-      <div>
-        <div class="text-[11px] font-bold tracking-[0.14em] text-[#9AA0A8]">CONNECT</div>
-        <div class="mt-3 grid gap-2 text-[13.5px] font-medium">
-          <a href="#" class="flex items-center gap-2 text-[#6B6B6E] hover:text-black transition"><i class="fa-brands fa-linkedin w-3.5"></i> LinkedIn</a>
-          <a href="#" class="flex items-center gap-2 text-[#6B6B6E] hover:text-black transition"><i class="fa-brands fa-x-twitter w-3.5"></i> X / Twitter</a>
-          <a href="#" class="flex items-center gap-2 text-[#6B6B6E] hover:text-black transition"><i class="fa-brands fa-instagram w-3.5"></i> Instagram</a>
-          <a href="#" class="flex items-center gap-2 text-[#6B6B6E] hover:text-black transition"><i class="fa-brands fa-behance w-3.5"></i> Behance</a>
-        </div>
-        <a href="mailto:info@novahuas.com" class="mt-4 inline-flex items-center gap-2 bg-[#101114] text-white px-4 py-2 rounded-full text-[12.5px] font-semibold">info@novahuas.com <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
-      </div>
-    </div>
-    <div class="px-6 md:px-10 py-4 border-t border-black/[0.06] flex flex-col sm:flex-row items-center justify-between gap-2 text-[11.5px] text-[#9AA0A8]">
-      <span>© 2026 Nova Huas Agency. All rights reserved.</span>
-      <span class="flex items-center gap-4"><a href="#" class="hover:text-black">Privacy</a><a href="#" class="hover:text-black">Terms</a><span class="hidden sm:inline">Crafted for category leaders.</span></span>
-    </div>
-  </div>
-</footer>
-
-<script>
-gsap.registerPlugin(ScrollTrigger);
-
-// Standard Reveal for general components
-gsap.utils.toArray('.reveal').forEach((el, i)=>{
-  gsap.from(el, {
-    y: 18, opacity: 0, duration: 0.6, ease: "power3.out",
-    scrollTrigger:{ trigger: el, start:"top 90%" },
-    delay: (i % 3) * 0.04
-  });
-});
-
-// HERO DECK POP ENTRANCE
-const heroDeck = document.getElementById('heroDeckStage');
-const deckCards = document.querySelectorAll('.deck-card');
-const backdrop = document.getElementById('heroHoverBackdrop');
-const backdropImg = document.getElementById('heroBackdropImg');
-
-const baseRotations = [-12, -6, 0, 6, 12];
-const baseYOffsets = [20, 8, -14, 8, 20];
-
-gsap.from(deckCards, {
-  y: 80,
-  opacity: 0,
-  scale: 0.8,
-  stagger: 0.07,
-  duration: 0.9,
-  ease: "back.out(1.4)",
-  delay: 0.1
-});
-
-// DESKTOP VS MOBILE GSAP MATCHMEDIA
-const mm = gsap.matchMedia();
-
-mm.add("(min-width: 1024px)", () => {
-  // Desktop Mouse Tilt on Hero Deck
-  let heroBounds = heroDeck.getBoundingClientRect();
-  const onResize = () => { heroBounds = heroDeck.getBoundingClientRect(); };
-  window.addEventListener('resize', onResize);
-
-  const onMouseMove = (e) => {
-    const xRel = (e.clientX - (heroBounds.left + heroBounds.width / 2)) / (heroBounds.width / 2);
-    const yRel = (e.clientY - (heroBounds.top + heroBounds.height / 2)) / (heroBounds.height / 2);
-
-    deckCards.forEach((card, idx) => {
-      const staggerFactor = (idx - 2) * 1.5;
-      gsap.to(card, {
-        rotation: baseRotations[idx] + (xRel * 4),
-        y: baseYOffsets[idx] + (yRel * 8),
-        x: xRel * (6 + Math.abs(staggerFactor)),
-        rotationY: xRel * 7,
-        rotationX: -yRel * 5,
-        duration: 0.5,
-        ease: "power2.out",
-        overwrite: "auto"
-      });
-    });
-  };
-
-  const onMouseLeave = () => {
-    deckCards.forEach((card, idx) => {
-      gsap.to(card, {
-        rotation: baseRotations[idx],
-        y: baseYOffsets[idx],
-        x: 0,
-        rotationY: 0,
-        rotationX: 0,
-        duration: 0.7,
-        ease: "power3.out",
-        overwrite: "auto"
-      });
-    });
-  };
-
-  window.addEventListener('mousemove', onMouseMove);
-  heroDeck.addEventListener('mouseleave', onMouseLeave);
-
-  // Desktop Services Scroll Pin
-  const colLeft = document.getElementById('colLeft');
-  const colCenter = document.getElementById('colCenter');
-  const colRight = document.getElementById('colRight');
-
-  gsap.set(colCenter, { yPercent: 4 });
-  gsap.set([colLeft, colRight], { yPercent: 55 });
-
-  const servicesTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#services",
-      start: "top top",
-      end: "+=650",
-      pin: true,
-      scrub: 0.5,
-      anticipatePin: 1
-    }
-  });
-
-  servicesTl
-    .to([colLeft, colRight], { yPercent: 4, ease: "power2.out", duration: 0.7 })
-    .to([colLeft, colCenter, colRight], { yPercent: -35, ease: "power1.inOut", duration: 0.5 });
-
-  // Desktop Process Horizontal Scroll Pin
-  const processTrack = document.getElementById('processTrack');
-  const getScrollAmount = () => -(processTrack.scrollWidth - window.innerWidth + 80);
-
-  gsap.to(processTrack, {
-    x: () => getScrollAmount(),
-    ease: "none",
-    scrollTrigger: {
-      trigger: "#processPinWrapper",
-      start: "top top",
-      end: () => `+=${Math.max(750, processTrack.scrollWidth - window.innerWidth)}`,
-      pin: true,
-      scrub: 0.5,
-      invalidateOnRefresh: true,
-      anticipatePin: 1
-    }
-  });
-
-  return () => {
-    window.removeEventListener('resize', onResize);
-    window.removeEventListener('mousemove', onMouseMove);
-  };
-});
-
-// Mobile & Tablet fallback (Stacked natural scrolling)
-mm.add("(max-width: 1023px)", () => {
-  const colLeft = document.getElementById('colLeft');
-  const colCenter = document.getElementById('colCenter');
-  const colRight = document.getElementById('colRight');
-  const processTrack = document.getElementById('processTrack');
-
-  gsap.set([colLeft, colCenter, colRight], { clearProps: "all" });
-  gsap.set(processTrack, { clearProps: "all" });
-});
-
-// Card hover and click image projections (Universal across mouse & touch)
-deckCards.forEach(card => {
-  const showBackdrop = () => {
-    const previewSrc = card.getAttribute('data-preview');
-    if(previewSrc){
-      backdropImg.src = previewSrc;
-      backdrop.style.opacity = '1';
-    }
-  };
-  const hideBackdrop = () => {
-    backdrop.style.opacity = '0';
-  };
-  card.addEventListener('mouseenter', showBackdrop);
-  card.addEventListener('mouseleave', hideBackdrop);
-  card.addEventListener('click', showBackdrop);
-});
-
-// Mobile menu toggle
-const toggle = document.getElementById('mobileToggle');
-const mobileMenu = document.getElementById('mobileMenu');
-let menuOpen = false;
-toggle.addEventListener('click', ()=>{
-  menuOpen = !menuOpen;
-  mobileMenu.classList.toggle('hidden', !menuOpen);
-  toggle.innerHTML = menuOpen ? '<i class="fa-solid fa-xmark text-[13px]"></i>' : '<i class="fa-solid fa-bars text-[12px]"></i>';
-});
-document.querySelectorAll('.mobile-link').forEach(a => a.addEventListener('click', () => { 
-  menuOpen = false; 
-  mobileMenu.classList.add('hidden'); 
-  toggle.innerHTML = '<i class="fa-solid fa-bars text-[12px]"></i>'; 
-}));
-
-// Nav Active State Indicator
-const navLinks = document.querySelectorAll('.nav-link');
-const indicator = document.getElementById('navIndicator');
-function moveIndicator(el){
-  if(!el || window.innerWidth < 1024) return;
-  const parent = el.parentElement.getBoundingClientRect();
-  const r = el.getBoundingClientRect();
-  indicator.style.left = (r.left - parent.left) + 'px';
-  indicator.style.width = r.width + 'px';
-}
-let activeId = 'home';
-const sectionMap = {};
-document.querySelectorAll('section[id]').forEach(s => sectionMap[s.id] = s);
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      activeId = entry.target.id;
-      navLinks.forEach(l=>{
-        const isActive = l.dataset.nav === activeId;
-        l.classList.toggle('text-[#101114]', isActive);
-        l.classList.toggle('text-[#6B6B6E]', !isActive);
-        l.classList.toggle('font-semibold', isActive);
-        l.classList.toggle('font-medium', !isActive);
-        if(isActive) moveIndicator(l);
-      });
-    }
-  });
-},{ rootMargin:"-40% 0px -40% 0px", threshold:0 });
-Object.values(sectionMap).forEach(s => observer.observe(s));
-window.addEventListener('resize', ()=> {
-  const active = document.querySelector(`.nav-link[data-nav="${activeId}"]`);
-  if(active) moveIndicator(active);
-});
-window.addEventListener('load', ()=> {
-  const active = document.querySelector(`.nav-link[data-nav="home"]`);
-  if(active) moveIndicator(active);
-});
-
-// Smooth Scroll for Navigation Anchors
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click', e=>{
-    const id = a.getAttribute('href');
-    if(id.length > 1){
-      const target = document.querySelector(id);
-      if(target){ 
-        e.preventDefault(); 
-        target.scrollIntoView({behavior:'smooth', block:'start'}); 
-      }
-    }
-  });
-});
-
-// Live Stats Counters
-const counters = document.querySelectorAll('.counter');
-const counted = new Set();
-const counterObserver = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting && !counted.has(entry.target)){
-      counted.add(entry.target);
-      animateCounter(entry.target);
-    }
-  });
-},{threshold:0.5});
-counters.forEach(c => counterObserver.observe(c));
-function animateCounter(el){
-  const target = parseFloat(el.dataset.target);
-  const decimals = parseInt(el.dataset.decimals||'0');
-  const suffix = el.dataset.suffix||'';
-  const obj = {v:0};
-  gsap.to(obj, {v:target, duration:1.5, ease:"power3.out", onUpdate:()=>{
-    el.textContent = (decimals ? obj.v.toFixed(decimals) : Math.round(obj.v).toString()) + suffix;
-  }});
-}
-
-// Hover Light Follower for Desktop
-if(window.matchMedia("(hover: hover)").matches){
-  document.querySelectorAll('.hover-light').forEach(card=>{
-    card.addEventListener('mousemove', e=>{
-      const r = card.getBoundingClientRect();
-      const x = e.clientX - r.left, y = e.clientY - r.top;
-      card.style.setProperty('--mx', x+'px');
-      card.style.setProperty('--my', y+'px');
-      card.style.background = `radial-gradient(350px circle at ${x}px ${y}px, rgba(160,180,255,0.12), transparent 70%), white`;
-    });
-    card.addEventListener('mouseleave', () => card.style.background = 'white');
-  });
-}
-
-// Form Diagnostic Validation
-const budgetGroup = document.getElementById('budgetGroup');
-let selectedBudget = null;
-budgetGroup.querySelectorAll('.budget-pill').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    budgetGroup.querySelectorAll('.budget-pill').forEach(b=>{ b.classList.remove('bg-[#101114]','text-white','border-[#101114]'); b.classList.add('bg-[#F6F7F9]','text-[#6B6B6E]','border-black/10'); });
-    btn.classList.remove('bg-[#F6F7F9]','text-[#6B6B6E]','border-black/10');
-    btn.classList.add('bg-[#101114]','text-white','border-[#101114]');
-    selectedBudget = btn.dataset.budget;
-    hideErr('budget');
-  });
-});
-function showErr(key){ const el = document.querySelector(`[data-err="${key}"]`); if(el) el.classList.remove('hidden'); }
-function hideErr(key){ const el = document.querySelector(`[data-err="${key}"]`); if(el) el.classList.add('hidden'); }
-['fName','fEmail','fSite','fGoal'].forEach(id=>{
-  document.getElementById(id).addEventListener('input', () => hideErr(id === 'fGoal' ? 'goal' : id.replace('f','').toLowerCase()));
-  document.getElementById(id).addEventListener('focus', () => hideErr(id === 'fGoal' ? 'goal' : id.replace('f','').toLowerCase()));
-});
-
-document.getElementById('leadForm').addEventListener('submit', (e)=>{
-  e.preventDefault();
-  let valid = true;
-  const name = document.getElementById('fName').value.trim();
-  const email = document.getElementById('fEmail').value.trim();
-  const site = document.getElementById('fSite').value.trim();
-  const goal = document.getElementById('fGoal').value;
-  if(!name){ showErr('fName'); valid = false; } else hideErr('fName');
-  if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ showErr('fEmail'); valid = false; } else hideErr('fEmail');
-  if(!site || !/^https?:\/\/.+\..+/.test(site)){ showErr('fSite'); valid = false; } else hideErr('fSite');
-  if(!selectedBudget){ showErr('budget'); valid = false; } else hideErr('budget');
-  if(!goal){ showErr('goal'); valid = false; } else hideErr('goal');
-  if(!valid){
-    gsap.fromTo('#leadForm', {x:-6},{x:6, duration:0.08, yoyo:true, repeat:4, ease:"power2.inOut"});
-    return;
-  }
-  document.getElementById('successName').textContent = name.split(' ')[0];
-  try{ document.getElementById('successBrand').textContent = new URL(site).hostname.replace('www.',''); } catch{ document.getElementById('successBrand').textContent = site; }
-  document.getElementById('formSuccess').classList.remove('hidden');
-  gsap.fromTo('#formSuccess', {opacity:0, scale:0.98},{opacity:1, scale:1, duration:0.35, ease:"power3.out"});
-});
-document.getElementById('resetForm').addEventListener('click', ()=>{
-  document.getElementById('formSuccess').classList.add('hidden');
-  document.getElementById('leadForm').reset();
-  selectedBudget = null;
-  budgetGroup.querySelectorAll('.budget-pill').forEach(b=>{ b.classList.remove('bg-[#101114]','text-white','border-[#101114]'); b.classList.add('bg-[#F6F7F9]','text-[#6B6B6E]','border-black/10'); });
-});
-
-// Navbar Shadow on Scroll
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', ()=>{
-  if(window.scrollY > 16) navbar.classList.add('shadow-[0_12px_40px_rgba(0,0,0,0.12)]');
-  else navbar.classList.remove('shadow-[0_12px_40px_rgba(0,0,0,0.12)]');
-});
-</script>
-</body>
 </html>
-
-```
