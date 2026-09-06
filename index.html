@@ -52,9 +52,10 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
   overflow:hidden;
   box-shadow:0 14px 30px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.04);
   border:2px solid #FFFFFF;
-  transition:transform 0.4s cubic-bezier(0.16,1,0.3,1), filter 0.3s ease, box-shadow 0.3s ease;
+  transition:transform 0.4s cubic-bezier(0.16,1,0.3,1), filter 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   will-change:transform;
   flex-shrink:0;
+  touch-action:manipulation;
 }
 @media (min-width: 640px) {
   .deck-card{ border-radius:24px; border-width:2.5px; }
@@ -65,6 +66,12 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
     z-index:40 !important;
     box-shadow:0 24px 50px rgba(0,0,0,0.2);
   }
+}
+.deck-card.touch-active{
+  transform:scale(1.12) translateY(-10px) rotate(0deg) !important;
+  z-index:45 !important;
+  border-color:#FFE664 !important;
+  box-shadow:0 20px 45px rgba(255,230,100,0.4), 0 4px 12px rgba(0,0,0,0.12) !important;
 }
 
 /* Services Stage (Desktop Pinned) */
@@ -103,6 +110,7 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
   border:1px solid rgba(0,0,0,0.06);
   box-shadow:0 8px 24px rgba(0,0,0,0.03);
   transition:border-color 0.3s ease, box-shadow 0.3s ease;
+  will-change:transform, opacity;
 }
 @media (min-width: 640px) {
   .service-scroll-card{ border-radius:28px; }
@@ -145,6 +153,7 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
   position:relative;
   overflow:hidden;
   transition:all 0.35s cubic-bezier(0.16,1,0.3,1);
+  will-change:transform, background-color;
 }
 @media (min-width: 640px) {
   .process-feature-card{
@@ -153,26 +162,26 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
   }
 }
 
-/* Warm Yellow Hover for Process Cards */
-.process-feature-card:hover, .process-feature-card:active{
+/* Warm Yellow Hover & Mobile Viewport Highlight */
+.process-feature-card:hover, .process-feature-card.mobile-highlight{
   background:#FFE664 !important;
   color:#101114 !important;
   border-color:transparent !important;
   transform:translateY(-6px);
   box-shadow:0 20px 45px rgba(255,230,100,0.32), 0 8px 20px rgba(0,0,0,0.05);
 }
-.process-feature-card:hover h3, .process-feature-card:active h3,
-.process-feature-card:hover p, .process-feature-card:active p,
-.process-feature-card:hover span, .process-feature-card:active span,
-.process-feature-card:hover div, .process-feature-card:active div{
+.process-feature-card:hover h3, .process-feature-card.mobile-highlight h3,
+.process-feature-card:hover p, .process-feature-card.mobile-highlight p,
+.process-feature-card:hover span, .process-feature-card.mobile-highlight span,
+.process-feature-card:hover div, .process-feature-card.mobile-highlight div{
   color:#101114 !important;
 }
-.process-feature-card:hover .step-badge, .process-feature-card:active .step-badge{
+.process-feature-card:hover .step-badge, .process-feature-card.mobile-highlight .step-badge{
   background:#101114 !important;
   color:#FFE664 !important;
   border-color:#101114 !important;
 }
-.process-feature-card:hover .step-arrow, .process-feature-card:active .step-arrow{
+.process-feature-card:hover .step-arrow, .process-feature-card.mobile-highlight .step-arrow{
   background:#101114 !important;
   color:#FFE664 !important;
   transform:translateX(3px);
@@ -242,34 +251,34 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
   <div id="heroDeckStage" class="hero-deck-wrapper relative z-10 w-full max-w-[1320px] mx-auto my-auto py-2 md:py-4 flex flex-col items-center justify-center">
     <div id="deckCardsRow" class="relative z-20 w-full flex items-center justify-center -space-x-3 sm:-space-x-6 md:-space-x-8 lg:-space-x-10 pointer-events-auto px-2">
       <div data-preview="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1400&q=80&auto=format&fit=crop" class="deck-card w-[68px] sm:w-[110px] md:w-[155px] lg:w-[185px] h-[95px] sm:h-[150px] md:h-[210px] lg:h-[240px] -rotate-12 translate-y-3 sm:translate-y-5 md:translate-y-6 bg-black cursor-pointer">
-        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&q=80&auto=format&fit=crop" class="w-full h-full object-cover" alt="3D Engine">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
-        <span class="absolute bottom-1.5 left-1.5 sm:bottom-2 sm:left-2 text-white text-[8px] sm:text-[10px] md:text-[11px] font-bold tracking-wider">3D</span>
+        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&q=80&auto=format&fit=crop" class="w-full h-full object-cover pointer-events-none" alt="3D Engine">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none"></div>
+        <span class="absolute bottom-1.5 left-1.5 sm:bottom-2 sm:left-2 text-white text-[8px] sm:text-[10px] md:text-[11px] font-bold tracking-wider pointer-events-none">3D</span>
       </div>
 
       <div data-preview="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1400&q=80&auto=format&fit=crop" class="deck-card w-[72px] sm:w-[115px] md:w-[160px] lg:w-[190px] h-[100px] sm:h-[155px] md:h-[215px] lg:h-[245px] -rotate-6 translate-y-1 sm:translate-y-2 bg-black cursor-pointer z-10">
-        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=500&q=80&auto=format&fit=crop" class="w-full h-full object-cover" alt="Editorial">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
-        <span class="absolute bottom-1.5 left-1.5 sm:bottom-2 sm:left-2 text-white text-[8px] sm:text-[10px] md:text-[11px] font-bold tracking-wider">VISUAL</span>
+        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=500&q=80&auto=format&fit=crop" class="w-full h-full object-cover pointer-events-none" alt="Editorial">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none"></div>
+        <span class="absolute bottom-1.5 left-1.5 sm:bottom-2 sm:left-2 text-white text-[8px] sm:text-[10px] md:text-[11px] font-bold tracking-wider pointer-events-none">VISUAL</span>
       </div>
 
       <div data-preview="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1400&q=80&auto=format&fit=crop" class="deck-card w-[78px] sm:w-[125px] md:w-[175px] lg:w-[210px] h-[110px] sm:h-[170px] md:h-[235px] lg:h-[265px] rotate-0 -translate-y-2 sm:-translate-y-4 bg-black cursor-pointer z-20 shadow-xl">
-        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&q=80&auto=format&fit=crop" class="w-full h-full object-cover" alt="Viral Hooks">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-        <span class="absolute top-1.5 right-1.5 sm:top-2.5 sm:right-2.5 w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-white/90 grid place-items-center text-black text-[8px] sm:text-[10px] shadow"><i class="fa-solid fa-play"></i></span>
-        <span class="absolute bottom-1.5 left-1.5 sm:bottom-2 sm:left-2 text-white text-[8px] sm:text-[11px] font-black tracking-wide">HOOKS</span>
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&q=80&auto=format&fit=crop" class="w-full h-full object-cover pointer-events-none" alt="Viral Hooks">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
+        <span class="absolute top-1.5 right-1.5 sm:top-2.5 sm:right-2.5 w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-white/90 grid place-items-center text-black text-[8px] sm:text-[10px] shadow pointer-events-none"><i class="fa-solid fa-play"></i></span>
+        <span class="absolute bottom-1.5 left-1.5 sm:bottom-2 sm:left-2 text-white text-[8px] sm:text-[11px] font-black tracking-wide pointer-events-none">HOOKS</span>
       </div>
 
       <div data-preview="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1400&q=80&auto=format&fit=crop" class="deck-card w-[72px] sm:w-[115px] md:w-[160px] lg:w-[190px] h-[100px] sm:h-[155px] md:h-[215px] lg:h-[245px] rotate-6 translate-y-1 sm:translate-y-2 bg-black cursor-pointer z-10">
-        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500&q=80&auto=format&fit=crop" class="w-full h-full object-cover" alt="Commercial">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
-        <span class="absolute bottom-1.5 left-1.5 sm:bottom-2 sm:left-2 text-white text-[8px] sm:text-[10px] md:text-[11px] font-bold tracking-wider">COMMERCE</span>
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500&q=80&auto=format&fit=crop" class="w-full h-full object-cover pointer-events-none" alt="Commercial">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none"></div>
+        <span class="absolute bottom-1.5 left-1.5 sm:bottom-2 sm:left-2 text-white text-[8px] sm:text-[10px] md:text-[11px] font-bold tracking-wider pointer-events-none">COMMERCE</span>
       </div>
 
       <div data-preview="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=1400&q=80&auto=format&fit=crop" class="deck-card w-[68px] sm:w-[110px] md:w-[155px] lg:w-[185px] h-[95px] sm:h-[150px] md:h-[210px] lg:h-[240px] rotate-12 translate-y-3 sm:translate-y-5 md:translate-y-6 bg-black cursor-pointer">
-        <img src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=500&q=80&auto=format&fit=crop" class="w-full h-full object-cover" alt="4.8x Scale">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
-        <span class="absolute bottom-1.5 left-1.5 sm:bottom-2 sm:left-2 text-white text-[8px] sm:text-[10px] md:text-[11px] font-bold tracking-wider">SCALE</span>
+        <img src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=500&q=80&auto=format&fit=crop" class="w-full h-full object-cover pointer-events-none" alt="4.8x Scale">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none"></div>
+        <span class="absolute bottom-1.5 left-1.5 sm:bottom-2 sm:left-2 text-white text-[8px] sm:text-[10px] md:text-[11px] font-bold tracking-wider pointer-events-none">SCALE</span>
       </div>
     </div>
 
@@ -573,7 +582,7 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
           <a href="mailto:info@novahuas.com" class="flex items-center gap-3 bg-white/10 hover:bg-white/15 border border-white/10 rounded-full px-4 py-2.5 transition text-[13px] sm:text-[14px]">
             <span class="w-8 h-8 rounded-full bg-white text-black grid place-items-center"><i class="fa-regular fa-envelope text-[11px]"></i></span>
             <span class="font-medium">info@novahuas.com</span>
-            <span class="ml-auto w-6 h-6 rounded-full bg-white/10 grid place-items-center"><i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+            <span class="ml-auto w-6 h-6 rounded-full bg-white/10 grid place-items-center text-white"><i class="fa-solid fa-arrow-right text-[10px]"></i></span>
           </a>
           <a href="tel:+18006682487" class="flex items-center gap-3 bg-white/10 hover:bg-white/15 border border-white/10 rounded-full px-4 py-2.5 transition text-[13px] sm:text-[14px]">
             <span class="w-8 h-8 rounded-full bg-white text-black grid place-items-center"><i class="fa-solid fa-phone text-[11px]"></i></span>
@@ -657,7 +666,7 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
 <script>
 gsap.registerPlugin(ScrollTrigger);
 
-// Reveal animations
+// Universal reveal animations
 gsap.utils.toArray('.reveal').forEach((el, i)=>{
   gsap.from(el, {
     y: 18, opacity: 0, duration: 0.55, ease: "power2.out",
@@ -666,7 +675,7 @@ gsap.utils.toArray('.reveal').forEach((el, i)=>{
   });
 });
 
-// Hero pop entrance
+// HERO DECK POP ENTRANCE
 const heroDeck = document.getElementById('heroDeckStage');
 const deckCards = document.querySelectorAll('.deck-card');
 const backdrop = document.getElementById('heroHoverBackdrop');
@@ -685,7 +694,7 @@ gsap.from(deckCards, {
   delay: 0.1
 });
 
-// Desktop hover tilt & projection
+// DESKTOP HOVER TILT & PROJECTION
 if(window.matchMedia("(hover: hover) and (min-width: 768px)").matches && heroDeck){
   let heroBounds = heroDeck.getBoundingClientRect();
   window.addEventListener('resize', () => { heroBounds = heroDeck.getBoundingClientRect(); });
@@ -738,7 +747,28 @@ if(window.matchMedia("(hover: hover) and (min-width: 768px)").matches && heroDec
   });
 }
 
-// Responsive animations via matchMedia
+// MOBILE TOUCH-SWAP INTERACTION (HERO)
+if(window.innerWidth < 768) {
+  deckCards.forEach((card) => {
+    card.addEventListener('click', () => {
+      const isAlreadyActive = card.classList.contains('touch-active');
+      deckCards.forEach(c => c.classList.remove('touch-active'));
+      
+      if (!isAlreadyActive) {
+        card.classList.add('touch-active');
+        const previewSrc = card.getAttribute('data-preview');
+        if(previewSrc && backdropImg && backdrop){
+          backdropImg.src = previewSrc;
+          backdrop.style.opacity = '1';
+        }
+      } else {
+        if(backdrop) backdrop.style.opacity = '0';
+      }
+    });
+  });
+}
+
+// GSAP MATCHMEDIA (DESKTOP PINNED + MOBILE TOUCH-CHOREOGRAPHY)
 ScrollTrigger.matchMedia({
   // Desktop only (>= 768px): Pinned Parallax & Pinned Horizontal Track
   "(min-width: 768px)": function() {
@@ -792,15 +822,46 @@ ScrollTrigger.matchMedia({
     });
   },
 
-  // Mobile (< 768px): Unlock pinning completely for clean natural scrolling
+  // Mobile (< 768px): Active Touch-Scroll Dynamic Animations
   "(max-width: 767px)": function() {
-    const colLeft = document.getElementById('colLeft');
-    const colCenter = document.getElementById('colCenter');
-    const colRight = document.getElementById('colRight');
-    const processTrack = document.getElementById('processTrack');
+    // 1. Staggered slide-in reveal for mobile services cards
+    gsap.utils.toArray('.service-scroll-card').forEach((card, i) => {
+      const isEven = i % 2 === 0;
+      gsap.fromTo(card, 
+        { 
+          opacity: 0, 
+          y: 35, 
+          x: isEven ? -20 : 20, 
+          scale: 0.96 
+        },
+        {
+          opacity: 1,
+          y: 0,
+          x: 0,
+          scale: 1,
+          duration: 0.6,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 88%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    });
 
-    gsap.set([colLeft, colCenter, colRight], { clearProps: "all" });
-    gsap.set(processTrack, { clearProps: "all" });
+    // 2. Mobile Process Cards: Auto-highlight in warm yellow as user scrolls through them
+    gsap.utils.toArray('.process-feature-card').forEach((card) => {
+      ScrollTrigger.create({
+        trigger: card,
+        start: "top 60%",
+        end: "bottom 40%",
+        onEnter: () => card.classList.add('mobile-highlight'),
+        onLeave: () => card.classList.remove('mobile-highlight'),
+        onEnterBack: () => card.classList.add('mobile-highlight'),
+        onLeaveBack: () => card.classList.remove('mobile-highlight')
+      });
+    });
   }
 });
 
