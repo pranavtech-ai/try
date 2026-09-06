@@ -45,19 +45,17 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
   position:relative;
   width:100%;
   height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
   overflow:hidden;
 }
 .orbit-container{
   position:absolute;
-  top:50%;
+  top:65%;
   left:50%;
   width:1px;
   height:1px;
   pointer-events:none;
 }
+/* Fixed to use background-image to prevent Safari scale:0 squashing bugs */
 .orbit-img{
   position:absolute;
   top:50%;
@@ -76,6 +74,9 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
   opacity:0;
 }
 @media(min-width: 768px){
+  .orbit-container{
+    top:60%;
+  }
   .orbit-img{
     width:140px;
     height:190px;
@@ -167,6 +168,7 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
   overflow:hidden;
   transition:all 0.35s cubic-bezier(0.16,1,0.3,1);
   will-change:transform, background-color;
+  flex-shrink: 0;
 }
 @media (min-width: 640px) {
   .process-feature-card{ border-radius:32px; padding:2.25rem; }
@@ -257,12 +259,12 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
   </div>
 </nav>
 
-<!-- HERO: SQUASH-PROOF SCROLL ORBIT ANIMATION -->
+<!-- HERO: SQUASH-PROOF SCROLL ORBIT ANIMATION WITH FADING TEXT -->
 <section id="home" class="relative w-full overflow-hidden">
-  <div id="heroPinWrapper" class="hero-pin-wrapper">
+  <div id="heroPinWrapper" class="hero-pin-wrapper relative w-full h-full">
     
-    <!-- Central Typography (Z-Index 30 ensures text is ALWAYS readable over the orbiting images) -->
-    <div class="relative z-30 text-center px-4 max-w-5xl mx-auto pointer-events-none mb-10 md:mb-16">
+    <!-- Central Typography (Shifted Higher, Fades out on Scroll) -->
+    <div id="heroText" class="absolute top-[18%] md:top-[22%] left-1/2 -translate-x-1/2 w-full text-center px-4 max-w-5xl z-30">
       <div class="inline-flex items-center gap-1.5 bg-white/90 glass border border-black/[0.06] rounded-full px-3 py-1 shadow-sm mb-4 md:mb-6 reveal pointer-events-auto">
         <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-500 animate-pulse"></span>
         <span class="text-[10px] sm:text-[11px] font-bold tracking-[0.16em] text-[#101114]">NOVA HUAS COLLECTIVE</span>
@@ -274,9 +276,17 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
       <p class="mt-4 md:mt-6 text-[14px] sm:text-[16px] md:text-[18px] text-[#55575F] max-w-2xl mx-auto font-[450] leading-relaxed drop-shadow-[0_0_10px_rgba(248,249,250,0.9)]">
         Delivering category-dominating paid acquisition, high-fashion creative direction, and WebGL infrastructure.
       </p>
+
+      <!-- CTA Inside Fading Block -->
+      <div class="mt-6 md:mt-8 flex items-center justify-center gap-3">
+        <a href="#contact" class="inline-flex items-center gap-2 bg-[#101114] hover:bg-black text-white px-6 md:px-8 py-3.5 md:py-4 rounded-full font-bold text-[13px] md:text-[14.5px] hover:scale-[1.03] transition-all shadow-xl pointer-events-auto">
+          Get in Touch
+          <span class="w-6 h-6 md:w-7 md:h-7 rounded-full bg-white text-black grid place-items-center text-[10px] md:text-[11px]"><i class="fa-solid fa-arrow-right -rotate-45"></i></span>
+        </a>
+      </div>
     </div>
 
-    <!-- Reliable Orbit Images Container (Using Background-Image Divs) -->
+    <!-- Reliable Orbit Images Container (Positioned Below Text initially) -->
     <div class="orbit-container z-20">
       <div class="orbit-img" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80')"></div>
       <div class="orbit-img" style="background-image: url('https://images.unsplash.com/photo-1542744094-24638eff58bb?w=600&q=80')"></div>
@@ -287,18 +297,10 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
       <div class="orbit-img" style="background-image: url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80')"></div>
       <div class="orbit-img" style="background-image: url('https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&q=80')"></div>
     </div>
-
-    <!-- Absolute Positioning for Hero CTA -->
-    <div class="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3">
-      <a href="#contact" class="inline-flex items-center gap-2 bg-[#101114] hover:bg-black text-white px-6 md:px-8 py-3.5 md:py-4 rounded-full font-bold text-[13px] md:text-[14.5px] hover:scale-[1.03] transition-all shadow-xl">
-        Get in Touch
-        <span class="w-6 h-6 md:w-7 md:h-7 rounded-full bg-white text-black grid place-items-center text-[10px] md:text-[11px]"><i class="fa-solid fa-arrow-right -rotate-45"></i></span>
-      </a>
-    </div>
   </div>
 </section>
 
-<!-- SERVICES: DESKTOP PINNED + MOBILE FLUID STACK (WITH HIGH END PEXELS IMAGERY) -->
+<!-- SERVICES: DESKTOP PINNED + MOBILE FLUID STACK -->
 <section id="services" class="relative w-full overflow-hidden py-8 md:py-0">
   <div id="servicesPinWrapper" class="services-pin-wrapper">
     <!-- Header -->
@@ -435,7 +437,7 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
   </div>
 </section>
 
-<!-- PROCESS: HORIZONTAL SCRUB -->
+<!-- PROCESS: 6-STEP HORIZONTAL SCRUB -->
 <section id="process" class="relative w-full overflow-hidden bg-white py-8 md:py-4">
   <div id="processPinWrapper" class="process-pinned-section">
     <div class="px-4 sm:px-6 md:px-12 max-w-[1320px] w-full mx-auto pb-4 md:pb-6 shrink-0">
@@ -445,7 +447,7 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
       </div>
       <div class="mt-2.5 flex flex-col md:flex-row md:items-end justify-between gap-2 md:gap-4">
         <h2 class="font-display font-extrabold tracking-[-0.035em] text-[26px] sm:text-[34px] md:text-[48px] leading-tight text-[#101114]">From Zero to Category Leader</h2>
-        <p class="text-[13px] md:text-[14px] text-[#6B6B6E] max-w-md">A ruthlessly efficient 4-step system that removes guesswork and compounds growth every week.</p>
+        <p class="text-[13px] md:text-[14px] text-[#6B6B6E] max-w-md">A ruthlessly efficient 6-step system that removes guesswork and compounds growth every week.</p>
       </div>
     </div>
 
@@ -512,20 +514,59 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
         <div class="process-feature-card group">
           <div>
             <div class="flex items-center justify-between">
-              <div class="step-badge w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-[#101114] text-white grid place-items-center font-extrabold text-[12px] md:text-[13px] tracking-widest transition-colors duration-300">04</div>
+              <div class="step-badge w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-[#F5F3FF] text-[#7C3AED] grid place-items-center font-extrabold text-[12px] md:text-[13px] tracking-widest border border-[#7C3AED]/20 transition-colors duration-300">04</div>
               <span class="text-[10px] md:text-[11px] font-bold tracking-widest text-[#9AA0A8] transition-colors duration-300">PHASE FOUR</span>
             </div>
             <div class="mt-5 md:mt-7 text-[10px] md:text-[11px] font-bold tracking-widest text-[#9AA0A8] flex items-center gap-2 transition-colors duration-300">
-              <span class="w-5 h-px bg-black/10"></span> ONGOING SCALE
+              <span class="w-5 h-px bg-black/10"></span> ONGOING
             </div>
             <h3 class="mt-2 md:mt-3 font-display font-bold text-[18px] md:text-[22px] tracking-tight text-[#101114] transition-colors duration-300">Aggressive Optimization</h3>
             <p class="mt-2 text-[13px] md:text-[14px] leading-6 text-[#6B6B6E] transition-colors duration-300">Pushing ad spend efficiently while safeguarding net-profit ROAS, automated customer retention, and compounding lifetime value.</p>
           </div>
           <div class="pt-4 md:pt-6 border-t border-black/[0.06] flex items-center justify-between">
-            <span class="text-[11px] md:text-[12px] font-semibold text-[#101114] transition-colors duration-300">Continuous Compounding</span>
+            <span class="text-[11px] md:text-[12px] font-semibold text-[#101114] transition-colors duration-300">Continuous Scale</span>
             <span class="step-arrow w-7 h-7 md:w-8 md:h-8 rounded-full bg-[#F6F7F9] grid place-items-center text-[#101114] transition-all duration-300"><i class="fa-solid fa-arrow-right text-[10px] md:text-[11px]"></i></span>
           </div>
         </div>
+
+        <!-- Step 05 -->
+        <div class="process-feature-card group">
+          <div>
+            <div class="flex items-center justify-between">
+              <div class="step-badge w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-[#FFF7ED] text-[#EA580C] grid place-items-center font-extrabold text-[12px] md:text-[13px] tracking-widest border border-[#EA580C]/20 transition-colors duration-300">05</div>
+              <span class="text-[10px] md:text-[11px] font-bold tracking-widest text-[#9AA0A8] transition-colors duration-300">PHASE FIVE</span>
+            </div>
+            <div class="mt-5 md:mt-7 text-[10px] md:text-[11px] font-bold tracking-widest text-[#9AA0A8] flex items-center gap-2 transition-colors duration-300">
+              <span class="w-5 h-px bg-black/10"></span> ONGOING
+            </div>
+            <h3 class="mt-2 md:mt-3 font-display font-bold text-[18px] md:text-[22px] tracking-tight text-[#101114] transition-colors duration-300">Conversion Rate Opt.</h3>
+            <p class="mt-2 text-[13px] md:text-[14px] leading-6 text-[#6B6B6E] transition-colors duration-300">Eliminating friction points and optimizing funnels to turn clicks into high-LTV customers and scale profitability.</p>
+          </div>
+          <div class="pt-4 md:pt-6 border-t border-black/[0.06] flex items-center justify-between">
+            <span class="text-[11px] md:text-[12px] font-semibold text-[#101114] transition-colors duration-300">A/B Testing</span>
+            <span class="step-arrow w-7 h-7 md:w-8 md:h-8 rounded-full bg-[#F6F7F9] grid place-items-center text-[#101114] transition-all duration-300"><i class="fa-solid fa-arrow-right text-[10px] md:text-[11px]"></i></span>
+          </div>
+        </div>
+
+        <!-- Step 06 -->
+        <div class="process-feature-card group">
+          <div>
+            <div class="flex items-center justify-between">
+              <div class="step-badge w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-[#101114] text-white grid place-items-center font-extrabold text-[12px] md:text-[13px] tracking-widest transition-colors duration-300">06</div>
+              <span class="text-[10px] md:text-[11px] font-bold tracking-widest text-[#9AA0A8] transition-colors duration-300">PHASE SIX</span>
+            </div>
+            <div class="mt-5 md:mt-7 text-[10px] md:text-[11px] font-bold tracking-widest text-[#9AA0A8] flex items-center gap-2 transition-colors duration-300">
+              <span class="w-5 h-px bg-black/10"></span> CATEGORY DESIGN
+            </div>
+            <h3 class="mt-2 md:mt-3 font-display font-bold text-[18px] md:text-[22px] tracking-tight text-[#101114] transition-colors duration-300">Brand Positioning</h3>
+            <p class="mt-2 text-[13px] md:text-[14px] leading-6 text-[#6B6B6E] transition-colors duration-300">Designing category-defining visual identities and executive narratives to command premium market pricing.</p>
+          </div>
+          <div class="pt-4 md:pt-6 border-t border-black/[0.06] flex items-center justify-between">
+            <span class="text-[11px] md:text-[12px] font-semibold text-[#101114] transition-colors duration-300">Market Dominance</span>
+            <span class="step-arrow w-7 h-7 md:w-8 md:h-8 rounded-full bg-[#F6F7F9] grid place-items-center text-[#101114] transition-all duration-300"><i class="fa-solid fa-arrow-right text-[10px] md:text-[11px]"></i></span>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -534,7 +575,7 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
 <!-- BRAND NEW: TILTED SELECTED WORK INFINITE GRID -->
 <section id="portfolio" class="py-12 md:py-20 overflow-hidden relative bg-[#F8F9FA] z-10 border-t border-black/[0.04]">
   <!-- Heading Locked Above Grid (z-20) to Prevent Overlap -->
-  <div class="text-center mb-16 md:mb-28 px-4 reveal relative z-20">
+  <div class="text-center px-4 reveal relative z-20">
     <div class="inline-flex items-center gap-1.5 bg-white border border-black/[0.06] rounded-full px-3 py-1 shadow-sm mb-3">
       <span class="w-1.5 h-1.5 rounded-full bg-[#101114]"></span>
       <span class="text-[10px] md:text-[11px] font-bold tracking-[0.14em]">PROVEN RESULTS</span>
@@ -543,9 +584,9 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
   </div>
 
   <!-- Interactive Angled Grid Container -->
-  <div class="transform -rotate-6 scale-110 origin-center w-[120vw] -ml-[10vw] flex flex-col gap-4 md:gap-6 relative z-10 mt-12 md:mt-24" id="workGallery">
+  <div class="transform -rotate-[5deg] scale-110 origin-center w-[120vw] -ml-[10vw] flex flex-col gap-4 md:gap-6 relative z-10 mt-12 md:mt-24" id="workGallery">
     
-    <!-- Row 1: Left Scroll -->
+    <!-- Row 1: Right Fast Scroll -->
     <div class="flex gap-4 md:gap-6 work-row-right">
       <div class="port-card group">
         <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=80" alt="Work" class="w-full h-full object-cover">
@@ -589,9 +630,15 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
            <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-google mr-2"></i> GOOGLE</span>
         </div>
       </div>
+      <div class="port-card group">
+        <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?w=600&q=80" alt="Work" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-meta mr-2"></i> META</span>
+        </div>
+      </div>
     </div>
 
-    <!-- Row 2: Right Scroll -->
+    <!-- Row 2: Left Fast Scroll -->
     <div class="flex gap-4 md:gap-6 work-row-left">
       <div class="port-card group">
         <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80" alt="Work" class="w-full h-full object-cover">
@@ -635,9 +682,15 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
            <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-solid fa-bolt mr-2"></i> VERCEL</span>
         </div>
       </div>
+      <div class="port-card group">
+        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80" alt="Work" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-airbnb mr-2"></i> AIRBNB</span>
+        </div>
+      </div>
     </div>
 
-    <!-- Row 3: Left Scroll -->
+    <!-- Row 3: Right Fast Scroll -->
     <div class="flex gap-4 md:gap-6 work-row-right">
       <div class="port-card group">
         <img src="https://images.unsplash.com/photo-1491933382434-500287f9b54b?w=600&q=80" alt="Work" class="w-full h-full object-cover">
@@ -679,6 +732,12 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
         <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80" alt="Work" class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
            <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-solid fa-cube mr-2"></i> NOTION</span>
+        </div>
+      </div>
+      <div class="port-card group">
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80" alt="Work" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-airbnb mr-2"></i> AIRBNB</span>
         </div>
       </div>
     </div>
@@ -795,7 +854,7 @@ gsap.utils.toArray('.reveal').forEach((el, i)=>{
   });
 });
 
-// HERO: MATHEMATICALLY PERFECT CIRCULAR SCROLL-ORBIT (SQUASH PROOF)
+// HERO: MATHEMATICALLY PERFECT CIRCULAR SCROLL-ORBIT (SQUASH PROOF DIVS)
 const orbitImgs = gsap.utils.toArray('.orbit-img');
 const numImgs = orbitImgs.length;
 
@@ -806,11 +865,6 @@ orbitImgs.forEach((img, i) => {
   gsap.set(img, { x: offset * xSpace, y: window.innerWidth < 768 ? 60 : 100, rotation: 0, scale: 0, opacity: 0 });
 });
 
-// Step 2: Entrance Pop-In
-gsap.to(orbitImgs, { opacity: 1, scale: 1, duration: 0.9, stagger: 0.06, ease: "back.out(1.5)", delay: 0.2 });
-
-// Step 3: Scroll-Bound Orbit Animation
-const heroRadius = window.innerWidth < 768 ? Math.min(window.innerWidth * 0.4, 150) : 380; 
 const heroTl = gsap.timeline({
   scrollTrigger: {
     trigger: "#home",
@@ -822,23 +876,33 @@ const heroTl = gsap.timeline({
   }
 });
 
-// Animate into circle formation around the text
+// Step 2: Entrance Pop-In & Immediate Scroll-Bound Orbit Animation
+const heroRadius = window.innerWidth < 768 ? Math.min(window.innerWidth * 0.4, 150) : 380; 
+
+// The Text Fades Out & Up Smoothly as you scroll
+heroTl.to('#heroText', { opacity: 0, y: -40, duration: 0.2, ease: "power1.inOut" }, 0);
+
+// Images Fan Out Into Circle
 orbitImgs.forEach((img, i) => {
   const angle = (i / numImgs) * Math.PI * 2 - (Math.PI / 2); 
   const x = Math.cos(angle) * heroRadius;
   const y = Math.sin(angle) * heroRadius;
   const rot = (angle * 180 / Math.PI) + 90; 
   
+  // Fade them in slightly if they aren't already visible, then fan them out
+  gsap.to(img, { opacity: 1, scale: 1, duration: 0.9, stagger: 0.06, ease: "back.out(1.5)", delay: 0.1 });
+
   heroTl.to(img, { 
     x: x, 
     y: y, 
     rotation: rot, 
-    ease: "power2.inOut" 
+    ease: "power2.inOut",
+    duration: 0.6
   }, 0);
 });
 
 // Rotate the whole ring
-heroTl.to(".orbit-container", { rotation: 180, ease: "none" }, 0.2);
+heroTl.to(".orbit-container", { rotation: 180, ease: "none", duration: 1 }, 0);
 
 
 // GSAP MATCHMEDIA (DESKTOP PINNED + MOBILE TOUCH-CHOREOGRAPHY)
@@ -885,7 +949,7 @@ ScrollTrigger.matchMedia({
       scrollTrigger: {
         trigger: "#processPinWrapper",
         start: "top top",
-        end: () => `+=${Math.max(700, processTrack.scrollWidth - window.innerWidth)}`,
+        end: () => `+=${Math.max(1200, processTrack.scrollWidth - window.innerWidth)}`,
         pin: true,
         scrub: 0.6,
         invalidateOnRefresh: true,
@@ -927,25 +991,25 @@ ScrollTrigger.matchMedia({
   }
 });
 
-// PORTFOLIO SCROLL-BOUND MARQUEE (TILTED)
+// FASTER TILTED PORTFOLIO SCROLL-BOUND MARQUEE
 gsap.to('.work-row-right', {
-  xPercent: 12,
+  xPercent: 35,
   ease: "none",
   scrollTrigger: {
     trigger: "#workGallery",
     start: "top bottom",
     end: "bottom top",
-    scrub: 1
+    scrub: 0.2
   }
 });
 gsap.to('.work-row-left', {
-  xPercent: -12,
+  xPercent: -35,
   ease: "none",
   scrollTrigger: {
     trigger: "#workGallery",
     start: "top bottom",
     end: "bottom top",
-    scrub: 1
+    scrub: 0.2
   }
 });
 
