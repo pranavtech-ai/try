@@ -79,7 +79,7 @@ body{background:#F8F9FA; color:#101114; overflow-x:hidden}
 ::-webkit-scrollbar-thumb{background:#101114; border-radius:999px}
 input,select{outline:none}
 
-/* Golden Flash Scroll-Pinned Parallax Engine */
+/* Faster Services Parallax Gallery */
 .services-pin-wrapper{
   position:relative;
   width:100%;
@@ -97,12 +97,11 @@ input,select{outline:none}
   grid-template-columns:repeat(3, 1fr);
   gap:1.5rem;
   padding:0 2rem;
-  perspective:1000px;
 }
 .parallax-col{
   display:flex;
   flex-direction:column;
-  gap:1.75rem;
+  gap:1.5rem;
   will-change:transform;
 }
 .service-scroll-card{
@@ -117,6 +116,44 @@ input,select{outline:none}
 .service-scroll-card:hover{
   border-color:rgba(0,0,0,0.15);
   box-shadow:0 20px 50px rgba(0,0,0,0.09);
+}
+
+/* Horizontal Feature Track Engine */
+.process-pinned-section{
+  position:relative;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.process-track{
+  display:flex;
+  gap:2rem;
+  width:max-content;
+  will-change:transform;
+  padding-left:max(1.5rem, calc((100vw - 1280px)/2));
+  padding-right:20vw;
+}
+.process-feature-card{
+  width:clamp(320px, 34vw, 420px);
+  min-height:380px;
+  border-radius:32px;
+  background:#FFFFFF;
+  border:1px solid rgba(0,0,0,0.07);
+  box-shadow:0 18px 45px rgba(0,0,0,0.05);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:2.25rem;
+  position:relative;
+  overflow:hidden;
+  transition:transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease;
+}
+.process-feature-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 24px 55px rgba(0,0,0,0.09);
 }
 </style>
 </head>
@@ -289,7 +326,7 @@ input,select{outline:none}
   </div>
 </section>
 
-<!-- SERVICES: PINNED PARALLAX COLUMN GALLERY -->
+<!-- SERVICES: FASTER PINNED PARALLAX COLUMN GALLERY -->
 <section id="services" class="relative w-full overflow-hidden">
   <div id="servicesPinWrapper" class="services-pin-wrapper">
     <!-- Pinned Top Header -->
@@ -305,9 +342,8 @@ input,select{outline:none}
     <!-- Parallax 3-Column Scroll Stage -->
     <div class="relative w-full flex-1 max-w-[1360px] mx-auto overflow-hidden px-4 md:px-8">
       <div class="parallax-gallery-container w-full h-full">
-        <!-- Column 1: Moves upward on scroll -->
+        <!-- Column 1 -->
         <div id="colLeft" class="parallax-col">
-          <!-- Card 01 -->
           <div class="service-scroll-card p-6 md:p-7 hover-light group">
             <div class="flex items-center justify-between">
               <div class="w-11 h-11 rounded-2xl bg-[#F2F3F6] border border-black/[0.04] grid place-items-center text-[#101114]"><i class="fa-solid fa-bullseye"></i></div>
@@ -326,7 +362,6 @@ input,select{outline:none}
             </div>
           </div>
 
-          <!-- Card 04 -->
           <div class="service-scroll-card p-6 md:p-7 hover-light group">
             <div class="flex items-center justify-between">
               <div class="w-11 h-11 rounded-2xl bg-[#ECFDF5] border border-black/[0.04] grid place-items-center text-[#059669]"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
@@ -346,9 +381,8 @@ input,select{outline:none}
           </div>
         </div>
 
-        <!-- Column 2: Center Hero Anchor Column -->
+        <!-- Column 2 -->
         <div id="colCenter" class="parallax-col">
-          <!-- Card 02 -->
           <div class="service-scroll-card p-6 md:p-7 hover-light group border-black/10 shadow-md">
             <div class="flex items-center justify-between">
               <div class="w-11 h-11 rounded-2xl bg-[#FFF1F5] border border-black/[0.04] grid place-items-center text-[#E11D48]"><i class="fa-solid fa-camera"></i></div>
@@ -367,7 +401,6 @@ input,select{outline:none}
             </div>
           </div>
 
-          <!-- Card 05 -->
           <div class="service-scroll-card p-6 md:p-7 hover-light group">
             <div class="flex items-center justify-between">
               <div class="w-11 h-11 rounded-2xl bg-[#FFF7ED] border border-black/[0.04] grid place-items-center text-[#EA580C]"><i class="fa-solid fa-clapperboard"></i></div>
@@ -387,9 +420,8 @@ input,select{outline:none}
           </div>
         </div>
 
-        <!-- Column 3: Opposing Scroll Motion -->
+        <!-- Column 3 -->
         <div id="colRight" class="parallax-col">
-          <!-- Card 03 -->
           <div class="service-scroll-card p-6 md:p-7 hover-light group">
             <div class="flex items-center justify-between">
               <div class="w-11 h-11 rounded-2xl bg-[#EEF2FF] border border-black/[0.04] grid place-items-center text-[#4F46E5]"><i class="fa-solid fa-cube"></i></div>
@@ -408,7 +440,6 @@ input,select{outline:none}
             </div>
           </div>
 
-          <!-- Card 06 -->
           <div class="service-scroll-card p-6 md:p-7 hover-light group">
             <div class="flex items-center justify-between">
               <div class="w-11 h-11 rounded-2xl bg-[#F5F3FF] border border-black/[0.04] grid place-items-center text-[#7C3AED]"><i class="fa-solid fa-envelope-open-text"></i></div>
@@ -432,52 +463,98 @@ input,select{outline:none}
   </div>
 </section>
 
-<!-- PROCESS -->
-<section id="process" class="px-4 md:px-6 max-w-[1280px] mx-auto pt-8 md:pt-12 pb-4">
-  <div class="bg-white rounded-[32px] border border-black/[0.06] shadow-sm overflow-hidden">
-    <div class="px-6 md:px-10 pt-10 pb-8 text-center border-b border-black/[0.06]">
+<!-- PROCESS: PINNED HORIZONTAL CAROUSEL ENGINE -->
+<section id="process" class="relative w-full overflow-hidden bg-white">
+  <div id="processPinWrapper" class="process-pinned-section">
+    <!-- Sticky Section Title Header -->
+    <div class="px-6 md:px-12 max-w-[1280px] w-full mx-auto pb-8 shrink-0">
       <div class="inline-flex items-center gap-2 bg-[#F6F7F9] border border-black/[0.06] rounded-full px-3.5 py-1.5">
         <span class="w-1.5 h-1.5 rounded-full bg-[#101114]"></span>
         <span class="text-[11px] font-bold tracking-[0.14em]">HOW WE WORK</span>
       </div>
-      <h2 class="mt-4 font-display font-extrabold tracking-[-0.04em] text-[32px] md:text-[44px] leading-none">From Zero to Category Leader</h2>
-      <p class="mt-3 text-[14px] text-[#6B6B6E] max-w-2xl mx-auto">A ruthlessly efficient 4-step system that removes guesswork and compounds growth every week.</p>
+      <div class="mt-4 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <h2 class="font-display font-extrabold tracking-[-0.04em] text-[34px] md:text-[50px] leading-none text-[#101114]">From Zero to Category Leader</h2>
+        <p class="text-[14px] text-[#6B6B6E] max-w-md">A ruthlessly efficient 4-step system that removes guesswork and compounds growth every week.</p>
+      </div>
     </div>
 
-    <div class="relative px-6 md:px-8 py-8">
-      <!-- connecting line -->
-      <div class="hidden lg:block absolute top-[74px] left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-black/10 to-transparent"></div>
-      <div class="grid lg:grid-cols-4 gap-6">
-        <!-- Step 01 -->
-        <div class="reveal relative bg-[#FCFCFD] rounded-[24px] border border-black/[0.06] p-6">
-          <div class="w-10 h-10 rounded-full bg-[#101114] text-white grid place-items-center font-extrabold text-[12px] tracking-widest">01</div>
-          <div class="hidden lg:block absolute top-5 -right-3 w-6 h-6 rounded-full bg-white border border-black/10 grid place-items-center shadow-sm"><i class="fa-solid fa-arrow-right text-[10px] text-[#9AA0A8]"></i></div>
-          <h3 class="mt-4 font-bold text-[15px] tracking-tight">Audit & Discovery</h3>
-          <p class="mt-2 text-[13.5px] leading-6 text-[#6B6B6E]">Deep-dive analysis of your funnel, unit economics, competitor blindspots, and missed revenue leaks.</p>
-          <div class="mt-4 inline-flex items-center gap-2 text-[11px] font-bold tracking-widest text-[#9AA0A8]"><span class="w-6 h-px bg-black/10"></span> WEEK 01</div>
+    <!-- Pinned Horizontal Cards Track -->
+    <div class="w-full overflow-hidden">
+      <div id="processTrack" class="process-track">
+        <!-- 01: Audit & Discovery -->
+        <div class="process-feature-card group">
+          <div>
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-[#101114] text-white grid place-items-center font-extrabold text-[13px] tracking-widest shadow-md">01</div>
+              <span class="text-[11px] font-bold tracking-widest text-[#9AA0A8]">PHASE ONE</span>
+            </div>
+            <div class="mt-8 text-[11px] font-bold tracking-widest text-[#9AA0A8] flex items-center gap-2">
+              <span class="w-6 h-px bg-black/10"></span> WEEK 01
+            </div>
+            <h3 class="mt-3 font-display font-bold text-[22px] tracking-tight text-[#101114]">Audit & Discovery</h3>
+            <p class="mt-3 text-[14px] leading-6 text-[#6B6B6E]">Deep-dive analysis of your funnel, unit economics, competitor blindspots, and missed revenue leaks.</p>
+          </div>
+          <div class="pt-6 border-t border-black/[0.06] flex items-center justify-between">
+            <span class="text-[12px] font-semibold text-[#101114]">Diagnostic Deliverable</span>
+            <span class="w-8 h-8 rounded-full bg-[#F6F7F9] grid place-items-center text-[#101114] group-hover:translate-x-1 transition-transform"><i class="fa-solid fa-arrow-right text-[11px]"></i></span>
+          </div>
         </div>
-        <!-- Step 02 -->
-        <div class="reveal relative bg-[#FCFCFD] rounded-[24px] border border-black/[0.06] p-6">
-          <div class="w-10 h-10 rounded-full bg-white border border-black/10 grid place-items-center font-extrabold text-[12px]">02</div>
-          <div class="hidden lg:block absolute top-5 -right-3 w-6 h-6 rounded-full bg-white border border-black/10 grid place-items-center shadow-sm"><i class="fa-solid fa-arrow-right text-[10px] text-[#9AA0A8]"></i></div>
-          <h3 class="mt-4 font-bold text-[15px] tracking-tight">Creative & Technical Re-Architecture</h3>
-          <p class="mt-2 text-[13.5px] leading-6 text-[#6B6B6E]">Scripting high-converting hooks, shooting bespoke assets, and CRO rebuilding landing pages.</p>
-          <div class="mt-4 inline-flex items-center gap-2 text-[11px] font-bold tracking-widest text-[#9AA0A8]"><span class="w-6 h-px bg-black/10"></span> WEEK 02–03</div>
+
+        <!-- 02: Creative & Technical Re-Architecture -->
+        <div class="process-feature-card group">
+          <div>
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-[#FFF1F5] text-[#E11D48] grid place-items-center font-extrabold text-[13px] tracking-widest border border-[#E11D48]/20">02</div>
+              <span class="text-[11px] font-bold tracking-widest text-[#9AA0A8]">PHASE TWO</span>
+            </div>
+            <div class="mt-8 text-[11px] font-bold tracking-widest text-[#9AA0A8] flex items-center gap-2">
+              <span class="w-6 h-px bg-black/10"></span> WEEK 02–03
+            </div>
+            <h3 class="mt-3 font-display font-bold text-[22px] tracking-tight text-[#101114]">Creative & Technical Re-Architecture</h3>
+            <p class="mt-3 text-[14px] leading-6 text-[#6B6B6E]">Scripting high-converting hooks, shooting bespoke visual assets, and CRO rebuilding high-velocity landing pages.</p>
+          </div>
+          <div class="pt-6 border-t border-black/[0.06] flex items-center justify-between">
+            <span class="text-[12px] font-semibold text-[#101114]">Asset Production</span>
+            <span class="w-8 h-8 rounded-full bg-[#F6F7F9] grid place-items-center text-[#101114] group-hover:translate-x-1 transition-transform"><i class="fa-solid fa-arrow-right text-[11px]"></i></span>
+          </div>
         </div>
-        <!-- Step 03 -->
-        <div class="reveal relative bg-[#FCFCFD] rounded-[24px] border border-black/[0.06] p-6">
-          <div class="w-10 h-10 rounded-full bg-white border border-black/10 grid place-items-center font-extrabold text-[12px]">03</div>
-          <div class="hidden lg:block absolute top-5 -right-3 w-6 h-6 rounded-full bg-white border border-black/10 grid place-items-center shadow-sm"><i class="fa-solid fa-arrow-right text-[10px] text-[#9AA0A8]"></i></div>
-          <h3 class="mt-4 font-bold text-[15px] tracking-tight">Algorithmic Testing & Media Blitz</h3>
-          <p class="mt-2 text-[13.5px] leading-6 text-[#6B6B6E]">Multi-variant ad testing across platforms to isolate winning creative-angle combinations.</p>
-          <div class="mt-4 inline-flex items-center gap-2 text-[11px] font-bold tracking-widest text-[#9AA0A8]"><span class="w-6 h-px bg-black/10"></span> WEEK 04–06</div>
+
+        <!-- 03: Algorithmic Testing & Media Blitz -->
+        <div class="process-feature-card group">
+          <div>
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-[#EEF2FF] text-[#4F46E5] grid place-items-center font-extrabold text-[13px] tracking-widest border border-[#4F46E5]/20">03</div>
+              <span class="text-[11px] font-bold tracking-widest text-[#9AA0A8]">PHASE THREE</span>
+            </div>
+            <div class="mt-8 text-[11px] font-bold tracking-widest text-[#9AA0A8] flex items-center gap-2">
+              <span class="w-6 h-px bg-black/10"></span> WEEK 04–06
+            </div>
+            <h3 class="mt-3 font-display font-bold text-[22px] tracking-tight text-[#101114]">Algorithmic Testing & Media Blitz</h3>
+            <p class="mt-3 text-[14px] leading-6 text-[#6B6B6E]">Multi-variant ad testing across platforms to isolate winning creative-angle combinations with minimal budget waste.</p>
+          </div>
+          <div class="pt-6 border-t border-black/[0.06] flex items-center justify-between">
+            <span class="text-[12px] font-semibold text-[#101114]">Angle Validation</span>
+            <span class="w-8 h-8 rounded-full bg-[#F6F7F9] grid place-items-center text-[#101114] group-hover:translate-x-1 transition-transform"><i class="fa-solid fa-arrow-right text-[11px]"></i></span>
+          </div>
         </div>
-        <!-- Step 04 -->
-        <div class="reveal relative bg-[#101114] rounded-[24px] border border-white/10 p-6 text-white">
-          <div class="w-10 h-10 rounded-full bg-white text-[#101114] grid place-items-center font-extrabold text-[12px]">04</div>
-          <h3 class="mt-4 font-bold text-[15px] tracking-tight">Aggressive Scale & Optimization</h3>
-          <p class="mt-2 text-[13.5px] leading-6 text-white/60">Pushing ad spend efficiently while safeguarding ROAS, retention, and lifetime value.</p>
-          <div class="mt-4 inline-flex items-center gap-2 text-[11px] font-bold tracking-widest text-white/50"><span class="w-6 h-px bg-white/20"></span> ONGOING</div>
+
+        <!-- 04: Aggressive Scale & Optimization -->
+        <div class="process-feature-card group bg-[#101114] border-white/10 text-white shadow-xl">
+          <div>
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-white text-[#101114] grid place-items-center font-extrabold text-[13px] tracking-widest">04</div>
+              <span class="text-[11px] font-bold tracking-widest text-white/50">PHASE FOUR</span>
+            </div>
+            <div class="mt-8 text-[11px] font-bold tracking-widest text-white/50 flex items-center gap-2">
+              <span class="w-6 h-px bg-white/20"></span> ONGOING SCALE
+            </div>
+            <h3 class="mt-3 font-display font-bold text-[22px] tracking-tight text-white">Aggressive Scale & Optimization</h3>
+            <p class="mt-3 text-[14px] leading-6 text-white/70">Pushing ad spend efficiently while safeguarding net-profit ROAS, automated customer retention, and compounding lifetime value.</p>
+          </div>
+          <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[12px] font-semibold text-emerald-400">Continuous Compounding</span>
+            <span class="w-8 h-8 rounded-full bg-white text-[#101114] grid place-items-center group-hover:translate-x-1 transition-transform"><i class="fa-solid fa-arrow-right text-[11px]"></i></span>
+          </div>
         </div>
       </div>
     </div>
@@ -567,7 +644,6 @@ input,select{outline:none}
           </div>
           <span class="w-10 h-10 rounded-full bg-white grid place-items-center shadow"><i class="fa-solid fa-arrow-up-right-from-square text-[13px]"></i></span>
         </div>
-        <!-- webgl badge -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
           <div class="w-24 h-24 rounded-full border border-white/20 bg-white/10 glass grid place-items-center backdrop-blur">
             <i class="fa-solid fa-cube text-white text-xl"></i>
@@ -686,7 +762,6 @@ input,select{outline:none}
 <!-- CONTACT -->
 <section id="contact" class="px-4 md:px-6 max-w-[1280px] mx-auto pt-4 pb-8">
   <div class="relative overflow-hidden rounded-[32px] md:rounded-[40px] bg-[#0F0F12] border border-white/10 shadow-[0_24px_80px_rgba(0,0,0,0.35)]">
-    <!-- glowing accents -->
     <div class="pointer-events-none absolute -top-40 -right-40 w-[640px] h-[640px] rounded-full opacity-30" style="background:radial-gradient(circle at 50% 50%, rgba(140,160,255,0.5), transparent 70%)"></div>
     <div class="pointer-events-none absolute -bottom-40 -left-40 w-[560px] h-[560px] rounded-full opacity-20" style="background:radial-gradient(circle at 50% 50%, rgba(255,180,200,0.45), transparent 70%)"></div>
 
@@ -865,33 +940,48 @@ gsap.utils.toArray('.reveal').forEach((el, i)=>{
   });
 });
 
-// Golden Flash Scroll-Pinned Stagger Animation (Services)
-const pinWrap = document.getElementById('servicesPinWrapper');
+// 1. Faster Services Parallax Column Animation (Optimized Distance & Catch-up)
 const colLeft = document.getElementById('colLeft');
 const colCenter = document.getElementById('colCenter');
 const colRight = document.getElementById('colRight');
 
-// Initialize starting offsets for the parallax columns
-gsap.set(colLeft, { yPercent: 40 });
-gsap.set(colCenter, { yPercent: 65 });
-gsap.set(colRight, { yPercent: 35 });
+gsap.set(colLeft, { yPercent: 22 });
+gsap.set(colCenter, { yPercent: 40 });
+gsap.set(colRight, { yPercent: 18 });
 
-// Pinned scroll timeline scrubbing through the 3 columns
-const servicesTl = gsap.timeline({
+gsap.timeline({
   scrollTrigger: {
     trigger: "#services",
     start: "top top",
-    end: "+=2200",
+    end: "+=950", // Drastically reduced for fast, crisp responsiveness
     pin: true,
-    scrub: 1.2,
+    scrub: 0.6, // Tighter catch-up eliminates lag
+    anticipatePin: 1
+  }
+})
+.to(colLeft, { yPercent: -28, ease: "none" }, 0)
+.to(colCenter, { yPercent: -35, ease: "none" }, 0)
+.to(colRight, { yPercent: -25, ease: "none" }, 0);
+
+// 2. Process Section: Horizontal Scrub Animation
+const processTrack = document.getElementById('processTrack');
+function getScrollAmount() {
+  return -(processTrack.scrollWidth - window.innerWidth + (window.innerWidth < 768 ? 40 : 120));
+}
+
+gsap.to(processTrack, {
+  x: () => getScrollAmount(),
+  ease: "none",
+  scrollTrigger: {
+    trigger: "#processPinWrapper",
+    start: "top top",
+    end: () => `+=${Math.max(1200, processTrack.scrollWidth - window.innerWidth)}`,
+    pin: true,
+    scrub: 0.7,
+    invalidateOnRefresh: true,
     anticipatePin: 1
   }
 });
-
-servicesTl
-  .to(colLeft, { yPercent: -45, ease: "none" }, 0)
-  .to(colCenter, { yPercent: -55, ease: "none" }, 0)
-  .to(colRight, { yPercent: -40, ease: "none" }, 0);
 
 // Crystal tilt inertia
 const crystal = document.getElementById('crystal');
@@ -920,7 +1010,7 @@ toggle.addEventListener('click', ()=>{
 });
 document.querySelectorAll('.mobile-link').forEach(a=> a.addEventListener('click',()=>{ menuOpen=false; mobileMenu.classList.add('hidden'); toggle.innerHTML='<i class="fa-solid fa-bars text-[13px]"></i>'; }));
 
-// Nav indicator & active
+// Nav indicator & active state
 const navLinks = document.querySelectorAll('.nav-link');
 const indicator = document.getElementById('navIndicator');
 function moveIndicator(el){
@@ -958,7 +1048,7 @@ window.addEventListener('load', ()=> {
   if(active) moveIndicator(active);
 });
 
-// Smooth anchor
+// Smooth anchor scroll
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click', e=>{
     const id=a.getAttribute('href');
@@ -1028,7 +1118,7 @@ document.querySelectorAll('.hover-light').forEach(card=>{
   card.addEventListener('mouseleave', ()=> card.style.background='white');
 });
 
-// Form
+// Form Handling
 const budgetGroup=document.getElementById('budgetGroup');
 let selectedBudget=null;
 budgetGroup.querySelectorAll('.budget-pill').forEach(btn=>{
