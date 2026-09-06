@@ -1,34 +1,3 @@
-Here is the fully responsive `index.html`.
-
-### Responsiveness & Cross-Device Fixes Applied:
-
-1. **Adaptive GSAP MatchMedia (`gsap.matchMedia()`):**
-* **Desktop (`min-width: 1024px`):** Full 3D mouse perspective tilt on the hero arch, pinned 3-column stagger animation on `#services`, and pinned horizontal scrubbing on `#process`.
-* **Mobile & Tablet (`max-width: 1023px`):** Disabled desktop scroll-pin hijacking that causes crashes and overlapping cards on touch screens. Cards stack into fluid, touch-friendly, native vertical and horizontal swipe layouts.
-
-
-2. **Hero Deck Responsiveness:**
-* Scaled the 5 floating cards dynamically using clamp dimensions (`clamp(72px, 18vw, 190px)`) with graceful negative margin spacing (`-space-x-3 sm:-space-x-6 md:-space-x-8 lg:-space-x-10`), eliminating horizontal viewport breakout on smaller screens.
-* On touch devices, taps preview the background projection without requiring mouse coordinates.
-
-
-3. **Services (`#services`) Responsive Engine:**
-* Desktop maintains the Golden Flash center-anchor reveal.
-* Mobile and tablet seamlessly transform into a clean, 1-column or 2-column stacked grid with lightweight scroll reveals (`y: 20`, `opacity: 0`).
-
-
-4. **Process (`#process`) Touch-Ready Handling:**
-* Pinned horizontal scrub activates on desktop.
-* Mobile & tablet switch to a smooth native touch scroll track with scroll-snap and zero page layout locks.
-
-
-5. **Form & Inputs:**
-* Grid splits to single-column on mobile screens (`< 640px`) to prevent input squishing and keyboard overlapping.
-* Full accessibility for touch targets (`min-height: 48px`).
-
-
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
