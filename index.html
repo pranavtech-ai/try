@@ -40,7 +40,7 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
 .glass{backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px)}
 .pill-active{transition:all 0.4s cubic-bezier(0.16,1,0.3,1)}
 
-/* Hero Orbital Styles (Responsive) */
+/* Hero Orbital Styles (Responsive & Squish-Proof) */
 .hero-pin-wrapper{
   position:relative;
   width:100%;
@@ -58,19 +58,23 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
   height:1px;
   pointer-events:none;
 }
+/* Fixed to use background-image to prevent Safari scale:0 squashing bugs */
 .orbit-img{
   position:absolute;
   top:50%;
   left:50%;
-  width:64px;
-  height:88px;
+  width:72px;
+  height:100px;
   border-radius:10px;
-  object-fit:cover;
-  box-shadow:0 8px 20px rgba(0,0,0,0.12);
+  background-size:cover;
+  background-position:center;
+  background-color:#101114;
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
   border:2px solid #FFFFFF;
-  margin-top:-44px;
-  margin-left:-32px;
+  margin-top:-50px;
+  margin-left:-36px;
   will-change:transform, opacity;
+  opacity:0;
 }
 @media(min-width: 768px){
   .orbit-img{
@@ -194,15 +198,15 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
   transform:translateX(3px);
 }
 
-/* Scroll-Bound Selected Work Gallery */
+/* Tilted Portfolio Interactive Marquee */
 .work-row-right { transform: translateX(-15%); will-change: transform; }
 .work-row-left { transform: translateX(0%); will-change: transform; }
 .port-card {
   width:220px; height:240px; position:relative; border-radius:20px; overflow:hidden; 
-  border:1px solid rgba(0,0,0,0.06); box-shadow:0 12px 30px rgba(0,0,0,0.04); flex-shrink:0;
+  border:1px solid rgba(0,0,0,0.05); box-shadow:0 12px 30px rgba(0,0,0,0.04); flex-shrink:0;
 }
 @media (min-width: 768px) {
-  .port-card { width:320px; height:340px; border-radius:24px; }
+  .port-card { width:360px; height:380px; border-radius:24px; }
 }
 
 ::-webkit-scrollbar{width:5px}
@@ -254,7 +258,7 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
   </div>
 </nav>
 
-<!-- HERO: SCROLL ORBIT ANIMATION -->
+<!-- HERO: SQUASH-PROOF SCROLL ORBIT ANIMATION -->
 <section id="home" class="relative w-full overflow-hidden">
   <div id="heroPinWrapper" class="hero-pin-wrapper">
     
@@ -273,16 +277,16 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
       </p>
     </div>
 
-    <!-- Orbit Images Container (Responsive Radius via JS) -->
+    <!-- Reliable Orbit Images Container (Using Background-Image Divs) -->
     <div class="orbit-container z-20">
-      <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80" class="orbit-img" alt="Work 1">
-      <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?w=800&q=80" class="orbit-img" alt="Work 2">
-      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80" class="orbit-img" alt="Work 3">
-      <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&q=80" class="orbit-img" alt="Work 4">
-      <img src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=800&q=80" class="orbit-img" alt="Work 5">
-      <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&q=80" class="orbit-img" alt="Work 6">
-      <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80" class="orbit-img" alt="Work 7">
-      <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&q=80" class="orbit-img" alt="Work 8">
+      <div class="orbit-img" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80')"></div>
+      <div class="orbit-img" style="background-image: url('https://images.unsplash.com/photo-1542744094-24638eff58bb?w=600&q=80')"></div>
+      <div class="orbit-img" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80')"></div>
+      <div class="orbit-img" style="background-image: url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80')"></div>
+      <div class="orbit-img" style="background-image: url('https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=600&q=80')"></div>
+      <div class="orbit-img" style="background-image: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80')"></div>
+      <div class="orbit-img" style="background-image: url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80')"></div>
+      <div class="orbit-img" style="background-image: url('https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&q=80')"></div>
     </div>
 
     <!-- Absolute Positioning for Hero CTA -->
@@ -313,7 +317,7 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
       <div class="parallax-gallery-container grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
         <!-- Col 1 -->
         <div id="colLeft" class="parallax-col space-y-4 md:space-y-6">
-          <div class="service-scroll-card p-5 md:p-7 group">
+          <div class="service-scroll-card p-5 md:p-7 hover-light group">
             <div class="flex items-center justify-between">
               <div class="w-10 h-10 rounded-2xl bg-[#F2F3F6] border border-black/[0.04] grid place-items-center text-[#101114]"><i class="fa-solid fa-bullseye text-[13px]"></i></div>
               <span class="text-[11px] font-bold tracking-widest text-[#9AA0A8]">01</span>
@@ -325,13 +329,9 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
             </div>
             <h3 class="mt-4 font-bold tracking-tight text-[16px] md:text-[18px] leading-snug">Paid Social &<br class="hidden md:block"> Performance Media</h3>
             <p class="mt-2 text-[12.5px] md:text-[13.5px] leading-6 text-[#6B6B6E]">Meta, Google, TikTok spend management with creative fatigue forecasting and high-ROAS algorithmic bidding.</p>
-            <div class="mt-3.5 flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">Meta Ads</span>
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">TikTok</span>
-            </div>
           </div>
 
-          <div class="service-scroll-card p-5 md:p-7 group">
+          <div class="service-scroll-card p-5 md:p-7 hover-light group">
             <div class="flex items-center justify-between">
               <div class="w-10 h-10 rounded-2xl bg-[#ECFDF5] border border-black/[0.04] grid place-items-center text-[#059669]"><i class="fa-solid fa-magnifying-glass-chart text-[13px]"></i></div>
               <span class="text-[11px] font-bold tracking-widest text-[#9AA0A8]">04</span>
@@ -343,16 +343,12 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
             </div>
             <h3 class="mt-4 font-bold tracking-tight text-[16px] md:text-[18px] leading-snug">Search Engine Domination</h3>
             <p class="mt-2 text-[12.5px] md:text-[13.5px] leading-6 text-[#6B6B6E]">Technical architecture audits, programmatic keyword capture, and authoritative backlink acquisition.</p>
-            <div class="mt-3.5 flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">Technical SEO</span>
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">Content</span>
-            </div>
           </div>
         </div>
 
         <!-- Col 2 -->
         <div id="colCenter" class="parallax-col space-y-4 md:space-y-6">
-          <div class="service-scroll-card p-5 md:p-7 group border-black/15 shadow-md">
+          <div class="service-scroll-card p-5 md:p-7 hover-light group border-black/15 shadow-md">
             <div class="flex items-center justify-between">
               <div class="w-10 h-10 rounded-2xl bg-[#FFF1F5] border border-black/[0.04] grid place-items-center text-[#E11D48]"><i class="fa-solid fa-camera text-[13px]"></i></div>
               <span class="text-[11px] font-bold tracking-widest text-[#9AA0A8]">02</span>
@@ -364,13 +360,9 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
             </div>
             <h3 class="mt-4 font-bold tracking-tight text-[16px] md:text-[18px] leading-snug">Commercial Visual Identity</h3>
             <p class="mt-2 text-[12.5px] md:text-[13.5px] leading-6 text-[#6B6B6E]">Cinema-grade ad production, macro product captures, and editorial aesthetic direction that stops the scroll.</p>
-            <div class="mt-3.5 flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">Art Direction</span>
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">UGC</span>
-            </div>
           </div>
 
-          <div class="service-scroll-card p-5 md:p-7 group">
+          <div class="service-scroll-card p-5 md:p-7 hover-light group">
             <div class="flex items-center justify-between">
               <div class="w-10 h-10 rounded-2xl bg-[#FFF7ED] border border-black/[0.04] grid place-items-center text-[#EA580C]"><i class="fa-solid fa-clapperboard text-[13px]"></i></div>
               <span class="text-[11px] font-bold tracking-widest text-[#9AA0A8]">05</span>
@@ -382,16 +374,12 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
             </div>
             <h3 class="mt-4 font-bold tracking-tight text-[16px] md:text-[18px] leading-snug">Social Growth & Viral Creative</h3>
             <p class="mt-2 text-[12.5px] md:text-[13.5px] leading-6 text-[#6B6B6E]">Trend-jacking Reels/TikToks and cohesive grid curation that turns followers into fanatics.</p>
-            <div class="mt-3.5 flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">Reels</span>
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">Community</span>
-            </div>
           </div>
         </div>
 
         <!-- Col 3 -->
         <div id="colRight" class="parallax-col space-y-4 md:space-y-6">
-          <div class="service-scroll-card p-5 md:p-7 group">
+          <div class="service-scroll-card p-5 md:p-7 hover-light group">
             <div class="flex items-center justify-between">
               <div class="w-10 h-10 rounded-2xl bg-[#EEF2FF] border border-black/[0.04] grid place-items-center text-[#4F46E5]"><i class="fa-solid fa-cube text-[13px]"></i></div>
               <span class="text-[11px] font-bold tracking-widest text-[#9AA0A8]">03</span>
@@ -403,13 +391,9 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
             </div>
             <h3 class="mt-4 font-bold tracking-tight text-[16px] md:text-[18px] leading-snug">High-Conversion WebGL Sites</h3>
             <p class="mt-2 text-[12.5px] md:text-[13.5px] leading-6 text-[#6B6B6E]">Lightning-fast Awwwards-tier sites, interactive 3D landing pages, and frictionless checkout optimization.</p>
-            <div class="mt-3.5 flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">WebGL</span>
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">CRO</span>
-            </div>
           </div>
 
-          <div class="service-scroll-card p-5 md:p-7 group">
+          <div class="service-scroll-card p-5 md:p-7 hover-light group">
             <div class="flex items-center justify-between">
               <div class="w-10 h-10 rounded-2xl bg-[#F5F3FF] border border-black/[0.04] grid place-items-center text-[#7C3AED]"><i class="fa-solid fa-envelope-open-text text-[13px]"></i></div>
               <span class="text-[11px] font-bold tracking-widest text-[#9AA0A8]">06</span>
@@ -421,10 +405,6 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
             </div>
             <h3 class="mt-4 font-bold tracking-tight text-[16px] md:text-[18px] leading-snug">Retention Marketing</h3>
             <p class="mt-2 text-[12.5px] md:text-[13.5px] leading-6 text-[#6B6B6E]">Predictive Klaviyo flows, VIP LTV mechanics, and automated win-back journeys.</p>
-            <div class="mt-3.5 flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">Klaviyo</span>
-              <span class="px-2.5 py-1 rounded-full bg-[#F6F7F9] border border-black/5 text-[10.5px] font-semibold">LTV</span>
-            </div>
           </div>
         </div>
       </div>
@@ -528,169 +508,153 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
   </div>
 </section>
 
-<!-- BRAND NEW: SELECTED WORK SCROLL-BOUND GRID -->
+<!-- BRAND NEW: TILTED SELECTED WORK INFINITE GRID -->
 <section id="portfolio" class="py-12 md:py-20 overflow-hidden relative bg-[#F8F9FA] z-10 border-t border-black/[0.04]">
-  <div class="text-center mb-10 md:mb-14 px-4 reveal">
+  <div class="text-center mb-8 md:mb-12 px-4 reveal">
     <div class="inline-flex items-center gap-1.5 bg-white border border-black/[0.06] rounded-full px-3 py-1 shadow-sm mb-3">
       <span class="w-1.5 h-1.5 rounded-full bg-[#101114]"></span>
       <span class="text-[10px] md:text-[11px] font-bold tracking-[0.14em]">PROVEN RESULTS</span>
     </div>
-    <h2 class="font-display font-extrabold tracking-[-0.03em] text-[36px] sm:text-[48px] md:text-[60px] leading-tight text-[#101114]">Selected Work</h2>
+    <h2 class="font-display font-extrabold tracking-[-0.03em] text-[32px] sm:text-[44px] md:text-[56px] leading-tight text-[#101114]">Selected Work</h2>
   </div>
 
-  <div class="flex flex-col gap-4 md:gap-5 relative w-[130%] -translate-x-[15%]" id="workGallery">
+  <!-- Interactive Angled Grid Container -->
+  <div class="transform -rotate-6 scale-110 origin-center w-[120vw] -ml-[10vw] flex flex-col gap-4 md:gap-6 relative" id="workGallery">
+    
     <!-- Row 1: Left Scroll -->
-    <div class="flex gap-4 md:gap-5 work-row-right">
+    <div class="flex gap-4 md:gap-6 work-row-right">
       <div class="port-card group">
-        <img src="https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=80" alt="Work" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
            <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-google mr-2"></i> GOOGLE</span>
         </div>
       </div>
       <div class="port-card group">
-        <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?w=600&q=80" alt="Work" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
            <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-meta mr-2"></i> META</span>
         </div>
       </div>
       <div class="port-card group">
-        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80" alt="Work" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
            <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-microsoft mr-2"></i> MICROSOFT</span>
         </div>
       </div>
       <div class="port-card group">
-        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80" alt="Work" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
            <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-stripe mr-2"></i> STRIPE</span>
         </div>
       </div>
       <div class="port-card group">
-        <img src="https://images.unsplash.com/photo-1491933382434-500287f9b54b?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=600&q=80" alt="Work" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-figma mr-2"></i> FIGMA</span>
+        </div>
+      </div>
+      <div class="port-card group">
+        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&q=80" alt="Work" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
            <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-apple mr-2"></i> APPLE</span>
         </div>
       </div>
       <div class="port-card group">
-        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-solid fa-shoe-prints mr-2"></i> NIKE</span>
-        </div>
-      </div>
-      <div class="port-card group">
-        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-airbnb mr-2"></i> AIRBNB</span>
-        </div>
-      </div>
-      <div class="port-card group">
-        <img src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-spotify mr-2"></i> SPOTIFY</span>
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=80" alt="Work" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-google mr-2"></i> GOOGLE</span>
         </div>
       </div>
     </div>
 
     <!-- Row 2: Right Scroll -->
-    <div class="flex gap-4 md:gap-5 work-row-left">
-      <div class="port-card group">
-        <img src="https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-amazon mr-2"></i> AMAZON</span>
-        </div>
-      </div>
-      <div class="port-card group">
-        <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-uber mr-2"></i> UBER</span>
-        </div>
-      </div>
-      <div class="port-card group">
-        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-solid fa-cube mr-2"></i> NOTION</span>
-        </div>
-      </div>
+    <div class="flex gap-4 md:gap-6 work-row-left">
       <div class="port-card group">
         <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
            <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-solid fa-bolt mr-2"></i> VERCEL</span>
         </div>
       </div>
       <div class="port-card group">
         <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-figma mr-2"></i> FIGMA</span>
-        </div>
-      </div>
-      <div class="port-card group">
-        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-apple mr-2"></i> APPLE</span>
-        </div>
-      </div>
-      <div class="port-card group">
-        <img src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-stripe mr-2"></i> STRIPE</span>
-        </div>
-      </div>
-      <div class="port-card group">
-        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-google mr-2"></i> GOOGLE</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Row 3: Left Scroll -->
-    <div class="flex gap-4 md:gap-5 work-row-right">
-      <div class="port-card group">
-        <img src="https://images.unsplash.com/photo-1491933382434-500287f9b54b?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-apple mr-2"></i> APPLE</span>
-        </div>
-      </div>
-      <div class="port-card group">
-        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-solid fa-shoe-prints mr-2"></i> NIKE</span>
-        </div>
-      </div>
-      <div class="port-card group">
-        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
            <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-airbnb mr-2"></i> AIRBNB</span>
         </div>
       </div>
       <div class="port-card group">
-        <img src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&q=80" alt="Work" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
            <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-spotify mr-2"></i> SPOTIFY</span>
         </div>
       </div>
       <div class="port-card group">
-        <img src="https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <img src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=600&q=80" alt="Work" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
            <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-amazon mr-2"></i> AMAZON</span>
         </div>
       </div>
       <div class="port-card group">
-        <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80" alt="Work" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
            <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-uber mr-2"></i> UBER</span>
         </div>
       </div>
       <div class="port-card group">
         <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
            <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-solid fa-cube mr-2"></i> NOTION</span>
         </div>
       </div>
       <div class="port-card group">
         <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80" alt="Work" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
            <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-solid fa-bolt mr-2"></i> VERCEL</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: Left Scroll -->
+    <div class="flex gap-4 md:gap-6 work-row-right">
+      <div class="port-card group">
+        <img src="https://images.unsplash.com/photo-1491933382434-500287f9b54b?w=600&q=80" alt="Work" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-apple mr-2"></i> APPLE</span>
+        </div>
+      </div>
+      <div class="port-card group">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80" alt="Work" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-solid fa-shoe-prints mr-2"></i> NIKE</span>
+        </div>
+      </div>
+      <div class="port-card group">
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80" alt="Work" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-airbnb mr-2"></i> AIRBNB</span>
+        </div>
+      </div>
+      <div class="port-card group">
+        <img src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=600&q=80" alt="Work" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-spotify mr-2"></i> SPOTIFY</span>
+        </div>
+      </div>
+      <div class="port-card group">
+        <img src="https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?w=600&q=80" alt="Work" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-amazon mr-2"></i> AMAZON</span>
+        </div>
+      </div>
+      <div class="port-card group">
+        <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80" alt="Work" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-uber mr-2"></i> UBER</span>
+        </div>
+      </div>
+      <div class="port-card group">
+        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80" alt="Work" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-solid fa-cube mr-2"></i> NOTION</span>
         </div>
       </div>
     </div>
@@ -815,7 +779,7 @@ const numImgs = orbitImgs.length;
 orbitImgs.forEach((img, i) => {
   const offset = (i - (numImgs - 1) / 2);
   const xSpace = window.innerWidth < 768 ? 35 : 75; 
-  gsap.set(img, { x: offset * xSpace, y: window.innerWidth < 768 ? 60 : 100, rotation: 0, scale: 0 });
+  gsap.set(img, { x: offset * xSpace, y: window.innerWidth < 768 ? 60 : 100, rotation: 0, scale: 0, opacity: 0 });
 });
 
 // Step 2: Entrance Pop-In
@@ -836,11 +800,10 @@ const heroTl = gsap.timeline({
 
 // Animate into circle formation
 orbitImgs.forEach((img, i) => {
-  // Distribute 8 images evenly in a 360 circle
   const angle = (i / numImgs) * Math.PI * 2 - (Math.PI / 2); 
   const x = Math.cos(angle) * heroRadius;
   const y = Math.sin(angle) * heroRadius;
-  const rot = (angle * 180 / Math.PI) + 90; // Face outward
+  const rot = (angle * 180 / Math.PI) + 90; 
   
   heroTl.to(img, { 
     x: x, 
@@ -850,7 +813,7 @@ orbitImgs.forEach((img, i) => {
   }, 0);
 });
 
-// As user continues scrolling down, rotate the whole ring
+// Rotate the whole ring
 heroTl.to(".orbit-container", { rotation: 180, ease: "none" }, 0.2);
 
 
@@ -940,7 +903,7 @@ ScrollTrigger.matchMedia({
   }
 });
 
-// NEW: PORTFOLIO SCROLL-BOUND MARQUEE
+// NEW: PORTFOLIO SCROLL-BOUND MARQUEE (TILTED)
 gsap.to('.work-row-right', {
   xPercent: 12,
   ease: "none",
@@ -1088,5 +1051,3 @@ if(resetBtn){
 </script>
 </body>
 </html>
-
-```
