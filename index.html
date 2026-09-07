@@ -254,7 +254,6 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
     <button id="mobileToggle" aria-label="Toggle navigation menu" class="lg:hidden w-8 h-8 rounded-full bg-[#101114] text-white grid place-items-center"><i class="fa-solid fa-bars text-[12px]"></i></button>
   </div>
 
-  <!-- Mobile Dropdown Drawer -->
   <div id="mobileMenu" class="hidden absolute top-[calc(100%+10px)] left-0 right-0 bg-white/95 glass rounded-[24px] border border-black/5 shadow-[0_20px_50px_rgba(0,0,0,0.12)] p-2 mx-1 overflow-hidden">
     <div class="flex flex-col p-2 space-y-1">
       <a href="#home" class="mobile-link px-4 py-3 rounded-full text-[14px] font-semibold bg-[#101114] text-white text-center">Home</a>
@@ -271,7 +270,7 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
 <section id="home" class="relative w-full h-screen min-h-[700px] overflow-hidden bg-[#F8F9FA] flex flex-col items-center justify-center">
   
   <!-- Central Typography (Fades out and drifts UP on scroll) -->
-  <div id="heroText" class="relative z-30 text-center px-4 w-full max-w-5xl mt-[-8vh] md:mt-[-15vh]">
+  <div id="heroText" class="relative z-30 text-center px-4 w-full max-w-5xl mt-[-5vh] md:mt-[-10vh]">
     <div class="inline-flex items-center gap-1.5 bg-white/90 glass border border-black/[0.06] rounded-full px-3 py-1 shadow-sm mb-4 md:mb-6 pointer-events-auto">
       <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-500 animate-pulse"></span>
       <span class="text-[10px] sm:text-[11px] font-bold tracking-[0.16em] text-[#101114]">NOVA HUAS COLLECTIVE</span>
@@ -282,7 +281,7 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
     </h1>
     
     <!-- Hero CTA directly underneath, perfectly spaced -->
-    <div class="mt-6 flex items-center justify-center">
+    <div class="mt-6 md:mt-8 flex items-center justify-center">
       <a href="#contact" class="inline-flex items-center gap-2 bg-[#101114] hover:bg-black text-white px-6 md:px-8 py-3.5 md:py-4 rounded-full font-bold text-[13px] md:text-[14.5px] hover:scale-[1.03] transition-all shadow-xl pointer-events-auto">
         Get in Touch
         <span class="w-6 h-6 md:w-7 md:h-7 rounded-full bg-white text-black grid place-items-center text-[10px] md:text-[11px]"><i class="fa-solid fa-arrow-right -rotate-45"></i></span>
@@ -781,18 +780,13 @@ gsap.utils.toArray('.reveal').forEach((el, i)=>{
 const orbitImgs = gsap.utils.toArray('.orbit-img');
 const numImgs = orbitImgs.length; // 6 images
 
-// Step 1: Initial State - Tight Horizontal Row beneath text
+// Step 1: Initial State - Tight Horizontal Row
 orbitImgs.forEach((img, i) => {
   const offset = (i - (numImgs - 1) / 2);
-  const xSpace = window.innerWidth < 768 ? 38 : 75; 
-  gsap.set(img, { x: offset * xSpace, y: window.innerWidth < 768 ? 80 : 150, rotation: 0, scale: 0, opacity: 0 });
+  const xSpace = window.innerWidth < 768 ? 40 : 80; 
+  gsap.set(img, { x: offset * xSpace, y: window.innerWidth < 768 ? 140 : 200, rotation: 0, scale: 0, opacity: 0 });
 });
 
-// Step 2: Entrance Pop-In
-gsap.to(orbitImgs, { opacity: 1, scale: 1, duration: 0.9, stagger: 0.06, ease: "back.out(1.2)", delay: 0.2 });
-
-// Step 3: Scroll-Bound Orbit Animation
-const heroRadius = window.innerWidth < 768 ? 110 : 250; 
 const heroTl = gsap.timeline({
   scrollTrigger: {
     trigger: "#home",
@@ -804,13 +798,18 @@ const heroTl = gsap.timeline({
   }
 });
 
-// The Text Fades Out & Up Smoothly as you scroll
-heroTl.to('#heroText', { opacity: 0, y: -120, duration: 0.35, ease: "power1.inOut" }, 0);
+// Step 2: Entrance Pop-In
+gsap.to(orbitImgs, { opacity: 1, scale: 1, duration: 0.9, stagger: 0.06, ease: "back.out(1.2)", delay: 0.2 });
+
+// The Text Fades Out & Up Smoothly as you scroll (Pointer-Events set to None so it doesn't block upper image clicks)
+heroTl.to('#heroText', { opacity: 0, y: -80, pointerEvents: "none", duration: 0.3, ease: "power1.inOut" }, 0);
 
 // Reveal the center static START button
 heroTl.to('#orbitCenterBtn', { opacity: 1, pointerEvents: 'auto', duration: 0.25, ease: "power1.inOut" }, 0.2);
 
 // Images Fan Out Into Circle
+const heroRadius = window.innerWidth < 768 ? 110 : 250; 
+
 orbitImgs.forEach((img, i) => {
   const angle = (i / numImgs) * Math.PI * 2 - (Math.PI / 2); 
   const x = Math.cos(angle) * heroRadius;
@@ -826,7 +825,7 @@ orbitImgs.forEach((img, i) => {
   }, 0.1); 
 });
 
-// Rotate the whole ring (The START button is absolutely positioned outside this rotating container)
+// Rotate the whole ring while the center button stays completely static
 heroTl.to(".orbit-container", { rotation: 180, ease: "none", duration: 1 }, 0.2);
 
 // Hero Orbit Click-to-Service Navigation (With Blink Effect)
@@ -939,12 +938,9 @@ ScrollTrigger.matchMedia({
   }
 });
 
-// FASTER TILTED PORTFOLIO SCROLL-BOUND MARQUEE (NO GAPS)
-gsap.set('.work-row-right', { xPercent: -25 });
-gsap.set('.work-row-left', { xPercent: 0 });
-
+// FASTER TILTED PORTFOLIO SCROLL-BOUND MARQUEE
 gsap.to('.work-row-right', {
-  xPercent: 0,
+  x: () => -window.innerWidth * 0.45,
   ease: "none",
   scrollTrigger: {
     trigger: "#portfolio",
@@ -953,8 +949,10 @@ gsap.to('.work-row-right', {
     scrub: 0.2
   }
 });
-gsap.to('.work-row-left', {
-  xPercent: -25,
+gsap.fromTo('.work-row-left', {
+  x: () => -window.innerWidth * 0.45
+}, {
+  x: 0,
   ease: "none",
   scrollTrigger: {
     trigger: "#portfolio",
