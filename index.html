@@ -40,7 +40,7 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
 .glass{backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px)}
 .pill-active{transition:all 0.4s cubic-bezier(0.16,1,0.3,1)}
 
-/* Hero Orbital Styles (Rolls-Royce Setup) */
+/* Hero Orbital Styles (Perfect Center Alignment) */
 .hero-pin-wrapper{
   position:relative;
   width:100%;
@@ -84,6 +84,9 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
   display:block;
 }
 @media(min-width: 768px){
+  .orbit-container{
+    top:50%;
+  }
   .orbit-img{
     width:130px;
     height:180px;
@@ -269,12 +272,13 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
       <a href="#process" class="mobile-link px-4 py-3 rounded-full text-[14px] font-medium text-[#555] hover:bg-black/5 text-center">Process</a>
       <a href="#portfolio" class="mobile-link px-4 py-3 rounded-full text-[14px] font-medium text-[#555] hover:bg-black/5 text-center">Work</a>
       <a href="#contact" class="mobile-link px-4 py-3 rounded-full text-[14px] font-medium text-[#555] hover:bg-black/5 text-center">Contact</a>
+      <a href="#contact" class="mt-2 bg-[#101114] text-white text-center py-3.5 rounded-full font-bold text-[14px]">Let's Talk — Free Audit</a>
     </div>
   </div>
 </nav>
 
 <!-- HERO: IRONCLAD RESPONSIVE LAYOUT WITH ROLLS ROYCE BUTTON -->
-<section id="home" class="relative w-full h-[100svh] overflow-hidden bg-[#F8F9FA] flex flex-col items-center justify-start pt-[14vh] md:pt-[18vh]">
+<section id="home" class="relative w-full h-[100svh] min-h-[700px] overflow-hidden bg-[#F8F9FA] flex flex-col items-center justify-start pt-[14vh] md:pt-[18vh]">
   
   <!-- Central Typography (Perfectly Stacked, Glides Up on Scroll) -->
   <div id="heroText" class="relative z-30 text-center px-4 w-full max-w-5xl flex flex-col items-center">
@@ -298,10 +302,10 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
   </div>
 
   <!-- The Orbital Deck Hub -->
-  <div class="orbit-anchor-point flex-1">
+  <div class="orbit-anchor-point flex-1 w-full relative">
     
-    <!-- Center Interactive "START" Button (Rolls Royce Style - NEVER ROTATES) -->
-    <a href="#services" id="orbitCenterBtn" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[65px] h-[65px] md:w-[90px] md:h-[90px] bg-[#101114] text-white rounded-full flex flex-col items-center justify-center shadow-[0_12px_35px_rgba(0,0,0,0.25)] hover:scale-105 transition-transform duration-300 z-40 opacity-0 pointer-events-none">
+    <!-- Center Interactive "START" Button (Rolls Royce Style - NEVER ROTATES, Set to Exact 50%) -->
+    <a href="#services" id="orbitCenterBtn" class="absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[65px] h-[65px] md:w-[90px] md:h-[90px] bg-[#101114] text-white rounded-full flex flex-col items-center justify-center shadow-[0_12px_35px_rgba(0,0,0,0.25)] hover:scale-105 transition-transform duration-300 z-40 opacity-0 pointer-events-none">
       <span class="text-[8px] md:text-[10px] font-bold tracking-[0.2em] text-[#FFE664] mb-0.5 md:mb-1">START</span>
       <span class="w-5 h-5 md:w-6 md:h-6 rounded-full bg-white/10 grid place-items-center"><i class="fa-solid fa-arrow-down text-[9px] md:text-[10px]"></i></span>
     </a>
@@ -633,7 +637,7 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
       <div class="port-card group"><img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80" alt="Work" class="w-full h-full object-cover"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-stripe mr-2"></i> STRIPE</span></div></div>
       <div class="port-card group"><img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=600&q=80" alt="Work" class="w-full h-full object-cover"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-figma mr-2"></i> FIGMA</span></div></div>
       <div class="port-card group"><img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&q=80" alt="Work" class="w-full h-full object-cover"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-apple mr-2"></i> APPLE</span></div></div>
-      <!-- Duplicates to fill row entirely -->
+      <!-- Duplicates -->
       <div class="port-card group"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=80" alt="Work" class="w-full h-full object-cover"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-google mr-2"></i> GOOGLE</span></div></div>
       <div class="port-card group"><img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?w=600&q=80" alt="Work" class="w-full h-full object-cover"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-meta mr-2"></i> META</span></div></div>
       <div class="port-card group"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80" alt="Work" class="w-full h-full object-cover"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-microsoft mr-2"></i> MICROSOFT</span></div></div>
@@ -650,7 +654,7 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
       <div class="port-card group"><img src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=600&q=80" alt="Work" class="w-full h-full object-cover"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-amazon mr-2"></i> AMAZON</span></div></div>
       <div class="port-card group"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80" alt="Work" class="w-full h-full object-cover"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-uber mr-2"></i> UBER</span></div></div>
       <div class="port-card group"><img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80" alt="Work" class="w-full h-full object-cover"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-solid fa-cube mr-2"></i> NOTION</span></div></div>
-      <!-- Duplicates to fill row entirely -->
+      <!-- Duplicates -->
       <div class="port-card group"><img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80" alt="Work" class="w-full h-full object-cover"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-solid fa-bolt mr-2"></i> VERCEL</span></div></div>
       <div class="port-card group"><img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80" alt="Work" class="w-full h-full object-cover"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-airbnb mr-2"></i> AIRBNB</span></div></div>
       <div class="port-card group"><img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&q=80" alt="Work" class="w-full h-full object-cover"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-spotify mr-2"></i> SPOTIFY</span></div></div>
@@ -667,7 +671,7 @@ html, body{width:100%; overflow-x:hidden; background:#F8F9FA; color:#101114}
       <div class="port-card group"><img src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=600&q=80" alt="Work" class="w-full h-full object-cover"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-spotify mr-2"></i> SPOTIFY</span></div></div>
       <div class="port-card group"><img src="https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?w=600&q=80" alt="Work" class="w-full h-full object-cover"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-amazon mr-2"></i> AMAZON</span></div></div>
       <div class="port-card group"><img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80" alt="Work" class="w-full h-full object-cover"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-uber mr-2"></i> UBER</span></div></div>
-      <!-- Duplicates to fill row entirely -->
+      <!-- Duplicates -->
       <div class="port-card group"><img src="https://images.unsplash.com/photo-1491933382434-500287f9b54b?w=600&q=80" alt="Work" class="w-full h-full object-cover"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-apple mr-2"></i> APPLE</span></div></div>
       <div class="port-card group"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80" alt="Work" class="w-full h-full object-cover"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-solid fa-shoe-prints mr-2"></i> NIKE</span></div></div>
       <div class="port-card group"><img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80" alt="Work" class="w-full h-full object-cover"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><span class="text-white font-bold tracking-widest text-[14px]"><i class="fa-brands fa-airbnb mr-2"></i> AIRBNB</span></div></div>
@@ -788,16 +792,16 @@ gsap.utils.toArray('.reveal').forEach((el, i)=>{
   });
 });
 
-// HERO: MATHEMATICALLY PERFECT ARCH TO CIRCULAR ORBIT
+// HERO: MATHEMATICALLY PERFECT CIRCULAR SCROLL-ORBIT
 const orbitImgs = gsap.utils.toArray('.orbit-img');
 const numImgs = orbitImgs.length; 
 
 // Initial Arch Formation
 orbitImgs.forEach((img, i) => {
-  const offset = (i - (numImgs - 1) / 2); // Centers the array around 0
+  const offset = (i - (numImgs - 1) / 2); 
   const xSpace = window.innerWidth < 768 ? 40 : 85; 
-  const yOffset = Math.abs(offset) * (window.innerWidth < 768 ? 10 : 20); // Forms the arch curve
-  const rot = offset * 4; // Tilts the cards like an arch
+  const yOffset = Math.abs(offset) * (window.innerWidth < 768 ? 10 : 20); 
+  const rot = offset * 4; 
   gsap.set(img, { x: offset * xSpace, y: yOffset, rotation: rot, scale: 1, opacity: 1 });
 });
 
@@ -812,7 +816,7 @@ const heroTl = gsap.timeline({
   }
 });
 
-// The Text Fades Out & Up Smoothly as you scroll (Pointer-Events set to None so it doesn't block upper image clicks)
+// The Text Fades Out & Up Smoothly as you scroll
 heroTl.to('#heroText', { opacity: 0, y: -80, pointerEvents: "none", duration: 0.3, ease: "power1.inOut" }, 0);
 
 // Reveal the center static START button (Rolls Royce center cap)
@@ -876,7 +880,7 @@ ScrollTrigger.matchMedia({
       scrollTrigger: {
         trigger: "#servicesPinWrapper",
         start: "top top",
-        end: "+=500", // Shortened pinning eliminates the huge blank space delay
+        end: "+=500", 
         pin: true,
         scrub: 1,
         anticipatePin: 1
@@ -943,7 +947,7 @@ ScrollTrigger.matchMedia({
   }
 });
 
-// PORTFOLIO SCROLL-BOUND MARQUEE (SYNCED, OPPOSING SPEEDS)
+// PORTFOLIO SCROLL-BOUND MARQUEE (SYNCED)
 gsap.to('.work-row-left', {
   x: () => -window.innerWidth * 0.45,
   ease: "none",
